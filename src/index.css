@@ -1,1 +1,20 @@
+:root {
+    --bg-light: #ffffff;
+    --bg-dark: #000000;
+    --content-light: #00ffd5;
+    --content-dark: #95ffed;
+    --dettail-light: #00ffd5;
+    --dettail-dark: #95ffed;
+    --text-color-light: #ffffff;
+    --text-color-light: #000000;
+    --header-height: 100px;
+    --footer-height: 100px;
+    --main-height: calc(100vh -(--header-height + --footer-height));
+    --font-corpo: 1em;
+    --font-title: 4em;
+    --font-subtitle: 3em;
+
+
+}
+
 @import "tailwindcss";
