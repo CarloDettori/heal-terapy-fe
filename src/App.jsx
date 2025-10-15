@@ -6,7 +6,7 @@ import DefaultLayout from "../src/layout/DefaultLayout.jsx";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import InfoPage from "./pages/InfoPage.jsx";
-import ContentPage from "./pages/ContentPage.jsx";
+import UsPage from "./pages/UsPage.jsx";
 import ReservePage from "./pages/ReservePage.jsx";
 
 
@@ -19,9 +19,9 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/content" element={<ContentPage />} />
+            <Route path="/us" element={<UsPage />} />
             <Route path="/info" element={<InfoPage />} />
-            <Route path="/reserve" element={<ReservePage />} />
+            <Route path="/contact" element={<ReservePage />} />
           </Route>
         </Routes>
       </BrowserRouter>

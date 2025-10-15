@@ -1,5 +1,5 @@
 export default function InfoPage() {
     return (
-        <p>info page</p>
+        <section><p>info page</p></section>
     )
 }

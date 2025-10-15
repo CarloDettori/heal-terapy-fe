@@ -1,20 +1,107 @@
-:root {
-    --bg-light: #ffffff;
-    --bg-dark: #000000;
-    --content-light: #00ffd5;
-    --content-dark: #95ffed;
-    --dettail-light: #00ffd5;
-    --dettail-dark: #95ffed;
-    --text-color-light: #ffffff;
-    --text-color-light: #000000;
-    --header-height: 100px;
-    --footer-height: 100px;
-    --main-height: calc(100vh -(--header-height + --footer-height));
-    --font-corpo: 1em;
-    --font-title: 4em;
-    --font-subtitle: 3em;
+/*
 
+PALETTE 
+
+
+sul verde
+verde scuro #0D9488
+verde chiaro #50E3C2
+grigio scuro quasi nero #111827
+verde sbiadito #E0FCF0
+
+
+sul verde acqua
+verde acqua scuro #0D9488
+verde acqua chiaro #50E3C2
+blu scuro quasi nero #111827
+verde acqua sbiadito #E0FCF0
+
+
+sul blu
+blu scuro #0369A1
+blu chiaro #60A5FA
+blu scuro quasi nero #1F2937
+blu sbiadito #F0F9FF
+
+
+sul viola
+viola scuro #7C3AED
+viola chiaro #A78BFA
+grigio scuro quasi nero #111827
+rosa sbiadito #FDF7FF
+
+*/
+
+:root {
+
+    --theme: #0369A1;
+    --light-theme: #60A5FA;
+    --lightest-theme: #F0F9FF;
+    --dark-theme: #1F2937;
+    --header-height: 100px;
+    --footer-height: 40px;
+    --main-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+    --title-size: 1.5em;
+    --subtitle-size: 1em;
+    --corpo-size: 0.8em;
+    --description-size: 0.5em;
+}
+
+
+
+main {
+    box-shadow: 0px -5px 10px var(--theme);
 
 }
+
+main,
+footer {
+    padding: 10px;
+    z-index: 1000
+}
+
+header {
+    padding-top: 5px
+}
+
+.navlink {
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    color: var(--dark-theme);
+    background-color: var(--lightest-theme);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid var(--dark-theme)
+}
+
+
+.navlink:hover {
+    cursor: pointer;
+}
+
+.nav-icon {
+    background-color: var(--lightest-theme);
+    max-height: var(--title-size);
+    margin-left: auto;
+}
+
+h1 {
+    font-size: var(--title-size)
+}
+
+h2 {
+    font-size: var(--subtitle-size)
+}
+
+p {
+    font-size: var(--corpo-size)
+}
+
+h3 {
+    font-size: var(--description-size)
+}
+
 
 @import "tailwindcss";

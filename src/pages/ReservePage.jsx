@@ -1,5 +1,5 @@
 export default function ReservePage() {
     return (
-        <p>reserve page</p>
+        <section><p>reserve page</p></section>
     )
 }

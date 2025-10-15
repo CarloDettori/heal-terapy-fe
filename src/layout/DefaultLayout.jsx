@@ -10,7 +10,7 @@ export default function DefaultLayout() {
     return (
         <>
             <Header />
-            <main>
+            <main className="h-(--main-height) bg-(--lightest-theme) text-(--dark-theme)">
                 <Outlet />
             </main>
             <Footer />
