@@ -1,5 +1,15 @@
+
+import CarouselWithContent from "../components/common/CarouselWithContent.jsx"
 export default function HomePage() {
     return (
-        <section><p>home page</p></section>
+        <>
+
+
+            <section>
+
+
+
+            </section>
+        </>
     )
 }
