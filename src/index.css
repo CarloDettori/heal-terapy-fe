@@ -22,6 +22,7 @@ blu scuro #0369A1
 blu chiaro #60A5FA
 blu scuro quasi nero #1F2937
 blu sbiadito #F0F9FF
+blu sbiadito leggermente piu scuro #ced6db
 
 
 sul viola
@@ -55,36 +56,40 @@ main {
 
 }
 
+
+#hero {
+    background-image: url(https://picsum.photos/id/870/2000/300?grayscale&blur=2);
+}
+
+.home-icon {
+    width: 30%;
+    margin-left: 40px;
+    align-items: center;
+    margin: 15px auto;
+
+
+
+}
+
+.home-paragraph {
+    margin: 120px 10px;
+    max-width: 500px;
+}
+
+.home-corpo {
+    max-width: 600px;
+}
+
 section {
     padding: 10px
 }
 
 
 
-
-
-.navlink {
-    padding: 5px;
-    display: flex;
-    width: 100%;
-    text-align: center;
-    color: var(--dark-theme);
-    background-color: var(--off-page-theme);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 1px solid var(--dark-theme)
-}
-
-
-.navlink:hover {
-    cursor: pointer;
-}
-
 .nav-icon {
     max-height: var(--title-size);
     margin: auto;
     margin-right: 5px;
-
 }
 
 h1 {

@@ -6,6 +6,7 @@ import { useState } from "react"
 export default function Header() {
 
     const pages = [
+
         {
             id: 1,
             name: "Noi",
@@ -23,7 +24,8 @@ export default function Header() {
             name: "Contattaci",
             route: "contact",
             icon: <i className="fa-solid fa-envelope nav-icon"></i>
-        },
+        }
+
     ]
 
 
@@ -36,8 +38,8 @@ export default function Header() {
 
                 {pages.map((page, index) => {
                     return (
-                        <NavLink id={`link-${page.id}`} className="navlink" style={({ isActive }) => ({
-                            borderColor: isActive ? "var(--lightest-theme)" : "var(--dark-theme)",
+                        <NavLink key={page.id} id={`link-${page.id}`} className="navlink flex w-full p-1 text-center text-(--dark-theme) rounded-t-md border-b cursor-pointer" style={({ isActive }) => ({
+                            borderColor: isActive ? "var(--lightest-theme)" : "#bdbdbdff",
                             backgroundColor: isActive ? "var(--lightest-theme)" : "var(--off-page-theme)",
                         })} to={page.route} onClick={() => setSelected(page.id)}>
                             {page.icon}
