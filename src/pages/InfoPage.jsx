@@ -5,7 +5,9 @@ export default function InfoPage() {
     return (
         <section>
 
-            <h2></h2>
+            <h2>
+                <p>info</p>
+            </h2>
 
 
 

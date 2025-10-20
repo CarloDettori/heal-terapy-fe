@@ -6,24 +6,29 @@ import { useState } from "react"
 export default function Header() {
 
     const pages = [
-
         {
             id: 1,
-            name: "Dott. Chessa",
-            route: "us",
-            icon: <i className="fa-solid fa-user-doctor nav-icon"></i>
+            name: "Home",
+            route: "",
+            icon: "fa-solid fa-house"
         },
         {
             id: 2,
-            name: "Info",
-            route: "info",
-            icon: <i className="fa-solid fa-circle-info nav-icon"></i>
+            name: "Chi sono",
+            route: "us",
+            icon: "fa-solid fa-user-doctor"
         },
         {
             id: 3,
-            name: "Contattaci",
+            name: "Info",
+            route: "info",
+            icon: "fa-solid fa-circle-info"
+        },
+        {
+            id: 4,
+            name: "Contattami",
             route: "contact",
-            icon: <i className="fa-solid fa-envelope nav-icon"></i>
+            icon: "fa-solid fa-envelope"
         }
 
     ]
@@ -32,18 +37,18 @@ export default function Header() {
     return (
         <header className="pt-1 flex flex-col  bg-(--light-theme) text-(--lightest-theme) text-center justify-between">
 
-            <NavLink className="my-8" to="/" onClick={() => setSelected(0)}><h1 >AMBULATORIO RIGENERATIVO</h1></NavLink>
+            <h1 className="my-8" >AMBULATORIO RIGENERATIVO</h1>
 
             <nav className="flex justify-evenly gap-0.5">
 
                 {pages.map((page, index) => {
                     return (
-                        <NavLink key={page.id} id={`link-${page.id}`} className="navlink flex w-full p-1 text-center text-(--dark-theme) rounded-t-md border-b cursor-pointer" style={({ isActive }) => ({
+                        <NavLink key={page.id} id={`link-${page.id}`} className="navlink flex flex-col w-full p-1 text-center text-(--dark-theme) rounded-t-md border-b cursor-pointer" style={({ isActive }) => ({
                             borderColor: isActive ? "var(--lightest-theme)" : "#bdbdbdff",
                             backgroundColor: isActive ? "var(--lightest-theme)" : "var(--off-page-theme)",
                         })} to={page.route} onClick={() => setSelected(page.id)}>
-                            {page.icon}
-                            <h2 className="mr-auto my-auto">{page.name}</h2>
+                            <i className={`${page.icon} max-h-(--title-size) mx-auto mt-2`}></i>
+                            <h2 className="mx-auto">{page.name}</h2>
                         </NavLink>
                     )
                 })}

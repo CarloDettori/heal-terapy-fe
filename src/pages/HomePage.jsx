@@ -85,7 +85,7 @@ export default function HomePage() {
 
                 </div>
 
-                <h1 className="my-20">COSA OFFRIAMO?</h1>
+                <h1 className="my-20">COSA OFFRO?</h1>
                 <div className="flex mb-10 flex-wrap gap-10 justify-center">
                     {
                         products.map((product) => {
