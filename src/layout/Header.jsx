@@ -9,7 +9,7 @@ export default function Header() {
 
         {
             id: 1,
-            name: "Noi",
+            name: "Dott. Chessa",
             route: "us",
             icon: <i className="fa-solid fa-user-doctor nav-icon"></i>
         },
@@ -30,9 +30,9 @@ export default function Header() {
 
 
     return (
-        <header className="pt-2.5 flex flex-col h-(--header-height) bg-(--light-theme) text-(--lightest-theme) text-center justify-between">
+        <header className="pt-1 flex flex-col  bg-(--light-theme) text-(--lightest-theme) text-center justify-between">
 
-            <NavLink to="/" onClick={() => setSelected(0)}><h1 >AMBULATORIO RIGENERATIVO</h1></NavLink>
+            <NavLink className="my-8" to="/" onClick={() => setSelected(0)}><h1 >AMBULATORIO RIGENERATIVO</h1></NavLink>
 
             <nav className="flex justify-evenly gap-0.5">
 
@@ -43,7 +43,7 @@ export default function Header() {
                             backgroundColor: isActive ? "var(--lightest-theme)" : "var(--off-page-theme)",
                         })} to={page.route} onClick={() => setSelected(page.id)}>
                             {page.icon}
-                            <h2 className="mr-auto">{page.name}</h2>
+                            <h2 className="mr-auto my-auto">{page.name}</h2>
                         </NavLink>
                     )
                 })}
