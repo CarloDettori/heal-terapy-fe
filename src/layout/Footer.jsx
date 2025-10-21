@@ -26,8 +26,8 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="p-2.5  text-white bg-(--dark-theme) text-(--lightest-theme)">
-            <div className="mx-auto my-15 flex flex-wrap justify-center ">
+        <footer className="p-10  text-white bg-(--dark-theme) text-(--lightest-theme)">
+            <div className="mx-auto p-10 my-20 flex flex-wrap justify-center ">
 
                 <a href="https://maps.app.goo.gl/wTK8A56x4ZNBpoNv5">
                     <img className="m-3" width="150" height="150" src="/addres.png" alt="" />
@@ -45,6 +45,20 @@ export default function Footer() {
 
                 </div>
 
+
+            </div>
+            <div className="my-20 mx-auto p-10 flex flex-col gap-5 max-w-130 border rounded-4xl">
+
+                <h1>
+                    FONTI
+                </h1>
+
+                <ul className="flex flex-col gap-2 italic">
+                    <li><p>"Riduzione del dolore senza chirurgia"</p></li>
+                    <li><p>"Stimolazione dei processi naturali di guarigione"</p></li>
+                    <li><p>"Selezione accurata del paziente, per garantire trattamenti mirati ed efficaci."</p></li>
+                    <li><p>"Cochrane Reviews / studi clinici su PRP, onde d’urto, rTMS, fibromialgia."</p></li>
+                </ul>
 
             </div>
         </footer>

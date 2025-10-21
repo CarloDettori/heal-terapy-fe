@@ -1,4 +1,5 @@
 
+import buttonText from "@material-tailwind/react/theme/components/button/buttonText.js"
 import HeroComponent from "../components/common/HeroComponent.jsx"
 export default function HomePage() {
 
@@ -51,6 +52,25 @@ export default function HomePage() {
 
     ]
 
+    const guides = [
+        {
+            img: "/ozone.png",
+            text: "Visita specialistica personalizzata per individuare la causa reale del dolore",
+        },
+        {
+            img: "/ozone.png",
+            text: "Esami mirati (lisosomiali, neurologici, funzionali) per pianificare il trattamento più adatto",
+        },
+        {
+            img: "/ozone.png",
+            text: "Terapie mini-invasive eseguite in ambulatorio, con ritorno immediato alla vita quotidiana",
+        },
+        {
+            img: "/ozone.png",
+            text: "Follow-up dedicato per monitorare la risposta e mantenere i risultati nel tempo",
+        },
+    ]
+
 
 
     return (
@@ -60,18 +80,20 @@ export default function HomePage() {
 
             <section className="text-center">
 
-
-                <div className="flex flex-wrap justify-around">
+                <h1 className="my-20 font-bold text-(--theme)">
+                    Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore cronico e alla rigenerazione dei tessuti.
+                </h1>
+                <div className="flex flex-wrap justify-around my-20 gap-30">
 
                     {
                         knowledges.map((knowledges) => {
                             return (
 
 
-                                <div key={knowledges.id} className="home-paragraph">
-                                    <h1>{knowledges.title}</h1>
+                                <div key={knowledges.id} className="max-w-100">
+                                    <h1 className="font-bold">{knowledges.title}</h1>
                                     <div>
-                                        <img className="home-icon" src={knowledges.icon} alt="" />
+                                        <img className=" w-1/2 mx-auto items-center my-10" src={knowledges.icon} alt="" />
                                         <h2 className="home-corpo">{knowledges.description}</h2>
                                     </div>
                                 </div>
@@ -85,7 +107,8 @@ export default function HomePage() {
 
                 </div>
 
-                <h1 className="my-20">COSA OFFRO?</h1>
+
+                <h1 className="my-20 font-bold">COSA OFFRO?</h1>
                 <div className="flex mb-10 flex-wrap gap-10 justify-center">
                     {
                         products.map((product) => {

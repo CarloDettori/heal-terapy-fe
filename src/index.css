@@ -49,6 +49,13 @@ rosa sbiadito #FDF7FF
     --description-size: 0.5em;
 }
 
+.blur-xsm {
+    filter: blur(0px);
+    -webkit-filter: blur(3px);
+
+
+}
+
 h1 {
     font-size: var(--title-size)
 }
@@ -78,23 +85,15 @@ section {
     padding: 10px
 }
 
-#hero-background {
-    background-image: url(/hero-bg.jpg);
-    filter: blur(0px);
-    -webkit-filter: blur(3px);
-    z-index: 999;
-    border-radius: 300px;
-}
 
-#hero-content {
-    z-index: 1000;
-}
+
+
 
 .home-icon {
     width: 30%;
     margin-left: 40px;
     align-items: center;
-    margin: 15px auto;
+
 }
 
 .home-paragraph {
@@ -120,7 +119,7 @@ section {
 
 
 
-@media only screen and (min-width: 837px) {
+@media only screen and (min-width: 877px) {
     #hero-text {
         text-align: left
     }
