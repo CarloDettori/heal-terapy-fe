@@ -3,74 +3,83 @@ export default function InfoPage() {
     const infos = [
 
         {
+            id: 1,
             title: "Ozonoterapia",
             subtitle: "La storia e l’innovazione",
             img: "/ozone.png",
-            lists: [
-                "",
-            ],
+            lists: "",
             description: "L’ozonoterapia utilizza una miscela di ossigeno e ozono con finalità terapeutiche, in particolare per dolori articolari, lombalgie e patologie infiammatorie. Uno dei massimi studiosi italiani del settore, Velio Bocci, ha contribuito a definirne le basi scientifiche, evidenziando il ruolo antinfiammatorio e modulatore dell’ozono. Oggi l’ozonoterapia rappresenta un supporto sicuro e versatile, applicabile in ambito ambulatoriale e privo di incisioni chirurgiche."
 
         },
         {
+            id: 2,
             title: "Medicina rigenerativa",
             subtitle: "la comunicazione delle cellule",
-            img: "/ozone.png",
-            lists: [],
+            img: "/regenerative.png",
+            lists: "",
             description: "La medicina rigenerativa mira a riattivare la capacità naturale dei tessuti di ripararsi. Tra i principali studiosi, Carlo Ventura ha introdotto l’idea innovativa della “comunicazione sonora delle cellule”: ogni cellula emette vibrazioni, e comprenderle può aprire nuove vie alla rigenerazione tissutale. In clinica, queste ricerche ispirano approcci di stimolazione biologica selettiva — riservati ai pazienti idonei — per rigenerare articolazioni e tessuti danneggiati.",
 
         },
         {
+            id: 3,
             title: "Esami diagnostici per la terapia dei lisosomi",
             subtitle: "",
-            img: "/ozone.png",
-            lists: [],
+            img: "/blood-analysis.png",
+            lists: "",
             description: "I lisosomi sono gli “apparati di pulizia” delle cellule. Alterazioni della loro funzione possono contribuire a processi infiammatori cronici o degenerativi. Gli esami per la funzionalità lisosomiale permettono di valutare se un paziente è candidato a specifiche terapie rigenerative o di supporto metabolico, fornendo una base diagnostica preziosa per un piano di trattamento personalizzato.",
 
         },
         {
-            title: "Trattamenti mini-invasivi per dolore e mobilità",
-            subtitle: "Tecniche moderne permettono oggi di trattare molte patologie senza incisioni chirurgiche, riducendo tempi di recupero e rischi.",
-            img: "/ozone.png",
-            lists: [
-                {
-                    title: "Tunnel carpale",
-                    description: "terapie ecoguidate e infiltrative che riducono la compressione nervosa."
-                },
-                {
-                    title: "Fascite plantare",
-                    description: "trattamenti con onde d’urto o plasma ricco di piastrine(PRP) per stimolare la"
-                },
-                {
-                    title: "Patologie neuromotorie",
-                    description: "approcci neuro-funzionali e biologici per migliorare il controllo motorio e ridurre il dolore"
-                },
-            ],
-            description: "",
+            id: 4,
+            title: "Scrambler Therapy (Calmare®)",
+            subtitle: "calmare il dolore neuropatico",
+            img: "/scrumbler.png",
+            lists: "",
+            description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del fuoco di Sant’Antonio e di altre neuropatie croniche. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
 
         },
         {
+            id: 5,
             title: "Fibromialgia",
             subtitle: "modulare il sistema nervoso centrale",
-            img: "/ozone.png",
-            lists: [],
+            img: "/muscle-pain.png",
+            lists: "",
             description: "La fibromialgia è una condizione complessa, spesso multifattoriale. Le nostre tecniche mini- invasive mirano a ridurre l’iperattività del sistema nervoso centrale, mediante terapie di neuromodulazione che “ri - educano” il segnale del dolore, offrendo sollievo anche nei casi più resistenti."
 
         },
         {
+            id: 6,
             title: "Rigenerazione articolare",
             subtitle: "solo per soggetti idonei",
-            img: "/ozone.png",
-            lists: [],
+            img: "/knee.png",
+            lists: "",
             description: "Le terapie rigenerative articolari (come PRP o cellule mesenchimali) non sono indicate per tutti.Sono rivolte a pazienti con lesioni articolari iniziali o moderate, nei quali è ancora possibile stimolare una risposta biologica di riparazione. L’idoneità viene valutata con esami mirati e consulenza specialistica."
 
         },
+
         {
-            title: "Scrambler Therapy (Calmare®)",
-            subtitle: "calmare il dolore neuropatico",
-            img: "/ozone.png",
-            lists: [],
-            description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del fuoco di Sant’Antonio e di altre neuropatie croniche. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
+            id: 7,
+            title: "Trattamenti mini-invasivi per dolore e mobilità",
+            subtitle: "Tecniche moderne permettono oggi di trattare molte patologie senza incisioni chirurgiche, riducendo tempi di recupero e rischi.",
+            img: "/no-scars.png",
+            lists: [
+                {
+                    title: "Tunnel carpale",
+                    description: "Terapie ecoguidate e infiltrative che riducono la compressione nervosa."
+                },
+                {
+                    title: "Fascite plantare",
+                    description: "Trattamenti con onde d’urto o plasma ricco di piastrine(PRP) per stimolare la"
+                },
+                {
+                    title: "Patologie neuromotorie",
+                    description: "Approcci neuro-funzionali e biologici per migliorare il controllo motorio e ridurre il dolore"
+                },
+            ]
+
+
+            ,
+            description: "",
 
         },
     ]
@@ -102,8 +111,8 @@ export default function InfoPage() {
 
     return (
         <section>
-            <h1 className="text-center my-20">INFORMAZIONI</h1>
-            <div className="flex text-(--dark-theme) flex-col gap-10 my-20 p-10 bg-white rounded-4xl text-center max-w-230 mx-auto">
+            <h1 className="text-center text-page-size font-bold my-20">INFORMAZIONI</h1>
+            <div className="flex text-(--dark-theme) flex-col gap-10 mt-20 mb-10 p-10 bg-white rounded-4xl text-center max-w-230 mx-auto">
                 <div className="flex flex-col gap-3">
 
                     <h1 className="font-bold">
@@ -115,6 +124,9 @@ export default function InfoPage() {
                     </h2>
 
                 </div>
+
+
+
                 <div className="flex flex-col gap-3">
 
                     <h1 className="font-bold" >
@@ -133,18 +145,39 @@ export default function InfoPage() {
 
                 </div>
             </div>
-
-            <div className="my-20 p-10">
+            <h1 className="font-bold my-20 mb-0 p-10 text-center ">LE NOSTRE AREE DI COMPETENZA</h1>
+            <div className="flex flex-wrap justify-center my-20 mt-0 p-10 gap-10">
 
                 {infos.map((info) => {
 
                     return (
 
-                        <div className=" p-10 flex flex-col gap-5 p-10 rounded-4xl bg-(--lightest-white)">
-                            <img src={info.img} alt="" />
-                            <div className="flex-col gap-5">
-                                <h1></h1>
-                                <p></p>
+                        <div className="border-dark-theme p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100">
+                            <img className="max-w-50 mx-auto" src={info.img} alt="info-img" />
+                            <div className="flex flex-col gap-5">
+                                <div className="flex flex-col gap-3">
+                                    <h1>{info.title}</h1>
+                                    <h2>{info.subtitle}</h2>
+                                </div>
+                                {info.description ? <p>{info.description}</p> : ""}
+                                {info.lists ?
+                                    <ul className="flex flex-col gap-3">
+
+                                        {info.lists.map((li) => {
+
+                                            return (
+                                                <li key={li.title}>
+                                                    <h2>{li.title}</h2>
+                                                    <p>{li.description}</p>
+                                                </li>
+                                            )
+
+                                        })}
+
+                                    </ul>
+                                    :
+                                    ""
+                                }
                             </div>
                         </div>
 
@@ -153,12 +186,24 @@ export default function InfoPage() {
                 })}
 
             </div>
+            <h1 className="font-bold text-center">DOMANDE FREQUENTI</h1>
 
-            <div className="my-20 p-10">
-                { }
+            <div className="flex flex-col gap-5 m-20  p-20 bg-white border-dark-theme rounded-4xl">
+                {
+                    faqs.map((faq) => {
+                        return (
+                            <div className="flex flex-col ">
+                                <h1 className="font-bold">{faq.question}</h1>
+                                <h2>{faq.answer}</h2>
+                            </div>
+                        )
+
+
+                    })
+                }
             </div>
 
-            <h1 className="text-center text-(--dark-theme) font-bold py-20">“Curare il dolore non significa solo eliminarlo, ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia. La scienza moderna ci offre strumenti innovativi<br />l’obiettivo è usarli con rigore, esperienza e umanità.”</h1>
+            <h1 className="text-center text-(--dark-theme) font-bold p-30">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</h1>
 
 
 

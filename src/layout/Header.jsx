@@ -37,7 +37,7 @@ export default function Header() {
     return (
         <header className="pt-1 flex flex-col bg-cover bg-center bg-(--light-theme) text-(--lightest-theme) text-center justify-between">
 
-            <strong><h1 className="my-8" >AMBULATORIO RIGENERATIVO</h1></strong>
+            <strong><h1 className="my-8 text-page-size p" >AMBULATORIO RIGENERATIVO</h1></strong>
 
             <nav className="flex justify-evenly gap-0.5">
 

@@ -49,12 +49,35 @@ rosa sbiadito #FDF7FF
     --description-size: 0.5em;
 }
 
+.text-page-size {
+    font-size: 2em;
+
+}
+
 .blur-xsm {
     filter: blur(0px);
     -webkit-filter: blur(3px);
 
 
 }
+
+.border-theme {
+    border: 2px solid var(--theme)
+}
+
+.border-light-theme {
+    border: 2px solid var(--light-theme)
+}
+
+.border-dark-theme {
+    border: 2px solid var(--dark-theme)
+}
+
+.border-lightest-theme {
+    border: 2px solid var(--lightest-theme)
+}
+
+
 
 h1 {
     font-size: var(--title-size)

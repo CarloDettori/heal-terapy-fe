@@ -36,7 +36,7 @@ export default function ReservePage() {
 
     return (
         <section className="text-(--dark-theme) max-w-300 mx-auto">
-            <h1 className="pt-20 font-bold text-center mb-12 text-(--dark-theme)">HAI BISOGNO DI SCRIVERMI?</h1>
+            <h1 className="pt-20 font-bold text-center mb-12 text-(--dark-theme) text-page-size">HAI BISOGNO DI SCRIVERMI?</h1>
 
             <form id="form" onSubmit={handleSubmit} className=" flex flex-col rounded-xl  py-15 space-y-12 w-auto mx-auto">
                 <div className="grid grid-cols-1 gap-12">

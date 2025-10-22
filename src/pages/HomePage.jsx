@@ -80,8 +80,8 @@ export default function HomePage() {
 
             <section className="text-center">
 
-                <h1 className="my-20 font-bold text-(--theme)">
-                    Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore cronico e alla rigenerazione dei tessuti.
+                <h1 className="my-20 pb-30 font-bold text-(--theme) text-page-size">
+                    Approccio innovativo, mini-invasivo e personalizzato <br />alla cura del dolore cronico e alla rigenerazione dei tessuti.
                 </h1>
                 <div className="flex flex-wrap justify-around my-20 gap-30">
 
@@ -108,7 +108,7 @@ export default function HomePage() {
                 </div>
 
 
-                <h1 className="my-20 font-bold">COSA OFFRO?</h1>
+                <h1 className="my-20 mt-30 font-bold">COSA OFFRO?</h1>
                 <div className="flex mb-10 flex-wrap gap-10 justify-center">
                     {
                         products.map((product) => {

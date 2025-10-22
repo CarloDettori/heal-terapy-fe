@@ -1,10 +1,10 @@
 export default function ContentPage() {
     return (
-        <section>
+        <section className="px-50">
 
-            <h1 className="text-center mt-20"><strong>VUOI SAPERE QUALCOSA SU DI ME?</strong></h1>
+            <h1 className="text-center mt-20 text-page-size"><strong>VUOI SAPERE QUALCOSA SU DI ME?</strong></h1>
 
-            <div className="my-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-10 gap-5" >
+            <div className="my-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
 
                 <div className="lg:flex lg:gap-5">
 
