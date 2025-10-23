@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="my-20 mx-auto p-10 flex flex-col gap-5 max-w-130 border rounded-4xl">
 
                 <h1>
-                    FONTI
+                    BIBLIOGRAFIA
                 </h1>
 
                 <ul className="flex flex-col gap-2 italic">
@@ -44,48 +44,54 @@ export default function Footer() {
                 </ul>
 
             </div>
-            <div className="mx-auto flex flex-wrap gap-10 justify-evenly place item-center text-white text-start">
 
 
-                <div className="flex ms-20 flex-wrap justify-center gap-6 ">
+            <div id="footer-content-wrapper" className="flex  justify-between place item-center text-white text-start">
 
-                    <a href="https://maps.app.goo.gl/wTK8A56x4ZNBpoNv5">
-                        <img width="150" height="150" src="/addres.png" alt="" />
+                <div id="footer-copyright-wrapper" className="footer-block flex place-content-center  text-white text-start">
+
+
+
+                    <a id="footer-block-1" href="https://www.miodottore.it/roberto-chessa-2/anestesista/sassari#profile-info" className="relative pe-7">
+                        <img id="footer-img" className="rounded-full shadow-2xl h-40 my-auto bg-(--lightest-theme) hover:scale-110" src="/doctor.png" alt="" />
                     </a>
-                    <div className="flex flex-col justify-between border-s border-e-(--lightest-theme) ps-3">
+
+                    <div id="footer-block-2" className=" px-5 footer-block border-s border-e-(--lightest-theme) flex flex-col justify-between">
+
 
                         {infos.map((info) => {
                             return (
-                                <div key={info.id} className="flex ">
-                                    <i className={info.icon + " mx-1 mt-1"}></i>
+                                <div key={info.id} className="address-info flex max-w-66">
+                                    <i className={info.icon + " me-3 mt-1"}></i>
                                     {info.info}
                                 </div>
                             )
                         })}
 
+
                     </div>
 
-
                 </div>
-                <div className="flex content-center text-white text-start">
 
-                    <div id="footer-block-3" className="footer-block flex flex-col justify-center mx-5">
-                        <h1 className="text-white text-center pb-3">LINK UTILI</h1>
-                        <div id="footer-pages-links" className="flex flex-col text-end">
+                <div id="footer-info-wrapper" className="flex place-content-center item-center  text-white text-start">
+
+                    <div id="footer-block-3" className="footer-block flex flex-col justify-center  px-8">
+                        <h1 className="text-white text-center pb-3">PAGINE DEL SITO</h1>
+                        <div id="footer-pages-links" className="flex flex-col  text-end">
                             <Link to="/" onClick={() => { window.scrollTo(0, 0) }}>Home</Link>
-                            <Link to="/us" onClick={() => { window.scrollTo(0, 0) }} >Chi sono</Link>
+                            <Link to="/us" onClick={() => { window.scrollTo(0, 0) }}>Chi Sono</Link>
                             <Link to="/info" onClick={() => { window.scrollTo(0, 0) }}>Info</Link>
-                            <Link to="/contact" onClick={() => { window.scrollTo(0, 0) }}>contact</Link>
+                            <Link to="/contact" onClick={() => { window.scrollTo(0, 0) }}>Contattami</Link>
                         </div>
                     </div>
 
-                    <div id="footer-block-4" className=" footer-block flex flex-col justify-between px-5 border-s border-e-(--lightest-theme)">
-                        <h1 className="inline-block text-(--lightest-theme) pb-3">CONTATTI</h1>
-                        <div className="flex flex-col gap-1">
+                    <div id="footer-block-4" className=" footer-block flex flex-col justify-center px-7 border-s border-e-white">
+                        <h1 className="inline-block text-white pb-3">CONTATTI</h1>
+                        <div className="flex flex-col">
                             <p>Sassari - ITALIA</p>
-                            <p>Viale Umberto I, 07100</p>
-                            <p>info@clinicaserra.it</p>
-                            <div id="social-links-wrapper-f" className="flex gap-5">
+                            <p>Viale Umberto I, 123,  07100</p>
+                            <p>info@clinicachessa.it</p>
+                            <div id="social-links-wrapper-f" className="flex gap-8 pt-4">
                                 <a href=""><i className="member-social-footer fa-brands fa-facebook-f"></i></a>
                                 <a href=""><i className="member-social-footer fa-brands fa-instagram"></i></a>
                                 <a href=""><i className="member-social-footer fa-brands fa-linkedin-in"></i></a>

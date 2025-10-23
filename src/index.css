@@ -105,7 +105,7 @@ main {
 }
 
 section {
-    padding: 10px
+    padding: 20px
 }
 
 
@@ -146,6 +146,133 @@ section {
     #hero-text {
         text-align: left
     }
+}
+
+
+
+
+
+
+@media (max-width: 1030px) {
+    #footer-content-wrapper {
+        flex-direction: column;
+    }
+
+    #footer-content-wrapper {
+        justify-content: center;
+    }
+
+
+
+    #footer-copyright-wrapper,
+    #footer-info-wrapper {
+        margin: 90px 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+
+
+
+
+    #footer-pages-links,
+    #footer-social-links {
+        text-align: center;
+        gap: 10px
+    }
+
+    #social-links-wrapper-f {
+        justify-content: center;
+    }
+
+
+    form .footer-block {
+        margin: 0;
+        padding: 0;
+        width: 216px;
+        padding-top: 50px;
+        border: none;
+    }
+
+    #footer-img {
+        margin: 0 auto
+    }
+
+    #footer-block-1 {
+        padding-right: 0;
+    }
+
+    .address-info {
+
+        margin: 0 auto
+    }
+
+    #footer-block-2,
+    #footer-block-4 {
+
+        border-left: none;
+    }
+
+
+
+    #footer-block-2,
+    #footer-block-3,
+    #footer-block-4 {
+        padding-top: 40px;
+        text-align: center;
+        border-top: 3px solid white;
+        gap: 20px
+    }
+
+    f .octagon {
+        padding: 0
+    }
+
+
+    #arrows {
+        height: 20px;
+
+    }
+
+    #l-arrow-body,
+    #r-arrow-body {
+        display: inline-block;
+
+        height: 4px;
+    }
+
+    #footer-block-3 {
+        text-align: left;
+        margin: 0;
+
+    }
+
+    #footer-copyright-wrapper,
+    #footer-info-wrapper {
+        flex-direction: column;
+        gap: 50px;
+        margin: 30px 0
+    }
+
+    #footer-copyright-wrapper {
+        padding: 0
+    }
+
+    #footer-info-wrapper {
+        padding: 0
+    }
+
+    #game-description {
+        display: none;
+    }
+
+    #game-title {
+        margin-bottom: 400px;
+    }
+
+
 }
 
 
