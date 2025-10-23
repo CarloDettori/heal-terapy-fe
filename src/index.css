@@ -153,7 +153,7 @@ section {
 
 
 
-@media (max-width: 1030px) {
+@media (max-width: 1100px) {
     #footer-content-wrapper {
         flex-direction: column;
     }

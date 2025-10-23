@@ -145,7 +145,7 @@ export default function InfoPage() {
 
                 </div>
             </div>
-            <h1 className="font-bold my-20 mb-0 p-10 text-center ">LE NOSTRE AREE DI COMPETENZA</h1>
+            <h1 className="font-bold my-20 mb-0 p-10 text-center ">AREE DI COMPETENZA</h1>
             <div className="flex flex-wrap justify-center my-20 mt-0 p-10 gap-10">
 
                 {infos.map((info) => {
