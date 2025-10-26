@@ -47,6 +47,7 @@ rosa sbiadito #FDF7FF
     --subtitle-size: 1em;
     --corpo-size: 0.8em;
     --description-size: 0.5em;
+
 }
 
 .text-page-size {
@@ -60,6 +61,8 @@ rosa sbiadito #FDF7FF
 
 
 }
+
+/*custom border*/
 
 .border-theme {
     border: 2px solid var(--theme)
@@ -141,16 +144,12 @@ section {
 
 
 
-
+/*reponsive footer*/
 @media only screen and (min-width: 877px) {
     #hero-text {
         text-align: left
     }
 }
-
-
-
-
 
 
 @media (max-width: 1100px) {

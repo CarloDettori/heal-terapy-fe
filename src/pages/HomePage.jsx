@@ -3,7 +3,7 @@ import buttonText from "@material-tailwind/react/theme/components/button/buttonT
 import HeroComponent from "../components/common/HeroComponent.jsx"
 export default function HomePage() {
 
-
+    {/*dati cards*/ }
     const knowledges = [
 
         {
@@ -54,19 +54,23 @@ export default function HomePage() {
 
     const guides = [
         {
-            img: "/ozone.png",
+            id: 1,
+            img: "/physiotherapy.png",
             text: "Visita specialistica personalizzata per individuare la causa reale del dolore",
         },
         {
-            img: "/ozone.png",
+            id: 2,
+            img: "/blood-test.png",
             text: "Esami mirati (lisosomiali, neurologici, funzionali) per pianificare il trattamento più adatto",
         },
         {
-            img: "/ozone.png",
+            id: 3,
+            img: "/physical-examination.png",
             text: "Terapie mini-invasive eseguite in ambulatorio, con ritorno immediato alla vita quotidiana",
         },
         {
-            img: "/ozone.png",
+            id: 4,
+            img: "/schedule.png",
             text: "Follow-up dedicato per monitorare la risposta e mantenere i risultati nel tempo",
         },
     ]
@@ -115,7 +119,7 @@ export default function HomePage() {
                             return (
 
 
-                                <div key={product.id} className="max-w-50 bg-white p-5 rounded-2xl">
+                                <div key={product.id} className=" max-w-50 bg-white p-5 rounded-2xl">
                                     <img src={product.icon} alt="" />
                                     <h2 className="home-corpo mt-3" >{product.description}</h2>
                                 </div>
@@ -127,10 +131,22 @@ export default function HomePage() {
 
 
 
+                <h1 className="my-20 mt-50 font-bold">COSA ASPETTARSI</h1>
+                <div className="flex flex-col gap-40 pb-30">
+                    {
+                        guides.map((guide) => {
 
+                            return (
 
+                                <div key={guide.id} className="max-w-500 flex flex-wrap justify-center">
+                                    <img src={guide.img} className="h-100 py-15" alt="" />
+                                    <h1 className=" my-auto max-w-150" >{guide.text}</h1>
+                                </div>
 
-
+                            )
+                        })
+                    }
+                </div>
             </section>
         </>
     )

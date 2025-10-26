@@ -24,7 +24,7 @@ export default function ReservePage() {
 
         const subject = `Contatto da ${formData.name}`;
         const body = `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMessaggio:\n${formData.message}`;
-        const mailtoLink = `mailto:dott.robertochessa@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:dettoric07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         // Apre il client di posta con i dati precompilati
         window.location.href = mailtoLink;
