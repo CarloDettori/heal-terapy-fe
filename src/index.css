@@ -145,6 +145,7 @@ section {
 
 
 /*reponsive footer*/
+
 @media only screen and (min-width: 877px) {
     #hero-text {
         text-align: left
@@ -187,13 +188,7 @@ section {
     }
 
 
-    form .footer-block {
-        margin: 0;
-        padding: 0;
-        width: 216px;
-        padding-top: 50px;
-        border: none;
-    }
+
 
     #footer-img {
         margin: 0 auto
@@ -225,22 +220,6 @@ section {
         gap: 20px
     }
 
-    f .octagon {
-        padding: 0
-    }
-
-
-    #arrows {
-        height: 20px;
-
-    }
-
-    #l-arrow-body,
-    #r-arrow-body {
-        display: inline-block;
-
-        height: 4px;
-    }
 
     #footer-block-3 {
         text-align: left;
@@ -263,16 +242,11 @@ section {
         padding: 0
     }
 
-    #game-description {
-        display: none;
-    }
 
-    #game-title {
-        margin-bottom: 400px;
-    }
 
 
 }
 
+/*end reponsive footer*/
 
 @import "tailwindcss";

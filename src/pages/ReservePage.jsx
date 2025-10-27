@@ -27,7 +27,7 @@ export default function ReservePage() {
         const mailtoLink = `mailto:dettoric07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         // Apre il client di posta con i dati precompilati
-        window.location.href = mailtoLink;
+        //window.location.href = mailtoLink;
     };
 
     const toggleTerms = () => {
