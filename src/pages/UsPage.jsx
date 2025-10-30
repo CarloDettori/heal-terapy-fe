@@ -15,7 +15,7 @@ export default function ContentPage() {
                     <div className="text-(--dark-theme) gap-5 my-auto">
 
                         <h1>
-                            <strong className="text-(--dark-theme)">Dtt. Roberto Serra</strong>
+                            <strong className="text-(--dark-theme)">Dtt. Roberto Chessa</strong>
                         </h1>
 
                         <p>

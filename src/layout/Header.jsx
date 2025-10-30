@@ -24,12 +24,7 @@ export default function Header() {
             route: "info",
             icon: "fa-solid fa-circle-info"
         },
-        {
-            id: 4,
-            name: "Contattami",
-            route: "contact",
-            icon: "fa-solid fa-envelope"
-        }
+
 
     ]
 
