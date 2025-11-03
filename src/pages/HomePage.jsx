@@ -52,6 +52,7 @@ export default function HomePage() {
 
     ]
 
+
     const guides = [
         {
             id: 1,
@@ -112,7 +113,7 @@ export default function HomePage() {
                 </div>
 
 
-                <h1 className="my-20 mt-30 font-bold">COSA OFFRO?</h1>
+                {/*<h1 className="my-20 mt-30 font-bold">COSA OFFRO?</h1>
                 <div className="flex mb-10 flex-wrap gap-10 justify-center">
                     {
                         products.map((product) => {
@@ -127,9 +128,7 @@ export default function HomePage() {
                             )
                         })
                     }
-                </div>
-
-
+                </div>*/}
 
                 <h1 className="my-20 mt-50 font-bold">COSA ASPETTARSI</h1>
                 <div className="flex flex-col gap-40 pb-30">
@@ -147,6 +146,7 @@ export default function HomePage() {
                         })
                     }
                 </div>
+
             </section>
         </>
     )

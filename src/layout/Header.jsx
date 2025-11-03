@@ -14,26 +14,26 @@ export default function Header() {
         },
         {
             id: 2,
-            name: "Chi sono",
-            route: "us",
-            icon: "fa-solid fa-user-doctor"
-        },
-        {
-            id: 3,
             name: "Info",
             route: "info",
             icon: "fa-solid fa-circle-info"
         },
 
-
+        {
+            id: 3,
+            name: "test",
+            route: "contact",
+            icon: ""
+        },
     ]
 
 
     return (
         <header className="pt-1 flex flex-col bg-cover bg-center bg-(--light-theme) text-(--lightest-theme) text-center justify-between">
-
-            <strong><h1 className="my-8 text-page-size p" >AMBULATORIO RIGENERATIVO</h1></strong>
-
+            <div className="flex flex-col gap-5 my-8">
+                <strong><h1 className="text-page-size" >CR</h1></strong>
+                <h2>Clinica Rigenerativa</h2>
+            </div>
             <nav className="flex justify-evenly gap-0.5">
 
                 {pages.map((page, index) => {

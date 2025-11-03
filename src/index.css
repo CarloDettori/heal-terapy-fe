@@ -80,8 +80,6 @@ rosa sbiadito #FDF7FF
     border: 2px solid var(--lightest-theme)
 }
 
-
-
 h1 {
     font-size: var(--title-size)
 }
@@ -111,10 +109,6 @@ section {
     padding: 20px
 }
 
-
-
-
-
 .home-icon {
     width: 30%;
     margin-left: 40px;
@@ -139,7 +133,29 @@ section {
     border: 4px solid var(--dark-theme)
 }
 
+.animation-wrapper {
+    width: 50%;
+    padding-bottom: 50%;
+}
 
+.sphere-animation {
+    width: 580px;
+    height: 580px;
+    margin: 0 auto
+}
+
+.sphere path {
+    fill: url(#sphereGradient);
+    stroke-width: 3px;
+    stroke: var(--light-theme);
+    backface-visibility: hidden;
+}
+
+@media (min-width: 500px) {
+    .sphere path {
+        stroke-width: .4px;
+    }
+}
 
 
 
@@ -246,6 +262,9 @@ section {
 
 
 }
+
+
+
 
 /*end reponsive footer*/
 
