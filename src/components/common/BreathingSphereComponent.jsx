@@ -22,21 +22,21 @@ export default function BreathingSphereComponent() {
         anime({
             targets: paths,
             translateX: [
-                { value: 4, duration: 1000, easing: "easeInOutSine" },
-                { value: 0, duration: 1000, easing: "easeInOutSine" },
+                { value: 4, duration: 600, easing: "easeInOutSine" },
+                { value: 0, duration: 600, easing: "easeInOutSine" },
             ],
             translateY: [
-                { value: 4, duration: 1000, easing: "easeInOutSine" },
-                { value: 0, duration: 1000, easing: "easeInOutSine" },
+                { value: 4, duration: 600, easing: "easeInOutSine" },
+                { value: 0, duration: 600, easing: "easeInOutSine" },
             ],
             stroke: [
                 { value: baseStroke, duration: 0 },
-                { value: activeStroke, duration: 1000, easing: "easeInOutSine" },
-                { value: baseStroke, duration: 1000, easing: "easeInOutSine" },
+                { value: activeStroke, duration: 500, easing: "easeInOutSine" },
+                { value: baseStroke, duration: 500, easing: "easeInOutSine" },
             ],
             strokeWidth: [
-                { value: 2, duration: 1000, easing: "easeInOutSine" },
-                { value: 1.2, duration: 1000, easing: "easeInOutSine" },
+                { value: 2, duration: 500, easing: "easeInOutSine" },
+                { value: 1.5, duration: 500, easing: "easeInOutSine" },
             ],
             delay: anime.stagger(100, { start: 0, direction: "reverse" }), // alto → basso, sinistra → destra
             easing: "easeInOutSine",
