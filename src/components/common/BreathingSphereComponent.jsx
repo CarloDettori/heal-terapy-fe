@@ -4,41 +4,44 @@ import anime from "animejs";
 export default function BreathingSphereComponent() {
     useEffect(() => {
         const paths = Array.from(document.querySelectorAll(".sphere path"));
+        const root = getComputedStyle(document.documentElement);
 
-        // impostiamo lo stroke iniziale su ogni path
-        const baseStroke = "#415774ff";
+        const baseStroke = "#415774"; // colore iniziale
+        const activeStroke = root.getPropertyValue("--light-theme")?.trim() || "#a5c5e9";
+
+        // imposta lo stile iniziale
         paths.forEach((p) => {
-            p.setAttribute("stroke", baseStroke);
-            p.setAttribute("stroke-width", "1.5");
+            p.style.stroke = baseStroke;
+            p.style.strokeWidth = "1.2";
+            p.style.vectorEffect = "non-scaling-stroke";
+            p.style.strokeLinecap = "round";
+            p.style.strokeLinejoin = "round";
+            p.style.transformOrigin = "center center";
         });
 
-        // animazione combinata: translate (andata/ritorno) + colore bordo (andata -> var(--lightest-theme) -> ritorno)
         anime({
             targets: paths,
             translateX: [
-                { value: 4, duration: 1800, easing: "easeInOutSine" }, // andata
-                { value: 0, duration: 1800, easing: "easeInOutSine" }  // ritorno
+                { value: 4, duration: 1000, easing: "easeInOutSine" },
+                { value: 0, duration: 1000, easing: "easeInOutSine" },
             ],
             translateY: [
-                { value: 4, duration: 1800, easing: "easeInOutSine" },
-                { value: 0, duration: 1800, easing: "easeInOutSine" }
+                { value: 4, duration: 1000, easing: "easeInOutSine" },
+                { value: 0, duration: 1000, easing: "easeInOutSine" },
             ],
-            // colore del bordo: base -> lightest -> base (sincronizzato con movimento)
             stroke: [
-                { value: baseStroke, duration: 0 }, // punto di partenza
-                { value: "var(--lightest-theme)", duration: 1800, easing: "easeInOutSine" }, // verso il massimo durante l'andata
-                { value: baseStroke, duration: 1800, easing: "easeInOutSine" } // ritorno al termine del movimento
+                { value: baseStroke, duration: 0 },
+                { value: activeStroke, duration: 1000, easing: "easeInOutSine" },
+                { value: baseStroke, duration: 1000, easing: "easeInOutSine" },
             ],
-            delay: anime.stagger(100, { start: 0, direction: "reverse" }), // onda dall'alto a sinistra verso il basso a destra
-            loop: true,
-            direction: "normal",
+            strokeWidth: [
+                { value: 2, duration: 1000, easing: "easeInOutSine" },
+                { value: 1.2, duration: 1000, easing: "easeInOutSine" },
+            ],
+            delay: anime.stagger(100, { start: 0, direction: "reverse" }), // alto → basso, sinistra → destra
             easing: "easeInOutSine",
-            // assicuriamoci che l'animazione applichi trasform origin consistente
-            begin: () => {
-                paths.forEach(p => p.style.transformOrigin = "center center");
-            }
+            loop: true,
         });
-
     }, []);
 
     return (
@@ -46,10 +49,9 @@ export default function BreathingSphereComponent() {
             <div className="sphere-animation">
                 <svg className="sphere" viewBox="0 0 440 440">
                     <defs>
-                        {/* Gradiente già aggiustato come volevi */}
                         <linearGradient id="sphereGradient" x1="5%" x2="5%" y1="0%" y2="80%">
-                            <stop stopColor="#415774ff" offset="0%" />
-                            <stop stopColor="#2d3c50ff" offset="50%" />
+                            <stop stopColor="#415774" offset="0%" />
+                            <stop stopColor="#2d3c50" offset="50%" />
                             <stop stopColor="#1F2937" offset="100%" />
                         </linearGradient>
                     </defs>

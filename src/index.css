@@ -141,20 +141,17 @@ section {
 .sphere-animation {
     width: 580px;
     height: 580px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .sphere path {
     fill: url(#sphereGradient);
-    stroke-width: 3px;
-    stroke: var(--light-theme);
-    backface-visibility: hidden;
-}
-
-@media (min-width: 500px) {
-    .sphere path {
-        stroke-width: .4px;
-    }
+    stroke-width: 1.2px;
+    stroke: #415774;
+    vector-effect: non-scaling-stroke;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: none;
 }
 
 
