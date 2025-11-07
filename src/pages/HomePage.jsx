@@ -1,6 +1,6 @@
 
 import buttonText from "@material-tailwind/react/theme/components/button/buttonText.js"
-import HeroComponent from "../components/common/HeroComponent.jsx"
+import FirtsHeroComponent from "../components/common/FirstHeroComponent"
 export default function HomePage() {
 
     {/*dati cards*/ }
@@ -81,7 +81,7 @@ export default function HomePage() {
     return (
         <>
 
-            <HeroComponent />
+            <FirtsHeroComponent />
 
             <section className="text-center">
 
