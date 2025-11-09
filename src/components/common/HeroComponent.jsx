@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from "react";
-import "./Hero.css"; // qui metteremo le animazioni e gli stili
 
-export default function Hero() {
+
+export default function HeroComponenet() {
     const [showHeader, setShowHeader] = useState(false);
     const [moveTitle, setMoveTitle] = useState(false);
 
