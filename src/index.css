@@ -33,6 +33,8 @@ rosa sbiadito #FDF7FF
 
 */
 
+@import "tailwindcss";
+
 :root {
 
     --theme: #0369A1;
@@ -148,14 +150,11 @@ section {
     width: 100%;
     height: 80px;
     background-color: rgba(10, 20, 30, 0.85);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition:
-        top 0.8s cubic-bezier(0.77, 0, 0.175, 1),
-        opacity 0.8s ease;
-    opacity: 0;
+    transition: top 1s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1000;
 }
 
@@ -176,39 +175,51 @@ section {
     opacity: 1;
 }
 
-/* Hero section */
+/* HERO SECTION */
 .hero-section {
+    position: relative;
     height: 200vh;
     background: radial-gradient(circle at center, #0f172a, #020617);
+    color: white;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    overflow: hidden;
 }
 
+/* Testo principale hero */
 .hero-title {
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.2;
     color: var(--lightest-theme);
     transform-origin: center;
-    transition:
-        transform 1.2s cubic-bezier(0.77, 0, 0.175, 1),
-        opacity 1s ease 0.2s;
-    will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1.5s ease-out forwards;
+    transition: transform 1.2s ease, opacity 1s ease;
+    z-index: 5;
+    /* resta sopra la sfera finché non sale */
 }
 
-.hero-title.move-up {
-    transform: translateY(-120px) scale(0.85);
-    opacity: 0.6;
+/* Animazione di ingresso */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Quando l’header compare, la scritta sale e svanisce */
 .hero-title.move-up {
-    transform: translateY(-120px) scale(0.85);
-    opacity: 0.5;
-    filter: blur(1px);
+    transform: translateY(-150px) scale(0.9);
+    opacity: 0;
 }
 
 /* Placeholder per la sfera */
@@ -219,6 +230,7 @@ section {
     background: radial-gradient(circle at top, #3b5168, #1f2937);
     margin-top: 40px;
     opacity: 0.9;
+    z-index: 1;
 }
 
 /*breathing sphere*/
@@ -249,14 +261,6 @@ section {
 
 /* CSS for the sphere disgregating animation*/
 
-.hero-section {
-    position: relative;
-    height: 200vh;
-    /* per poter scrollare */
-    background: radial-gradient(circle at center, #0f172a, #020617);
-    color: white;
-    overflow-x: hidden;
-}
 
 
 
@@ -276,28 +280,10 @@ section {
     text-align: center;
 }
 
-.hero-title {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--lightest-theme, #a5c5e9);
-    transform-origin: center;
-    transition: all 0.4s ease;
-}
-
 .hero-title span {
     font-size: 1.8rem;
     color: #d0d8e6;
     letter-spacing: 1px;
-}
-
-.sphere-placeholder {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle at top, #3b5168, #1f2937);
-    margin-top: 40px;
-    opacity: 0.8;
 }
 
 
@@ -408,5 +394,3 @@ section {
 
 
 /*end reponsive footer*/
-
-@import "tailwindcss";

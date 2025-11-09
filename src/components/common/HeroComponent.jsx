@@ -9,7 +9,7 @@ export default function HeroComponenet() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
-            if (scrollY > 100) {
+            if (scrollY > 60) {
                 setShowHeader(true);
                 setMoveTitle(true);
             } else {
