@@ -145,7 +145,7 @@ section {
 /* HEADER transition */
 .main-header {
     position: fixed;
-    top: -100px;
+    top: -120px;
     left: 0;
     width: 100%;
     height: 80px;
@@ -156,6 +156,7 @@ section {
     justify-content: center;
     transition: top 1s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1000;
+    opacity: 0;
 }
 
 .main-header.visible {
@@ -166,13 +167,8 @@ section {
 .header-title {
     font-size: 1.6rem;
     color: var(--lightest-theme);
-    letter-spacing: 1px;
-    opacity: 0.8;
-    transition: opacity 0.6s ease;
-}
-
-.main-header.visible .header-title {
-    opacity: 1;
+    opacity: 0.9;
+    transition: opacity 0.8s ease;
 }
 
 /* HERO SECTION */
@@ -181,7 +177,7 @@ section {
     height: 200vh;
     background: radial-gradient(circle at center, #0f172a, #020617);
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,33 +190,73 @@ section {
     font-weight: 600;
     line-height: 1.2;
     color: var(--lightest-theme);
-    transform-origin: center;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1.5s ease-out forwards;
-    transition: transform 1.2s ease, opacity 1s ease;
+    opacity: 1;
+    transition: opacity 0.6s ease, filter 0.6s ease;
     z-index: 5;
-    /* resta sopra la sfera finché non sale */
+    position: relative;
 }
 
-/* Animazione di ingresso */
-@keyframes fadeInUp {
+/* dissolvenza con effetto “smaterializzazione” */
+.hero-title.fade-out {
+    opacity: 0;
+    filter: blur(6px) contrast(120%) saturate(150%);
+}
+
+.hero-title.fade-in {
+    opacity: 1;
+    filter: blur(0) contrast(100%) saturate(100%);
+}
+
+/* animazione particellare leggera per un tocco di “disgregazione” */
+@keyframes disintegrate {
+    0% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: blur(3px);
+    }
+
+    100% {
+        opacity: 0;
+        filter: blur(6px);
+    }
+}
+
+@keyframes reintegrate {
     0% {
         opacity: 0;
-        transform: translateY(40px);
+        filter: blur(6px);
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: blur(3px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0);
+        filter: blur(0px);
     }
 }
 
-/* Quando l’header compare, la scritta sale e svanisce */
-.hero-title.move-up {
-    transform: translateY(-150px) scale(0.9);
-    opacity: 0;
+.hero-title.fade-out-anim {
+    animation: disintegrate 0.8s ease forwards;
 }
+
+.hero-title.fade-in-anim {
+    animation: reintegrate 0.8s ease forwards;
+}
+
+/* Uscita coordinata con comparsa dell’header */
+/* .hero-title.move-up {
+    transform: translateY(-200px) scale(0.9);
+    opacity: 0;
+    transition: transform 1.6s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 1.4s ease-in-out;
+} */
 
 /* Placeholder per la sfera */
 .sphere-placeholder {

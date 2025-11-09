@@ -7,14 +7,22 @@ export default function HeroComponenet() {
     const [moveTitle, setMoveTitle] = useState(false);
 
     useEffect(() => {
+        const header = document.querySelector(".main-header");
+        const title = document.querySelector(".hero-title");
+        let headerVisible = false;
+
         const handleScroll = () => {
             const scrollY = window.scrollY;
-            if (scrollY > 60) {
-                setShowHeader(true);
-                setMoveTitle(true);
-            } else {
-                setShowHeader(false);
-                setMoveTitle(false);
+            if (scrollY > 120 && !headerVisible) {
+                header.classList.add("visible");
+                title.classList.remove("fade-in", "fade-in-anim");
+                title.classList.add("fade-out", "fade-out-anim");
+                headerVisible = true;
+            } else if (scrollY <= 120 && headerVisible) {
+                header.classList.remove("visible");
+                title.classList.remove("fade-out", "fade-out-anim");
+                title.classList.add("fade-in", "fade-in-anim");
+                headerVisible = false;
             }
         };
 
@@ -25,19 +33,14 @@ export default function HeroComponenet() {
     return (
         <>
             {/* Header che compare quando serve */}
-            <header className={`main-header ${showHeader ? "visible" : ""}`}>
-                <h1 className="header-title">C.R. Clinica Rigenerativa</h1>
-            </header>
-
-            {/* Sezione hero */}
-            <section className="hero-section">
-                <div className="hero-content">
-                    <h1 className={`hero-title ${moveTitle ? "move-up" : ""}`}>
-                        C.R. <br /> Clinica Rigenerativa
-                    </h1>
-                    <div className="sphere-placeholder"></div>
-                </div>
+            <section class="hero-section">
+                <h1 class="hero-title">Benvenuto nel mondo digitale</h1>
+                <div class="sphere-placeholder"></div>
             </section>
+
+            <header class="main-header">
+                <h2 class="header-title">Il mio sito</h2>
+            </header>
         </>
     );
 }
