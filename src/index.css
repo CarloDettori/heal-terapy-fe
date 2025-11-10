@@ -171,6 +171,13 @@ section {
     transition: opacity 0.8s ease;
 }
 
+.header-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--lightest-theme, #a5c5e9);
+    letter-spacing: 2px;
+}
+
 /* HERO SECTION */
 .hero-section {
     position: relative;
@@ -250,6 +257,21 @@ section {
     animation: reintegrate 0.8s ease forwards;
 }
 
+.hero-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-title span {
+    font-size: 1.8rem;
+    color: #d0d8e6;
+    letter-spacing: 1px;
+}
+
 /* Uscita coordinata con comparsa dell’header */
 /* .hero-title.move-up {
     transform: translateY(-200px) scale(0.9);
@@ -258,16 +280,7 @@ section {
         opacity 1.4s ease-in-out;
 } */
 
-/* Placeholder per la sfera */
-.sphere-placeholder {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle at top, #3b5168, #1f2937);
-    margin-top: 40px;
-    opacity: 0.9;
-    z-index: 1;
-}
+
 
 /*breathing sphere*/
 
@@ -297,6 +310,63 @@ section {
 
 /* CSS for the sphere disgregating animation*/
 
+.sphere-disintegration-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sphere-container {
+    position: relative;
+    width: 580px;
+    height: 580px;
+}
+
+.discover-btn {
+    margin-top: 40px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: var(--lightest-theme);
+    background: transparent;
+    border: 2px solid var(--light-theme);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.discover-btn:hover {
+    background: var(--light-theme);
+    color: var(--dark-theme);
+    transform: scale(1.05);
+}
+
+.grid-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.grid-container.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.grid-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at top, #3b5168, #1f2937);
+    opacity: 0;
+    transform: scale(0.5);
+}
 
 
 
@@ -307,20 +377,9 @@ section {
     letter-spacing: 2px;
 }
 
-.hero-content {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
 
-.hero-title span {
-    font-size: 1.8rem;
-    color: #d0d8e6;
-    letter-spacing: 1px;
-}
+
+
 
 
 /*reponsive footer*/
