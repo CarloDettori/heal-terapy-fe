@@ -38,16 +38,26 @@ export default function SphereDisintegration() {
             const r = major / 2; // raggio derivato dall'asse maggiore
             const pathCenter = { x: bb.x + bb.width / 2, y: bb.y + bb.height / 2 };
 
+            // leggi fill / fill-opacity originari (fallback a computed style)
+            const origFillAttr = p.getAttribute('fill');
+            const computed = getComputedStyle(p);
+            const origFill = (origFillAttr && origFillAttr !== 'none') ? origFillAttr : (computed.fill || 'none');
+            const origFillOpacityAttr = p.getAttribute('fill-opacity');
+            const origFillOpacity = origFillOpacityAttr ?? computed.getPropertyValue('fill-opacity') ?? null;
+
             const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             // inizialmente centriamo il cerchio sulla posizione dell'ellisse
             c.setAttribute("cx", String(pathCenter.x));
             c.setAttribute("cy", String(pathCenter.y));
             c.setAttribute("r", String(r));
-            c.setAttribute("fill", "none");
+            // mantieni lo stesso background (fill) dell'ellisse
+            if (origFill && origFill !== 'none') c.setAttribute("fill", origFill);
+            else c.setAttribute("fill", "none");
+            if (origFillOpacity) c.setAttribute("fill-opacity", String(origFillOpacity));
+            // mantieni il bordo come prima
             c.setAttribute("stroke", getComputedStyle(document.documentElement).getPropertyValue("--light-theme")?.trim() || "#60A5FA");
             c.setAttribute("stroke-width", "1.2");
             c.style.opacity = "0";
-            // appendiamo i cerchi (sotto o sopra i path a seconda di come vuoi il layering)
             svg.appendChild(c);
             return { el: c, initialCenter: pathCenter, initialR: r };
         });
