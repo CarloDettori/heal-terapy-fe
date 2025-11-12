@@ -12,33 +12,21 @@ export default function SphereDisintegration() {
         const gridCircles = document.querySelectorAll(".grid-circle");
         const svg = document.querySelector(".sphere");
         if (!svg || spherePaths.length === 0) {
-            // fallback semplice se non trova elementi
-            anime({
-                targets: spherePaths,
-                opacity: [1, 0],
-                duration: 600,
-                easing: "easeInOutCubic",
-                complete: () => setDisintegrated(true),
-            });
+            anime({ targets: spherePaths, opacity: [1, 0], duration: 600, easing: "easeInOutCubic", complete: () => setDisintegrated(true) });
             return;
         }
 
-        // configurazioni (modifica TARGET_DIAMETER quando vuoi)
         const VIEWBOX = svg.viewBox && svg.viewBox.baseVal ? svg.viewBox.baseVal : { x: 0, y: 0, width: svg.clientWidth, height: svg.clientHeight };
         const CENTER = { cx: VIEWBOX.x + VIEWBOX.width / 2, cy: VIEWBOX.y + VIEWBOX.height / 2 };
-        const TARGET_DIAMETER = 48; // diametro finale dei cerchi prima del passaggio alla griglia
+        const TARGET_DIAMETER = 48;
         const finalRadius = TARGET_DIAMETER / 2;
 
-        // crea cerchi derivati dalle bbox delle ellissi
-        // ora creiamo cerchi il cui centro (cx,cy) è inizialmente nella posizione dell'ellisse,
-        // e poi animeremo cx/cy verso il CENTER per ottenere la disposizione concentrica perfetta
         const circles = spherePaths.map((p) => {
             const bb = p.getBBox();
             const major = Math.max(bb.width, bb.height);
-            const r = major / 2; // raggio derivato dall'asse maggiore
+            const r = major / 2;
             const pathCenter = { x: bb.x + bb.width / 2, y: bb.y + bb.height / 2 };
 
-            // leggi fill / fill-opacity originari (fallback a computed style)
             const origFillAttr = p.getAttribute('fill');
             const computed = getComputedStyle(p);
             const origFill = (origFillAttr && origFillAttr !== 'none') ? origFillAttr : (computed.fill || 'none');
@@ -46,15 +34,12 @@ export default function SphereDisintegration() {
             const origFillOpacity = origFillOpacityAttr ?? computed.getPropertyValue('fill-opacity') ?? null;
 
             const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            // inizialmente centriamo il cerchio sulla posizione dell'ellisse
             c.setAttribute("cx", String(pathCenter.x));
             c.setAttribute("cy", String(pathCenter.y));
             c.setAttribute("r", String(r));
-            // mantieni lo stesso background (fill) dell'ellisse
             if (origFill && origFill !== 'none') c.setAttribute("fill", origFill);
             else c.setAttribute("fill", "none");
             if (origFillOpacity) c.setAttribute("fill-opacity", String(origFillOpacity));
-            // mantieni il bordo come prima
             c.setAttribute("stroke", getComputedStyle(document.documentElement).getPropertyValue("--light-theme")?.trim() || "#60A5FA");
             c.setAttribute("stroke-width", "1.2");
             c.style.opacity = "0";
@@ -62,10 +47,8 @@ export default function SphereDisintegration() {
             return { el: c, initialCenter: pathCenter, initialR: r };
         });
 
-        // timeline: 1) dissolvenza ellissi + simultanea animazione dei cerchi verso centro 2) collasso radius -> finalRadius 3) rimuovi cerchi e mostra griglia
         const tl = anime.timeline({ autoplay: true });
 
-        // dissolvenza / spostamento casuale delle ellissi (vecchio comportamento)
         tl.add({
             targets: spherePaths,
             opacity: [1, 0],
@@ -77,11 +60,9 @@ export default function SphereDisintegration() {
             delay: anime.stagger(12),
         }, 0);
 
-        // i cerchi appaiono (partendo traslati sulle ellissi) e si muovono al centro (concurrent)
         tl.add({
             targets: circles.map(c => c.el),
             opacity: [0, 1],
-            // anima gli attributi cx/cy verso il centro della SVG per ottenere concentricità perfetta
             cx: CENTER.cx,
             cy: CENTER.cy,
             easing: "easeOutCubic",
@@ -89,7 +70,6 @@ export default function SphereDisintegration() {
             delay: anime.stagger(20, { direction: "reverse" })
         }, 150);
 
-        // collasso: riduci tutti i raggi fino al finalRadius (stagger se vuoi effetto onda)
         tl.add({
             targets: circles.map(c => c.el),
             r: finalRadius,
@@ -97,41 +77,91 @@ export default function SphereDisintegration() {
             duration: 700,
             delay: anime.stagger(18, { direction: "normal" }),
             complete: () => {
-                // rimuovi i cerchi temporanei (vogliamo che la griglia compaia dopo)
                 circles.forEach(c => c.el.remove());
                 setDisintegrated(true);
             }
         }, "+=120");
 
-        // mostra la griglia al termine (piccolo overlap possibile)
-        anime({
-            targets: gridCircles,
-            opacity: [0, 1],
-            scale: [0.5, 1],
-            delay: anime.stagger(100, { start: 1000 }),
-            duration: 800,
-            easing: "easeOutBack",
+        // dopo che la timeline termina, gestiamo la comparsa centrale e la distribuzione in griglia
+        tl.finished.then(() => {
+            const container = document.querySelector(".grid-container");
+            const nodes = Array.from(document.querySelectorAll(".grid-circle"));
+            const wrapper = document.querySelector(".sphere-disintegration-wrapper");
+            if (!container || nodes.length === 0 || !wrapper) return;
+
+            // calcola centro della SVG relativo al wrapper
+            const svgRect = svg.getBoundingClientRect();
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const centerX = svgRect.left + svgRect.width / 2 - wrapperRect.left;
+            const centerY = svgRect.top + svgRect.height / 2 - wrapperRect.top;
+
+            // assicura posizione assoluta e inserimento nel DOM prima di leggere dimensioni
+            container.style.position = "absolute";
+            container.style.zIndex = "50";
+            container.classList.add("visible");
+
+            // forza repaint e poi leggi dimensioni reali
+            const cw = container.offsetWidth || 320;
+            const ch = container.offsetHeight || 320;
+
+            // posiziona il container in modo che il suo centro corrisponda al centro della svg
+            container.style.left = `${Math.round(centerX - cw / 2)}px`;
+            container.style.top = `${Math.round(centerY - ch / 2)}px`;
+            container.style.transform = "none"; // rimuovi translate per evitare doppi offset
+
+            const cols = 4;
+            const rows = 4;
+            const gap = 200; // distanza tra centri in px (adatta per dimensioni nuove)
+
+            // comparsa centrale (tutti sovrapposti): opacity + scale
+            anime({
+                targets: nodes,
+                opacity: [0, 1],
+                scale: [0.3, 1],
+                duration: 320,
+                easing: "easeOutBack",
+                delay: anime.stagger(10)
+            }).finished.then(() => {
+                // calcola offset per ogni cella in modo che la griglia si apra dal centro
+                const totalW = (cols - 1) * gap;
+                const totalH = (rows - 1) * gap;
+                const startX = - totalW / 2;
+                const startY = - totalH / 2;
+
+                anime({
+                    targets: nodes,
+                    translateX: (el, i) => {
+                        const col = i % cols;
+                        return startX + col * gap;
+                    },
+                    translateY: (el, i) => {
+                        const row = Math.floor(i / cols);
+                        return startY + row * gap;
+                    },
+                    duration: 700,
+                    easing: "easeInOutCubic",
+                    delay: anime.stagger(20)
+                });
+            });
         });
     };
 
     return (
-        <div className="sphere-disintegration-wrapper">
+        <div className="sphere-disintegration-wrapper relative">
             <div className="sphere-container">
                 <BreathingSphereComponent />
             </div>
-
+            <div className={`grid-container ${disintegrated ? "visible" : ""} absolute`}>
+                {Array.from({ length: 16 }).map((_, i) => (
+                    <div key={i} className="grid-circle" />
+                ))}
+            </div>
             <button
                 className="discover-btn"
                 onClick={handleDisintegration}
             >
                 Scopri di più ↓
             </button>
-
-            <div className={`grid-container ${disintegrated ? "visible" : ""}`}>
-                {Array.from({ length: 9 }).map((_, i) => (
-                    <div key={i} className="grid-circle" />
-                ))}
-            </div>
         </div>
     );
 }
