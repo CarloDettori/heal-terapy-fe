@@ -363,11 +363,8 @@ section {
     left: 50%;
     top: 50%;
     width: 96px;
-    /* diametro dei cerchi (adatta se cambi) */
     height: 96px;
     border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0.5);
-    /* centrati nel container */
     opacity: 0;
     background: radial-gradient(circle at top, #3b5168, #1f2937);
     border: 1px solid var(--light-theme);

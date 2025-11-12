@@ -105,13 +105,13 @@ export default function SphereDisintegration() {
             const ch = container.offsetHeight || 320;
 
             // posiziona il container in modo che il suo centro corrisponda al centro della svg
-            container.style.left = `${Math.round(centerX - cw / 2)}px`;
-            container.style.top = `${Math.round(centerY - ch / 2)}px`;
-            container.style.transform = "none"; // rimuovi translate per evitare doppi offset
+            container.style.left = `${Math.round(centerX - cw / 1.75)}px`;
+            container.style.top = `${Math.round(centerY - ch / 1.75)}px`;
+            container.style.transform = "none";
 
             const cols = 4;
             const rows = 4;
-            const gap = 200; // distanza tra centri in px (adatta per dimensioni nuove)
+            const gap = 200;
 
             // comparsa centrale (tutti sovrapposti): opacity + scale
             anime({
@@ -130,13 +130,13 @@ export default function SphereDisintegration() {
 
                 anime({
                     targets: nodes,
-                    translateX: (el, i) => {
+                    left: (el, i) => {
                         const col = i % cols;
-                        return startX + col * gap;
+                        return `${50 + (startX + col * gap) / (cw / 2) * 50}%`;
                     },
-                    translateY: (el, i) => {
+                    top: (el, i) => {
                         const row = Math.floor(i / cols);
-                        return startY + row * gap;
+                        return `${50 + (startY + row * gap) / (ch / 2) * 50}%`;
                     },
                     duration: 700,
                     easing: "easeInOutCubic",
