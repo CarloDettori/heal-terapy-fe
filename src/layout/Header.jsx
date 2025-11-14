@@ -26,7 +26,7 @@ export default function HeaderComponent() {
 
     return (
         <header className="main-header">
-            <h1 className="header-title">C.R. Clinica Rigenerativa</h1>
+            <h1 className="header-title">C.R.</h1>
         </header>
     );
 }

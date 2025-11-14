@@ -18,13 +18,6 @@ export default function Header() {
             route: "info",
             icon: "fa-solid fa-circle-info"
         },
-
-        {
-            id: 3,
-            name: "test",
-            route: "contact",
-            icon: ""
-        },
     ]
 
 
@@ -37,6 +30,7 @@ export default function Header() {
             <nav className="flex justify-evenly gap-0.5">
 
                 {pages.map((page, index) => {
+
                     return (
                         <NavLink key={page.id} id={`link-${page.id}`} className="navlink flex flex-col w-full p-1 text-center text-(--dark-theme) rounded-t-md border-b cursor-pointer" style={({ isActive }) => ({
                             borderColor: isActive ? "var(--lightest-theme)" : "#bdbdbdff",
@@ -46,6 +40,7 @@ export default function Header() {
                             <h2 className="mx-auto">{page.name}</h2>
                         </NavLink>
                     )
+
                 })}
 
             </nav>

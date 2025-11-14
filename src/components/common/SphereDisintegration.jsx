@@ -105,8 +105,8 @@ export default function SphereDisintegration() {
             const ch = container.offsetHeight || 320;
 
             // posiziona il container in modo che il suo centro corrisponda al centro della svg
-            container.style.left = `${Math.round(centerX - cw / 1.75)}px`;
-            container.style.top = `${Math.round(centerY - ch / 1.75)}px`;
+            container.style.left = `${Math.round(centerX - cw / 1.74)}px`;
+            container.style.top = `${Math.round(centerY - ch / 1.74)}px`;
             container.style.transform = "none";
 
             const cols = 4;

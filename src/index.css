@@ -148,40 +148,38 @@ section {
     top: -120px;
     left: 0;
     width: 100%;
-    height: 80px;
+
     background-color: rgba(10, 20, 30, 0.85);
     backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
-    justify-content: center;
     transition: top 1s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1000;
-    opacity: 0;
+    opacity: 1;
+    padding: 10px;
 }
 
 .main-header.visible {
     top: 0;
     opacity: 1;
+    pointer-events: auto;
 }
 
-.header-title {
-    font-size: 1.6rem;
-    color: var(--lightest-theme);
-    opacity: 0.9;
-    transition: opacity 0.8s ease;
-}
+
 
 .header-title {
     font-size: 2rem;
     font-weight: 700;
     color: var(--lightest-theme, #a5c5e9);
     letter-spacing: 2px;
+    transition: opacity 0.8s ease;
+    opacity: 0.9;
 }
 
 /* HERO SECTION */
 .hero-section {
     position: relative;
-    height: 200vh;
+    height: 150vh;
     background: radial-gradient(circle at center, #0f172a, #020617);
     color: white;
     overflow: hidden;
@@ -189,11 +187,12 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10px;
 }
 
 /* Testo principale hero */
 .hero-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 600;
     line-height: 1.2;
     color: var(--lightest-theme);
@@ -325,7 +324,7 @@ section {
 }
 
 .discover-btn {
-    margin-top: 40px;
+    margin-top: 150px;
     padding: 12px 24px;
     font-size: 1.2rem;
     color: var(--lightest-theme);
