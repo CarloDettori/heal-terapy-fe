@@ -33,7 +33,7 @@ rosa sbiadito #FDF7FF
 
 */
 
-@import "tailwindcss";
+
 
 :root {
 
@@ -489,6 +489,6 @@ section {
 }
 
 
-
+@import "tailwindcss";
 
 /*end reponsive footer*/

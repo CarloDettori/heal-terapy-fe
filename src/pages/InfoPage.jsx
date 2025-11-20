@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function InfoPage() {
 
     const infos = [
@@ -20,14 +22,36 @@ export default function InfoPage() {
             description: "La medicina rigenerativa mira a riattivare la capacità naturale dei tessuti di ripararsi. Tra i principali studiosi, Carlo Ventura ha introdotto l’idea innovativa della “comunicazione sonora delle cellule”: ogni cellula emette vibrazioni, e comprenderle può aprire nuove vie alla rigenerazione tissutale. In clinica, queste ricerche ispirano approcci di stimolazione biologica selettiva — riservati ai pazienti idonei — per rigenerare articolazioni e tessuti danneggiati.",
 
         },
+        // {
+        //     id: 3,
+        //     title: "Esami diagnostici per la terapia dei lisosomi",
+        //     subtitle: "",
+        //     img: "/blood-analysis.png",
+        //     lists: "",
+        //     description: "I lisosomi sono gli “apparati di pulizia” delle cellule. Alterazioni della loro funzione possono contribuire a processi infiammatori cronici o degenerativi. Gli esami per la funzionalità lisosomiale permettono di valutare se un paziente è candidato a specifiche terapie rigenerative o di supporto metabolico, fornendo una base diagnostica preziosa per un piano di trattamento personalizzato.",
+
+        // },
         {
             id: 3,
-            title: "Esami diagnostici per la terapia dei lisosomi",
-            subtitle: "",
-            img: "/blood-analysis.png",
-            lists: "",
-            description: "I lisosomi sono gli “apparati di pulizia” delle cellule. Alterazioni della loro funzione possono contribuire a processi infiammatori cronici o degenerativi. Gli esami per la funzionalità lisosomiale permettono di valutare se un paziente è candidato a specifiche terapie rigenerative o di supporto metabolico, fornendo una base diagnostica preziosa per un piano di trattamento personalizzato.",
-
+            title: "Medicina estetica",
+            subtitle: "armonia naturale e tecniche non invasive",
+            img: "/botox.png",
+            lists: [
+                {
+                    title: "Ringiovanimento del volto",
+                    description: "Trattamenti personalizzati per migliorare luminosità, tono e idratazione della pelle."
+                },
+                {
+                    title: "Biorivitalizzazione",
+                    description: "Microiniezioni di sostanze biostimolanti per favorire la rigenerazione cutanea."
+                },
+                {
+                    title: "Correzione di inestetismi",
+                    description: "Procedure mini-invasive per ridurre rughe, cicatrici e lassità dei tessuti."
+                }
+            ],
+            description:
+                "La medicina estetica moderna punta a valorizzare l’armonia del viso e del corpo attraverso tecniche non invasive o mini-invasive. I trattamenti sono mirati a stimolare i processi biologici naturali della pelle, migliorando qualità tissutale e definizione dei volumi senza alterare la naturale espressività. Gli interventi vengono personalizzati in base alle caratteristiche del paziente, con l’obiettivo di ottenere risultati equilibrati, progressivi e rispettosi della fisiologia cutanea."
         },
         {
             id: 4,
@@ -86,22 +110,27 @@ export default function InfoPage() {
 
     const faqs = [
         {
+            id: 1,
             question: "Le terapie sono dolorose o chirurgiche?",
             answer: "No. Tutti i trattamenti proposti sono mini-invasivi o non invasivi. Nella maggior parte dei casi si effettuano in ambulatorio, senza ricovero e con recupero immediato."
         },
         {
+            id: 2,
             question: "L’ozonoterapia è sicura?",
             answer: "Sì, se eseguita da personale medico qualificato e con protocolli standardizzati. È una metodica ben documentata in letteratura e con oltre cinquant’anni di esperienza clinica."
         },
         {
+            id: 3,
             question: "Tutti possono fare medicina rigenerativa?",
             answer: "No. La terapia rigenerativa è riservata a pazienti idonei, valutati con esami specifici e visita specialistica."
         },
         {
+            id: 4,
             question: "Che differenza c’è tra terapia del dolore e medicina rigenerativa?",
             answer: "La terapia del dolore riduce i sintomi (dolore, infiammazione), mentre la medicina rigenerativa favorisce la riparazione dei tessuti. In molti casi le due strategie vengono integrate."
         },
         {
+            id: 5,
             question: "Cos’è la Scrambler Therapy?",
             answer: "È una tecnica di neuromodulazione che “inganna” i recettori del dolore con segnali non dolorosi, riducendo in modo duraturo il dolore neuropatico."
         },
@@ -111,8 +140,11 @@ export default function InfoPage() {
 
     return (
         <section>
-            <h1 className="text-center text-page-size font-bold my-20">INFORMAZIONI</h1>
+
+            <h1 className="text-center text-page-size font-bold mb-20 mt-30">INFORMAZIONI</h1>
+
             <div className="flex text-(--dark-theme) flex-col gap-10 mt-20 mb-10 p-10 bg-white rounded-4xl text-center max-w-230 mx-auto">
+
                 <div className="flex flex-col gap-3">
 
                     <h1 className="font-bold">
@@ -144,15 +176,18 @@ export default function InfoPage() {
                     </ul>
 
                 </div>
+
             </div>
+
             <h1 className="font-bold my-20 mb-0 p-10 text-center ">AREE DI COMPETENZA</h1>
+
             <div className="flex flex-wrap justify-center my-20 mt-0 p-10 gap-10">
 
                 {infos.map((info) => {
 
                     return (
 
-                        <div className="border-dark-theme p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100">
+                        <Link to={`/info/${info.id}`} key={info.id} className="border-dark-theme p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100">
                             <img className="max-w-50 mx-auto" src={info.img} alt="info-img" />
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-3">
@@ -179,20 +214,21 @@ export default function InfoPage() {
                                     ""
                                 }
                             </div>
-                        </div>
+                        </Link>
 
                     )
 
                 })}
 
             </div>
+
             <h1 className="font-bold text-center">DOMANDE FREQUENTI</h1>
 
             <div className="flex flex-col gap-5 m-20  p-20 bg-white border-dark-theme rounded-4xl">
                 {
                     faqs.map((faq) => {
                         return (
-                            <div className="flex flex-col ">
+                            <div key={faq.id} className="flex flex-col ">
                                 <h1 className="font-bold">{faq.question}</h1>
                                 <h2>{faq.answer}</h2>
                             </div>
