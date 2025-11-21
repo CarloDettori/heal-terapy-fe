@@ -202,6 +202,13 @@ section {
     position: relative;
 }
 
+.header-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--lightest-theme, #a5c5e9);
+    letter-spacing: 2px;
+}
+
 /* dissolvenza con effetto “smaterializzazione” */
 .hero-title.fade-out {
     opacity: 0;
@@ -371,13 +378,27 @@ section {
 }
 
 
+/*car animation*/
 
+#svg-createmotionpath {
+    position: relative;
+}
 
-.header-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--lightest-theme, #a5c5e9);
-    letter-spacing: 2px;
+#svg-createmotionpath .car {
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    left: -8px;
+    top: -5px;
+    color: var(--dark-theme);
+}
+
+#svg-createmotionpath .docs-demo-template .car {
+    display: none;
+}
+
+.car {
+    color: red
 }
 
 
