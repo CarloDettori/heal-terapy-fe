@@ -121,18 +121,18 @@ export default function ContentPage() {
 
             <h1 className="text-center mt-20 font-bold">CHI NE PUO USUFRUIRE?</h1>
 
-            <div className="my-10 w-full flex ">
+            <div className="my-10 max-w-300 mx-auto flex flex-wrap gap-5 justify-center">
                 {scramblerTarget.map((target, index) => {
                     return (
 
-                        <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-80 text-center mx-auto justify-center rounded-xl bg-white">
+                        <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-80 text-center mx-auto my-5 justify-center rounded-xl bg-white">
                             <h2 className="font-bold">{target}</h2>
                             <p>{target}</p>
                         </div>
                     )
                 })}
             </div>
-            <h1 className="text-center font-bold mt-30">PRINCIPAALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
+            <h1 className="text-center font-bold mt-30">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
             <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
 
 

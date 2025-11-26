@@ -46,6 +46,15 @@ export default function ScramblerDemo() {
         const pathEl = document.querySelector(`#suzuka-${index}`);
         if (!pathEl) return;
 
+        // aggiorna il <title> dell'SVG associato (solo per index 1 quando diventa blu)
+        const svgEl = pathEl.ownerSVGElement || pathEl.closest?.('svg');
+        if (svgEl) {
+            const titleEl = svgEl.querySelector('title');
+            if (titleEl) {
+                titleEl.textContent = (index === 1 && color === 'blue') ? 'segnali di non dolore' : 'segnali di dolore';
+            }
+        }
+
         // cancello anim precedente per questo index
         dotsAnimRef.current[index]?.pause?.();
         dotsAnimRef.current[index] = null;
