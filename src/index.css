@@ -383,7 +383,7 @@ section {
     display: flex;
     /* conferma flex container */
     align-items: center;
-    gap: 12px;
+
     /* spazio tra elementi (modifica se serve) */
     position: relative;
 }
@@ -410,7 +410,7 @@ section {
 /* svg dentro docs-demo-html si adatti al contenitore */
 .docs-demo-html svg {
     width: 100%;
-    height: 112px;
+    height: 100px;
     /* mantiene altezza esistente */
     display: block;
     transform-origin: left center;

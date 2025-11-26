@@ -3,63 +3,59 @@ import anime from "animejs";
 // ...existing code...
 export default function ScramblerDemo() {
     const [active, setActive] = useState(false);
-    const carRef = useRef(null);
+    const carRefs = useRef([]); // array di refs per le car
     const cable = useRef();
     const fig4Ref = useRef(null);
     const animeDotDuration = 5000;
 
     // keep refs to anime instances so we can stop them
-    const carAnimRef = useRef(null);
-    const pathAnimRef = useRef(null);
-    const dotsAnimRef = useRef(null);
+    const carAnimRef = useRef([]); // array di anime instances per car
+    const dotsAnimRef = useRef([]); // array di anime instances per path
 
     useEffect(() => {
         // pulisco eventuali anim precedenti
-        carAnimRef.current?.pause?.();
-        carAnimRef.current = null;
+        carAnimRef.current?.forEach?.(a => a?.pause?.());
+        carAnimRef.current = [];
 
-        const carEl = carRef.current;
-        const pathEl = document.querySelector('#suzuka');
+        const pathEls = Array.from(document.querySelectorAll('[id^="suzuka-"]'));
 
-        if (carEl && pathEl) {
-            const motionPath = anime.path(pathEl);
-
-            carAnimRef.current = anime({
-                targets: carEl,
-                translateX: motionPath('x'),
-                translateY: motionPath('y'),
-                // opzionale: ruota se vuoi
-                // rotate: motionPath('angle'),
-                duration: animeDotDuration,
-                easing: 'linear',
-                loop: true,
-            });
-        }
+        carRefs.current.forEach((carEl, i) => {
+            const pathEl = pathEls[i];
+            if (carEl && pathEl) {
+                const motionPath = anime.path(pathEl);
+                carAnimRef.current[i] = anime({
+                    targets: carEl,
+                    translateX: motionPath('x'),
+                    translateY: motionPath('y'),
+                    // rotate: motionPath('angle'),
+                    duration: animeDotDuration,
+                    easing: 'linear',
+                    loop: true,
+                });
+            }
+        });
 
         return () => {
-            carAnimRef.current?.pause?.();
-            carAnimRef.current = null;
+            carAnimRef.current?.forEach?.(a => a?.pause?.());
+            carAnimRef.current = [];
         };
     }, []);
 
-
-    // Animazione "puntini/linea" (usa strokeDashoffset; una sola animazione riutilizzabile)
-    const animateDots = (color = 'red') => {
-        const pathEl = document.querySelector('#suzuka');
+    // Animazione "puntini/linea" mirata per indice (0 = prima, 1 = seconda)
+    const animateDots = (index = 0, color = 'red') => {
+        const pathEl = document.querySelector(`#suzuka-${index}`);
         if (!pathEl) return;
 
-        // cancello anim precedente
-        dotsAnimRef.current?.pause?.();
-        dotsAnimRef.current = null;
+        // cancello anim precedente per questo index
+        dotsAnimRef.current[index]?.pause?.();
+        dotsAnimRef.current[index] = null;
 
-        // preparo stroke dash per effetto movimento
         const len = pathEl.getTotalLength?.() || 304;
-        // pattern: piccolo gap per dare effetto "puntini"
         pathEl.style.strokeDasharray = "2 14";
         pathEl.style.stroke = color;
         pathEl.style.strokeLinecap = "round";
 
-        dotsAnimRef.current = anime({
+        dotsAnimRef.current[index] = anime({
             targets: pathEl,
             strokeDashoffset: [0, -len],
             duration: 5000,
@@ -72,7 +68,7 @@ export default function ScramblerDemo() {
     const moveFig4 = (down) => {
         anime({
             targets: fig4Ref.current,
-            translateY: down ? 110 : 0,
+            translateY: down ? 135 : 0,
             duration: 800,
             easing: "easeInOutQuad"
         });
@@ -81,31 +77,32 @@ export default function ScramblerDemo() {
     const extendCable = (extend) => {
         anime({
             targets: cable.current,
-            height: extend ? 200 : 100,
+            height: extend ? 230 : 100,
             duration: 800,
             easing: 'easeInOutQuad'
         });
     };
 
-    // Effetto attiva/disattiva
+    // Effetto attiva/disattiva: cambia solo l'anim della seconda linea (index 1)
     useEffect(() => {
         if (active) {
             moveFig4(true);
             extendCable(true);
-            setTimeout(() => animateDots('blue'), 300);
+            setTimeout(() => animateDots(1, 'blue'), 800);
         } else {
             moveFig4(false);
             extendCable(false);
-            setTimeout(() => animateDots('red'), 300);
+            setTimeout(() => animateDots(1, 'red'), 200);
         }
     }, [active]);
 
-    // Prima animazione (rossi)
+    // Prima animazione (rosso) per entrambe le linee
     useEffect(() => {
-        animateDots('red');
+        animateDots(0, 'red');
+        animateDots(1, 'red');
         return () => {
-            dotsAnimRef.current?.pause?.();
-            dotsAnimRef.current = null;
+            dotsAnimRef.current?.forEach?.(a => a?.pause?.());
+            dotsAnimRef.current = [];
         };
     }, []);
 
@@ -121,7 +118,7 @@ export default function ScramblerDemo() {
                         background: "#ccc",
                         border: "2px solid black",
                         position: "absolute",
-                        left: "calc(45% - 30px)",
+                        left: "calc(47.5% - 30px)",
                         zIndex: 700
                     }}
                 >
@@ -134,7 +131,7 @@ export default function ScramblerDemo() {
                     style={{
                         position: "absolute",
                         top: 9,
-                        left: "calc(45% + 20px)",
+                        left: "calc(47.5% + 20px)",
                         width: 2,
                         height: 100,
                         background: "var(--dark-theme)",
@@ -152,7 +149,7 @@ export default function ScramblerDemo() {
                         border: "2px solid black",
                         position: "absolute",
                         top: 100,
-                        left: "45%",
+                        left: "47.5%",
                         zIndex: 700
 
                     }}
@@ -161,7 +158,7 @@ export default function ScramblerDemo() {
                 </div>
             </div>
             {/*FIG 1 - 2 */}
-            <div id="hand-brain" style={{ display: "flex", alignItems: "center" }}>
+            <div id="hand-brain" style={{ display: "flex", alignItems: "center", }}>
                 {/* FIG 1 */}
                 <div
                     style={{
@@ -174,17 +171,18 @@ export default function ScramblerDemo() {
                     Fig1
                 </div>
 
-                {/* LINEA E PALLINI */}
-                <div className="docs-demo-html">
-                    <svg className="" viewBox="0 0 304 112" preserveAspectRatio="none" style={{ width: "100%", height: 112, display: "block" }}>
-                        <title>segnali di dolore</title>
-                        <g stroke="none" fill="none" fillRule="evenodd">
-                            <path d="M0,56 L304,56" id="suzuka" stroke="currentColor" strokeWidth="2"></path>
-                        </g>
-                    </svg>
-                    {/* RIMOSSO transform inline e usato ref per l'anim */}
-                    <div ref={carRef} className="square car motion-path-car"></div>
-                </div>
+                {/* RENDER 2 LINEE + CAR con id unici e ref separate */}
+                {Array.from({ length: 2 }).map((_, i) => (
+                    <div key={i} className="docs-demo-html">
+                        <svg viewBox="0 0 304 112" preserveAspectRatio="none" style={{ width: "100%", height: 112, display: "block" }}>
+                            <title>segnali di dolore</title>
+                            <g stroke="none" fill="none" fillRule="evenodd">
+                                <path d="M0,56 L304,56" id={`suzuka-${i}`} stroke="currentColor" strokeWidth="2"></path>
+                            </g>
+                        </svg>
+                        <div ref={(el) => (carRefs.current[i] = el)} className="square car motion-path-car"></div>
+                    </div>
+                ))}
 
                 {/* FIG 2 */}
                 <div
