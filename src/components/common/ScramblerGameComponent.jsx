@@ -176,7 +176,7 @@ export default function ScramblerDemo() {
 
                 {/* LINEA E PALLINI */}
                 <div className="docs-demo-html">
-                    <svg className="" viewBox="0 0 304 112" style={{ width: "100%", height: 112, display: "block" }}>
+                    <svg className="" viewBox="0 0 304 112" preserveAspectRatio="none" style={{ width: "100%", height: 112, display: "block" }}>
                         <title>segnali di dolore</title>
                         <g stroke="none" fill="none" fillRule="evenodd">
                             <path d="M0,56 L304,56" id="suzuka" stroke="currentColor" strokeWidth="2"></path>
