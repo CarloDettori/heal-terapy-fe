@@ -73,6 +73,20 @@ export default function ScramblerDemo() {
         });
     };
 
+    const animateVerticalDots = () => {
+        const pathEl = document.querySelector('svg g path');
+        const len = pathEl.getTotalLength();
+        pathEl.style.strokeDasharray = "4 14"; // Assicurati che sia lo stesso valore usato sopra
+
+        anime({
+            targets: pathEl,
+            strokeDashoffset: [0, -len],
+            duration: 5000,
+            easing: 'linear',
+            loop: true,
+        });
+    };
+
     // Movimento dell’elettrodo (Fig4)
     const moveFig4 = (down) => {
         anime({
@@ -93,11 +107,15 @@ export default function ScramblerDemo() {
     };
 
     // Effetto attiva/disattiva: cambia solo l'anim della seconda linea (index 1)
+    // Chiamata all'animazione quando fig4 è attivato
     useEffect(() => {
         if (active) {
             moveFig4(true);
             extendCable(true);
-            setTimeout(() => animateDots(1, 'blue'), 800);
+            setTimeout(() => {
+                animateDots(1, 'blue');
+                animateVerticalDots(); // Avvia l'animazione verticale
+            }, 800);
         } else {
             moveFig4(false);
             extendCable(false);
@@ -143,10 +161,20 @@ export default function ScramblerDemo() {
                         left: "calc(47.5% + 20px)",
                         width: 2,
                         height: 100,
-                        background: "var(--dark-theme)",
+                        background: "lightgrey",
                         zIndex: 600
                     }}
                 ></div>
+
+                {active && (
+
+                    <svg viewBox="0 0 1 304" style={{ position: "absolute", top: 9, left: "calc(47.5% + 20px)", height: "115%", width: "2px", zIndex: 601 }}>
+                        <title>segnali di dolore</title>
+                        <g stroke="blue" fill="none" strokeWidth="4"> {/* Aumentato lo spessore */}
+                            <path d="M0,0 L0,304" strokeDasharray="4 14" /> {/* Aumentato il valore per i punti */}
+                        </g>
+                    </svg>
+                )}
 
                 {/* FIG4 (elettrodo) che scende */}
                 <div
