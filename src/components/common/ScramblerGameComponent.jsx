@@ -3,6 +3,7 @@ import anime from "animejs";
 // ...existing code...
 export default function ScramblerDemo() {
     const [active, setActive] = useState(false);
+    const [showSvg, setShowSvg] = useState(false);
     const carRefs = useRef([]); // array di refs per le car
     const cable = useRef();
     const fig4Ref = useRef(null);
@@ -11,6 +12,17 @@ export default function ScramblerDemo() {
     // keep refs to anime instances so we can stop them
     const carAnimRef = useRef([]); // array di anime instances per car
     const dotsAnimRef = useRef([]); // array di anime instances per path
+
+    useEffect(() => {
+        let timer;
+        if (active) {
+            timer = setTimeout(() => setShowSvg(true), 800);
+        } else {
+            // nascondi subito quando disattivo
+            setShowSvg(false);
+        }
+        return () => clearTimeout(timer);
+    }, [active]);
 
     useEffect(() => {
         // pulisco eventuali anim precedenti
@@ -75,8 +87,10 @@ export default function ScramblerDemo() {
 
     const animateVerticalDots = () => {
         const pathEl = document.querySelector('svg g path');
-        const len = pathEl.getTotalLength();
-        pathEl.style.strokeDasharray = "4 14"; // Assicurati che sia lo stesso valore usato sopra
+        if (!pathEl) return; // esce se lo SVG non è ancora montato
+        const len = pathEl.getTotalLength?.();
+        if (!len) return;
+        pathEl.style.strokeDasharray = "4 14";
 
         anime({
             targets: pathEl,
@@ -112,9 +126,10 @@ export default function ScramblerDemo() {
         if (active) {
             moveFig4(true);
             extendCable(true);
+            // avvia i puntini della seconda linea dopo lo stesso delay usato per mostrare lo SVG
             setTimeout(() => {
                 animateDots(1, 'blue');
-                animateVerticalDots(); // Avvia l'animazione verticale
+                // l'animazione verticale sarà avviata dal seguente effect quando showSvg diventa true
             }, 800);
         } else {
             moveFig4(false);
@@ -122,6 +137,14 @@ export default function ScramblerDemo() {
             setTimeout(() => animateDots(1, 'red'), 200);
         }
     }, [active]);
+
+    useEffect(() => {
+        if (showSvg && active) {
+            // piccolo delay per assicurare il paint del DOM prima della query
+            const t = setTimeout(() => animateVerticalDots(), 20);
+            return () => clearTimeout(t);
+        }
+    }, [showSvg, active]);
 
     // Prima animazione (rosso) per entrambe le linee
     useEffect(() => {
@@ -142,14 +165,14 @@ export default function ScramblerDemo() {
                     style={{
                         width: 100,
                         height: 40,
-                        background: "#ccc",
-                        border: "2px solid black",
+
+
                         position: "absolute",
                         left: "calc(47.5% - 30px)",
                         zIndex: 700
                     }}
                 >
-                    Fig3
+                    <img src="/scrambler-machine.png" alt="" />
                 </div>
 
                 {/* CAVO ELETTRICO */}
@@ -166,12 +189,13 @@ export default function ScramblerDemo() {
                     }}
                 ></div>
 
-                {active && (
 
+
+                {showSvg && (
                     <svg viewBox="0 0 1 304" style={{ position: "absolute", top: 9, left: "calc(47.5% + 20px)", height: "115%", width: "2px", zIndex: 601 }}>
                         <title>segnali di dolore</title>
-                        <g stroke="blue" fill="none" strokeWidth="4"> {/* Aumentato lo spessore */}
-                            <path d="M0,0 L0,304" strokeDasharray="4 14" /> {/* Aumentato il valore per i punti */}
+                        <g stroke="blue" fill="none" strokeWidth="4">
+                            <path d="M0,0 L0,304" strokeDasharray="4 14" />
                         </g>
                     </svg>
                 )}
@@ -182,8 +206,6 @@ export default function ScramblerDemo() {
                     style={{
                         width: 40,
                         height: 40,
-                        background: "#ccc",
-                        border: "2px solid black",
                         position: "absolute",
                         top: 100,
                         left: "47.5%",
@@ -191,7 +213,7 @@ export default function ScramblerDemo() {
 
                     }}
                 >
-                    Fig4
+                    <img src="/electrode.png" alt="" />
                 </div>
             </div>
             {/*FIG 1 - 2 */}
@@ -246,6 +268,6 @@ export default function ScramblerDemo() {
             >
                 {active ? "Disattiva Scrambler" : "Attiva Scrambler"}
             </button>
-        </div>
+        </div >
     );
 }
