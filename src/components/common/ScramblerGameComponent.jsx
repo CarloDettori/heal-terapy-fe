@@ -1,9 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 import anime from "animejs";
-// ...existing code...
+
 export default function ScramblerDemo() {
     const [active, setActive] = useState(false);
     const [showSvg, setShowSvg] = useState(false);
+
+    const [isFig4Animating, setIsFig4Animating] = useState(false);
+    const animatingCountRef = useRef(0);
+    const startAnim = () => {
+        animatingCountRef.current += 1;
+        setIsFig4Animating(true);
+    };
+    const endAnim = () => {
+        animatingCountRef.current -= 1;
+        if (animatingCountRef.current <= 0) {
+            animatingCountRef.current = 0;
+            setIsFig4Animating(false);
+        }
+    };
     const carRefs = useRef([]); // array di refs per le car
     const cable = useRef();
     const fig4Ref = useRef(null);
@@ -103,20 +117,24 @@ export default function ScramblerDemo() {
 
     // Movimento dell’elettrodo (Fig4)
     const moveFig4 = (down) => {
+        startAnim();
         anime({
             targets: fig4Ref.current,
             translateY: down ? 135 : 0,
             duration: 800,
-            easing: "easeInOutQuad"
+            easing: "easeInOutQuad",
+            complete: () => endAnim()
         });
     };
 
     const extendCable = (extend) => {
+        startAnim();
         anime({
             targets: cable.current,
             height: extend ? 230 : 100,
             duration: 800,
-            easing: 'easeInOutQuad'
+            easing: 'easeInOutQuad',
+            complete: () => endAnim()
         });
     };
 
@@ -168,7 +186,7 @@ export default function ScramblerDemo() {
 
 
                         position: "absolute",
-                        left: "calc(47.5% - 30px)",
+                        left: "calc(48.5% - 30px)",
                         zIndex: 700
                     }}
                 >
@@ -180,8 +198,8 @@ export default function ScramblerDemo() {
                     ref={cable}
                     style={{
                         position: "absolute",
-                        top: 9,
-                        left: "calc(47.5% + 20px)",
+                        top: 15,
+                        left: "calc(48.5% + 20px)",
                         width: 2,
                         height: 100,
                         background: "lightgrey",
@@ -192,7 +210,7 @@ export default function ScramblerDemo() {
 
 
                 {showSvg && (
-                    <svg viewBox="0 0 1 304" style={{ position: "absolute", top: 9, left: "calc(47.5% + 20px)", height: "115%", width: "2px", zIndex: 601 }}>
+                    <svg viewBox="0 0 1 304" style={{ position: "absolute", top: 15, left: "calc(48.5% + 20px)", height: "115%", width: "2px", zIndex: 601 }}>
                         <title>segnali di dolore</title>
                         <g stroke="blue" fill="none" strokeWidth="4">
                             <path d="M0,0 L0,304" strokeDasharray="4 14" />
@@ -207,8 +225,8 @@ export default function ScramblerDemo() {
                         width: 40,
                         height: 40,
                         position: "absolute",
-                        top: 100,
-                        left: "47.5%",
+                        top: 97,
+                        left: "48.5%",
                         zIndex: 700
 
                     }}
@@ -221,16 +239,15 @@ export default function ScramblerDemo() {
                 {/* FIG 1 */}
                 <div
                     style={{
-                        width: 60,
-                        height: 60,
-                        background: "#ccc",
-                        border: "2px solid black"
+                        width: 100,
+                        height: 100,
+
                     }}
                 >
-                    Fig1
+                    <img src="/pain.png" alt="" />
                 </div>
 
-                {/* RENDER 2 LINEE + CAR con id unici e ref separate */}
+                {/* RENDER 2 LINEE + CAR*/}
                 {Array.from({ length: 2 }).map((_, i) => (
                     <div key={i} className="docs-demo-html">
                         <svg viewBox="0 0 304 112" preserveAspectRatio="none" style={{ width: "100%", height: 112, display: "block" }}>
@@ -246,28 +263,43 @@ export default function ScramblerDemo() {
                 {/* FIG 2 */}
                 <div
                     style={{
-                        width: 60,
-                        height: 60,
-                        background: "#ccc",
-                        border: "2px solid black"
+                        width: 100,
+                        height: 100,
+                        position: "relative",
+                        backgroundImage: "url(/brain.png)",
+                        backgroundSize: "cover",
                     }}
                 >
-                    Fig2
+                    <img className="w-12 m-auto" src={showSvg ? "/calm.png" : "/sad.png"} alt="sad/calm" />
+
                 </div>
             </div>
 
             {/* BUTTON */}
             <button
-                onClick={() => setActive((v) => !v)}
+                className="font-bold"
+                disabled={isFig4Animating}
+                onClick={() => { if (isFig4Animating) return; setActive((v) => !v); }}
                 style={{
                     padding: "12px 20px",
+                    width: "150px",
                     marginTop: 20,
                     fontSize: 16,
-                    cursor: "pointer"
+                    cursor: isFig4Animating ? "not-allowed" : "pointer",
+                    opacity: isFig4Animating ? 0.6 : 1,
+                    color: active ? "var(--lightest-theme)" : "var(--theme)",
+                    backgroundColor: active ? "var(--theme)" : "",
+                    border: "2px solid var(--theme)",
+                    borderRadius: "50px",
+                    display: "flex",
+                    margin: "0 auto"
                 }}
+                title={isFig4Animating ? "Attendere la fine dell'animazione" : ""}
             >
-                {active ? "Disattiva Scrambler" : "Attiva Scrambler"}
+                {active ? "DISATTIVA SCRAMBLER" : "ATTIVA SCRAMBLER"}
             </button>
         </div >
     );
+
 }
+

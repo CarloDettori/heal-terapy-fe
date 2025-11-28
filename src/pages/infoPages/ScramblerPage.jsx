@@ -101,9 +101,9 @@ export default function ContentPage() {
     return (
         <section>
 
-            <h1 className="text-center mt-30 mb-20  text-page-size"><strong>CALMARE</strong></h1>
-
-            <h1>La “Calmare® Scrambler Therapy” rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci” e “da ultimo tentativo”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata con cautela: l’evidenza è ancora in fase di consolidamento, le risposte variano e la copertura assicurativa può essere problematica.</h1>
+            <h1 className="text-center mt-30 mb-10  text-page-size"><strong>CALMARE</strong></h1>
+            <img src="/scrambler-machine.png" alt="" className="flex mx-auto" />
+            <h1 className="mt-10">La “Calmare® Scrambler Therapy” rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci” e “da ultimo tentativo”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata con cautela: l’evidenza è ancora in fase di consolidamento, le risposte variano e la copertura assicurativa può essere problematica.</h1>
 
 
             <h2 className="text-center mt-30 mb-20  "><strong>Cosa si intende per “Calmare” / Scrambler Therapy</strong></h2>
@@ -119,23 +119,24 @@ export default function ContentPage() {
 
             <ScramblerGameComponent />
 
-            <h1 className="text-center mt-20 font-bold">CHI NE PUO USUFRUIRE?</h1>
+            <h1 className="text-center my-20 font-bold">CHI NE PUO USUFRUIRE?</h1>
 
-            <div className="my-10 max-w-300 mx-auto flex flex-wrap gap-5 justify-center">
+            <div className="my-10 max-w-300 mx-auto flex flex-wrap gap-10 justify-center">
                 {scramblerTarget.map((target, index) => {
                     return (
 
-                        <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-80 text-center mx-auto my-5 justify-center rounded-xl bg-white">
+                        <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-80 text-center justify-center rounded-xl bg-white">
                             <h2 className="font-bold">{target}</h2>
                             <p>{target}</p>
                         </div>
+
                     )
                 })}
             </div>
+
             <h1 className="text-center font-bold mt-30">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
+
             <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
-
-
 
                 <div className="lg:flex lg:gap-5">
 
@@ -145,15 +146,11 @@ export default function ContentPage() {
 
                     <div className="text-(--dark-theme) gap-5 my-auto">
 
-                        <h1 className="pb-5">
-                            <strong className="text-(--dark-theme) ">Dtt. Giuseppe Marineo</strong>
-                        </h1>
+                        <h1 className="mb-5 mt-3 font-bold text-center lg:text-left">Dtt. Giuseppe Marineo</h1>
 
                         <p>
                             Ricercatore/ingegnere/biofisico italiano legato all’Università di Roma Tor Vergata e al centro Delta Research & Development; Marineo è riconosciuto come l’inventore e il principale autore della teoria e della tecnologia Scrambler
                         </p>
-
-
 
                     </div>
 
