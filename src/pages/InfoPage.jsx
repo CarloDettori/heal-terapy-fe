@@ -13,15 +13,15 @@ export default function InfoPage() {
             description: "L’ozonoterapia utilizza una miscela di ossigeno e ozono con finalità terapeutiche, in particolare per dolori articolari, lombalgie e patologie infiammatorie. Uno dei massimi studiosi italiani del settore, Velio Bocci, ha contribuito a definirne le basi scientifiche, evidenziando il ruolo antinfiammatorio e modulatore dell’ozono. Oggi l’ozonoterapia rappresenta un supporto sicuro e versatile, applicabile in ambito ambulatoriale e privo di incisioni chirurgiche."
 
         },
-        {
-            id: 2,
-            title: "Medicina rigenerativa",
-            subtitle: "la comunicazione delle cellule",
-            img: "/regenerative.png",
-            lists: "",
-            description: "La medicina rigenerativa mira a riattivare la capacità naturale dei tessuti di ripararsi. Tra i principali studiosi, Carlo Ventura ha introdotto l’idea innovativa della “comunicazione sonora delle cellule”: ogni cellula emette vibrazioni, e comprenderle può aprire nuove vie alla rigenerazione tissutale. In clinica, queste ricerche ispirano approcci di stimolazione biologica selettiva — riservati ai pazienti idonei — per rigenerare articolazioni e tessuti danneggiati.",
+        // {
+        //     id: 2,
+        //     title: "Medicina rigenerativa",
+        //     subtitle: "la comunicazione delle cellule",
+        //     img: "/regenerative.png",
+        //     lists: "",
+        //     description: "La medicina rigenerativa mira a riattivare la capacità naturale dei tessuti di ripararsi. Tra i principali studiosi, Carlo Ventura ha introdotto l’idea innovativa della “comunicazione sonora delle cellule”: ogni cellula emette vibrazioni, e comprenderle può aprire nuove vie alla rigenerazione tissutale. In clinica, queste ricerche ispirano approcci di stimolazione biologica selettiva — riservati ai pazienti idonei — per rigenerare articolazioni e tessuti danneggiati.",
 
-        },
+        // },
         // {
         //     id: 3,
         //     title: "Esami diagnostici per la terapia dei lisosomi",
@@ -62,15 +62,15 @@ export default function InfoPage() {
             description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del fuoco di Sant’Antonio e di altre neuropatie croniche. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
 
         },
-        {
-            id: 5,
-            title: "Fibromialgia",
-            subtitle: "modulare il sistema nervoso centrale",
-            img: "/muscle-pain.png",
-            lists: "",
-            description: "La fibromialgia è una condizione complessa, spesso multifattoriale. Le nostre tecniche mini- invasive mirano a ridurre l’iperattività del sistema nervoso centrale, mediante terapie di neuromodulazione che “ri - educano” il segnale del dolore, offrendo sollievo anche nei casi più resistenti."
+        // {
+        //     id: 5,
+        //     title: "Fibromialgia",
+        //     subtitle: "modulare il sistema nervoso centrale",
+        //     img: "/muscle-pain.png",
+        //     lists: "",
+        //     description: "La fibromialgia è una condizione complessa, spesso multifattoriale. Le nostre tecniche mini- invasive mirano a ridurre l’iperattività del sistema nervoso centrale, mediante terapie di neuromodulazione che “ri - educano” il segnale del dolore, offrendo sollievo anche nei casi più resistenti."
 
-        },
+        // },
         {
             id: 6,
             title: "Rigenerazione articolare",

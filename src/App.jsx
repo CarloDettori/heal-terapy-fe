@@ -9,7 +9,9 @@ import UsPage from "./pages/UsPage.jsx";
 import ReservePage from "./pages/ReservePage.jsx";
 import InfoPage from "./pages/InfoPage.jsx";
 import OzonoterapiaPage from "./pages/infoPages/OzonoterapiaPage.jsx"
-import ScramblerTreapy from "./pages/infoPages/ScramblerPage.jsx"
+import ScramblerTreapyPage from "./pages/infoPages/ScramblerPage.jsx"
+import AestheticPage from "./pages/infoPages/AestheticPage.jsx"
+import RigenerazioneArticolarePage from "./pages/infoPages/RigenerazioneArticolarePage.jsx"
 
 function App() {
 
@@ -23,10 +25,10 @@ function App() {
             <Route path="/info" element={<InfoPage />} />
             <Route path="/info/1" element={<OzonoterapiaPage />} />
             <Route path="/info/2" element={<OzonoterapiaPage />} />
-            <Route path="/info/3" element={<OzonoterapiaPage />} />
-            <Route path="/info/4" element={<ScramblerTreapy />} />
+            <Route path="/info/3" element={<AestheticPage />} />
+            <Route path="/info/4" element={<ScramblerTreapyPage />} />
             <Route path="/info/5" element={<OzonoterapiaPage />} />
-            <Route path="/info/6" element={<OzonoterapiaPage />} />
+            <Route path="/info/6" element={<RigenerazioneArticolarePage />} />
             <Route path="/contact" element={<ReservePage />} />
           </Route>
         </Routes>
