@@ -62,15 +62,15 @@ export default function InfoPage() {
             description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del fuoco di Sant’Antonio e di altre neuropatie croniche. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
 
         },
-        // {
-        //     id: 5,
-        //     title: "Fibromialgia",
-        //     subtitle: "modulare il sistema nervoso centrale",
-        //     img: "/muscle-pain.png",
-        //     lists: "",
-        //     description: "La fibromialgia è una condizione complessa, spesso multifattoriale. Le nostre tecniche mini- invasive mirano a ridurre l’iperattività del sistema nervoso centrale, mediante terapie di neuromodulazione che “ri - educano” il segnale del dolore, offrendo sollievo anche nei casi più resistenti."
+        {
+            id: 5,
+            title: "Fibromialgia",
+            subtitle: "modulare il sistema nervoso centrale",
+            img: "/muscle-pain.png",
+            lists: "",
+            description: "La fibromialgia è una condizione complessa, spesso multifattoriale. Le nostre tecniche mini- invasive mirano a ridurre l’iperattività del sistema nervoso centrale, mediante terapie di neuromodulazione che “ri - educano” il segnale del dolore, offrendo sollievo anche nei casi più resistenti."
 
-        // },
+        },
         {
             id: 6,
             title: "Rigenerazione articolare",

@@ -70,7 +70,7 @@ export default function ContentPage() {
 
             </p>
             <div className="flex flex-wrap justify-center gap-20 mx-5">
-                <div className="rounded-xl bg-white p-20 mt-30">
+                <div className="rounded-xl bg-white p-20 mt-30 max-w-150">
 
                     <h1 className="text-center  mb-10 font-bold">OBBIETTIVI DELLA RIGENERAZIONE ARTICOLARE</h1>
 
@@ -89,7 +89,7 @@ export default function ContentPage() {
 
                 </div>
 
-                <div className="rounded-xl bg-white  p-20 mt-30">
+                <div className="rounded-xl bg-white p-20 mt-30 max-w-150">
 
                     <h1 className="text-center mb-10 font-bold">UN APPROCCIO MEDICO E SICURO</h1>
 
@@ -107,14 +107,14 @@ export default function ContentPage() {
                 </div>
             </div>
             <div className="flex flex-wrap justify-center gap-20 mx-5">
-                <div className="rounded-xl bg-white p-20 mt-30">
+                <div className="rounded-xl bg-white p-20 mt-30 max-w-150">
 
-                    <h1 className="text-center  mb-10 font-bold">OBBIETTIVI DELLA RIGENERAZIONE ARTICOLARE</h1>
+                    <h1 className="text-center  mb-10 font-bold">PER QUALI  PATOLOGIE È INDICATA QUESTA TERAPIA? </h1>
 
 
 
-                    <div className="my-10 w-full ">
-                        {obbiettiviArticolari.map((obj, index) => {
+                    <div className="my-10 w-full">
+                        {pazientiIdonei.map((obj, index) => {
                             return (
 
                                 <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
@@ -126,9 +126,9 @@ export default function ContentPage() {
 
                 </div>
 
-                <div className="rounded-xl bg-white  p-20 mt-30">
+                <div className="rounded-xl bg-white  p-20 mt-30  max-w-150">
 
-                    <h1 className="text-center mb-10 font-bold">UN APPROCCIO MEDICO E SICURO</h1>
+                    <h1 className="text-center mb-10 font-bold">PERCORSO PERSONALIZZATO</h1>
 
                     <div className="my-10 w-full ">
                         {percorso.map((target, index) => {

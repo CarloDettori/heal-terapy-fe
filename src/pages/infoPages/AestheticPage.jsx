@@ -4,6 +4,7 @@ export default function ContentPage() {
         {
             id: 1,
             titolo: "VOLTO",
+            img: "/face.png",
             list: [
                 "Tossina botulinica per rughe dinamiche",
                 "Filler a base di acido ialuronico (volumi, contorni, rughe)",
@@ -17,6 +18,7 @@ export default function ContentPage() {
         {
             id: 2,
             titolo: "COLLO",
+            img: "/neck.png",
             list: [
                 "Biorivitalizzazione del collo",
                 "Filler soft per rughe orizzontali",
@@ -27,6 +29,7 @@ export default function ContentPage() {
         {
             id: 3,
             titolo: "DECOLLETE'",
+            img: "/decollete.png",
             list: [
                 "Biorivitalizzazione profonda",
                 "Trattamenti anti-macchia",
@@ -113,8 +116,9 @@ export default function ContentPage() {
                     return (
 
                         <div key={trat.id} className="border-dark-theme p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100">
+                            <h1 className="font-bold text-center">{trat.titolo}</h1>
+                            <img src={trat.img} alt="" />
 
-                            <h1 className="font-bold">{trat.titolo}</h1>
 
                             <ul className="flex flex-col gap-3">
 
@@ -122,8 +126,9 @@ export default function ContentPage() {
 
                                     return (
 
-                                        <li key={index + 1}>
-                                            <h2>{li}</h2>
+
+                                        <li>
+                                            <h2 className="font-bold">-{li}</h2>
                                         </li>
 
                                     )
