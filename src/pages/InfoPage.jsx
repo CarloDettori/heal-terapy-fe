@@ -187,7 +187,7 @@ export default function InfoPage() {
 
                     return (
 
-                        <Link to={`/info/${info.id}`} key={info.id} className="border-dark-theme p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100">
+                        <Link to={`/info/${info.id}`} key={info.id} className="border-dark-theme p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100 hover:scale-102">
                             <img className="max-w-50 mx-auto" src={info.img} alt="info-img" />
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-3">

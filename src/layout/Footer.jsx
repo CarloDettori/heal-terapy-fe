@@ -75,7 +75,7 @@ export default function Footer() {
 
                 <div id="footer-info-wrapper" className="flex place-content-center item-center  text-white text-start">
 
-                    <div id="footer-block-3" className="footer-block flex flex-col justify-center  px-8">
+                    <div id="footer-block-3" className="footer-block flex flex-col justify-between  px-8">
                         <h1 className="text-white text-center pb-3">PAGINE DEL SITO</h1>
                         <div id="footer-pages-links" className="flex flex-col  text-end">
                             <Link to="/" onClick={() => { window.scrollTo(0, 0) }}>Home</Link>
@@ -85,7 +85,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div id="footer-block-4" className=" footer-block flex flex-col justify-center px-7 border-s border-e-white">
+                    <div id="footer-block-4" className=" footer-block flex flex-col justify-between px-7 border-s border-e-white">
                         <h1 className="inline-block text-white pb-3">CONTATTI</h1>
                         <div className="flex flex-col">
                             <p>Sassari - ITALIA</p>

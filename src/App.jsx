@@ -12,6 +12,7 @@ import OzonoterapiaPage from "./pages/infoPages/OzonoterapiaPage.jsx"
 import ScramblerTreapyPage from "./pages/infoPages/ScramblerPage.jsx"
 import AestheticPage from "./pages/infoPages/AestheticPage.jsx"
 import RigenerazioneArticolarePage from "./pages/infoPages/RigenerazioneArticolarePage.jsx"
+import FibromialgiaPage from "./pages/infoPages/FibromialgiaPage.jsx"
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
             <Route path="/info/2" element={<OzonoterapiaPage />} />
             <Route path="/info/3" element={<AestheticPage />} />
             <Route path="/info/4" element={<ScramblerTreapyPage />} />
-            <Route path="/info/5" element={<OzonoterapiaPage />} />
+            <Route path="/info/5" element={<FibromialgiaPage />} />
             <Route path="/info/6" element={<RigenerazioneArticolarePage />} />
             <Route path="/contact" element={<ReservePage />} />
           </Route>

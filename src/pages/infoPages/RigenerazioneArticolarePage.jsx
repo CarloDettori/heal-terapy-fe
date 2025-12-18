@@ -109,7 +109,7 @@ export default function ContentPage() {
             <div className="flex flex-wrap justify-center gap-20 mx-5">
                 <div className="rounded-xl bg-white p-20 mt-30 max-w-150">
 
-                    <h1 className="text-center  mb-10 font-bold">PER QUALI  PATOLOGIE È INDICATA QUESTA TERAPIA? </h1>
+                    <h1 className="text-center  mb-10 font-bold">PER QUALI PATOLOGIE È INDICATA QUESTA TERAPIA?</h1>
 
 
 
