@@ -82,16 +82,16 @@ export default function ContentPage() {
 
     return (
         <section>
-            <h2 className="mx-1 sm:mx-5 rounded-xl bg-white p-10 text-center ">
+            <div className="mx-1 sm:mx-5 rounded-xl bg-white mt-30 p-12 text-center ">
                 <h1 className="text-center mb-10 font-bold text-page-size ">APPROCCIO MINI-NVASIVO <br /> Cosa significa?</h1>
 
 
-                I trattamenti mini-invasivi permettono di ridurre il dolore e migliorare la funzione intervenendo in modo mirato, senza chirurgia tradizionale. <br />
-                L’utilizzo di tecniche ecoguidate consente di raggiungere con precisione la sede del problema, limitando i rischi e favorendo un recupero più rapido.
+                <h2>I trattamenti mini-invasivi permettono di ridurre il dolore e migliorare la funzione intervenendo in modo mirato, senza chirurgia tradizionale. <br />
+                    L’utilizzo di tecniche ecoguidate consente di raggiungere con precisione la sede del problema, limitando i rischi e favorendo un recupero più rapido.</h2>
 
-            </h2>
+            </div>
 
-            <div className="flex flex-col mx-auto p-20 mt-10 max-w-150 ">
+            <div className="flex flex-col border-dark-theme rounded-xl mx-auto p-15 my-30 max-w-150 ">
 
                 <h1 className="text-center mb-5 font-bold">VANTAGGI PRINCIPALI</h1>
 
@@ -108,7 +108,7 @@ export default function ContentPage() {
 
             </div>
 
-            <h1 className="text-center mt-10 mb-10 font-bold text-page-size ">PATOLOGIE TARGET</h1>
+            <h1 className="text-center mt-30 mb-10 font-bold text-page-size ">PATOLOGIE TARGET</h1>
 
             <div className="flex flex-wrap my-20 gap-10">
                 {tecniche.map((tech) => {
@@ -183,12 +183,12 @@ export default function ContentPage() {
 
             <h1 className="text-center mt-30 mb-10 font-bold">VALUTAZIONE PERONALIZZATA</h1>
 
-            <p className="flex mx-auto  rounded-xl bg-white p-10 text-center max-w-150 font-bold">
+            <p className="flex mx-auto rounded-xl bg-white p-10 text-center max-w-150 font-bold">
                 Ogni trattamento mini-invasivo è preceduto da una valutazione clinica approfondita, spesso supportata da ecografia, per definire il percorso terapeutico più adatto.
 
             </p>
 
-            <h1 className="text-center mt-30 mb-20 font-bold">L’obiettivo è offrire una soluzione efficace, <br /> mirata e meno invasiva possibile, <br />rispettando i tempi biologici di recupero del paziente.</h1>
+            <h1 className="text-center my-30 font-bold">L’obiettivo è offrire una soluzione efficace, <br /> mirata e meno invasiva possibile, <br />rispettando i tempi biologici di recupero del paziente.</h1>
 
         </section>
     )
