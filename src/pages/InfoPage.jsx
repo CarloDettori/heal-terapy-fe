@@ -22,15 +22,6 @@ export default function InfoPage() {
         //     description: "La medicina rigenerativa mira a riattivare la capacità naturale dei tessuti di ripararsi. Tra i principali studiosi, Carlo Ventura ha introdotto l’idea innovativa della “comunicazione sonora delle cellule”: ogni cellula emette vibrazioni, e comprenderle può aprire nuove vie alla rigenerazione tissutale. In clinica, queste ricerche ispirano approcci di stimolazione biologica selettiva — riservati ai pazienti idonei — per rigenerare articolazioni e tessuti danneggiati.",
 
         // },
-        // {
-        //     id: 3,
-        //     title: "Esami diagnostici per la terapia dei lisosomi",
-        //     subtitle: "",
-        //     img: "/blood-analysis.png",
-        //     lists: "",
-        //     description: "I lisosomi sono gli “apparati di pulizia” delle cellule. Alterazioni della loro funzione possono contribuire a processi infiammatori cronici o degenerativi. Gli esami per la funzionalità lisosomiale permettono di valutare se un paziente è candidato a specifiche terapie rigenerative o di supporto metabolico, fornendo una base diagnostica preziosa per un piano di trattamento personalizzato.",
-
-        // },
         {
             id: 3,
             title: "Medicina estetica",
@@ -221,6 +212,9 @@ export default function InfoPage() {
                 })}
 
             </div>
+
+
+
 
             <h1 className="font-bold text-center">DOMANDE FREQUENTI</h1>
 

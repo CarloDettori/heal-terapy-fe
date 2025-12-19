@@ -56,6 +56,20 @@ export default function ContentPage() {
 
     ]
 
+    const approccio = [
+
+        "Elevati standard di sicurezza clinica",
+
+        "Conoscenza approfondita dell’anatomia e dei tessuti",
+
+        "Gestione ottimale del comfort del paziente",
+
+        "Utilizzo di tecniche e prodotti certificati",
+
+        "Attenzione sia all’estetica che al benessere globale",
+
+    ]
+
 
 
     return (
@@ -63,49 +77,65 @@ export default function ContentPage() {
 
             <h1 className="text-center mt-30 mb-20 font-bold text-page-size">MEDICINA ESTETICA</h1>
 
-            <p className="mx-1 sm:mx-5 rounded-xl bg-white p-10 ">
+            <h2 className="mx-1 sm:mx-5 rounded-xl bg-white p-10">
                 La medicina estetica è una disciplina medica finalizzata a migliorare e mantenere l’equilibrio estetico del volto e del corpo, nel pieno rispetto della fisiologia e della salute del paziente.
                 Non si limita a correggere un inestetismo, ma mira a preservare la naturalezza, rallentare l’invecchiamento cutaneo e valorizzare i tratti individuali.
-                <br /><br />
-                Ogni trattamento è preceduto da una valutazione medica personalizzata, basata sull’anatomia, sulla qualità dei tessuti e sulle esigenze specifiche del paziente.
+            </h2>
 
-            </p>
+
+            <h1 className="mx-1 font-bold text-center sm:mx-5 p-20">Ogni trattamento è preceduto da una valutazione medica personalizzata, basata sull’anatomia, sulla qualità dei tessuti e sulle esigenze specifiche del paziente.</h1>
+
+
             <div className="flex flex-wrap justify-center gap-20 mx-5">
-                <div className="rounded-xl bg-white p-20 mt-30">
 
-                    <h1 className="text-center  mb-10 font-bold">OBBIETTIVI DELLA MEDICINA ESTETICA</h1>
+                <div>
 
-                    <div className="my-10 w-full ">
-                        {obbiettiviEstetici.map((obj, index) => {
-                            return (
+                    <div className="rounded-xl bg-white p-20 mt-20">
 
-                                <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
-                                    <h2 className="font-bold">{obj}</h2>
-                                </div>
-                            )
-                        })}
+                        <h1 className="text-center  mb-10 font-bold">OBBIETTIVI DELLA MEDICINA ESTETICA</h1>
+
+                        <div className="my-10 w-full min-h-175">
+                            {obbiettiviEstetici.map((obj, index) => {
+                                return (
+
+                                    <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
+                                        <h2 className="font-bold">{obj}</h2>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
                     </div>
+
+                    <h2 className=" flex mx-auto text-center m-10 font-bold max-w-100">L’approccio medico consente di intervenire in modo sicuro, controllato e minimamente invasivo, senza stravolgere l’espressione del volto.</h2>
 
                 </div>
 
-                <div className="rounded-xl bg-white  p-20 mt-30">
+                <div>
 
-                    <h1 className="text-center mb-10 font-bold">UN APPROCCIO MEDICO E SICURO</h1>
+                    <div className=" rounded-xl bg-white p-20 mt-20">
 
-                    <div className="my-10 w-full ">
-                        {obbiettiviEstetici.map((obj, index) => {
-                            return (
+                        <h1 className="text-center mb-10 font-bold">UN APPROCCIO MEDICO E SICURO</h1>
 
-                                <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
-                                    <h2 className="font-bold">{obj}</h2>
-                                </div>
-                            )
-                        })}
+                        <div className="my-10 w-full min-h-175">
+                            {approccio.map((obj, index) => {
+                                return (
+
+                                    <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
+                                        <h2 className="font-bold">{obj}</h2>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
                     </div>
 
+                    <h2 className=" flex mx-auto text-center m-10 font-bold max-w-100">Ogni trattamento è eseguito nel rispetto delle normative sanitarie e dei protocolli medici più aggiornati</h2>
+
                 </div>
+
             </div>
-            <h1 className="text-center mt-30 mb-10 font-bold">Ogni trattamento è preceduto da una valutazione medica personalizzata, basata sull’anatomia, sulla qualità dei tessuti e sulle esigenze specifiche del paziente.</h1>
+
 
             <h1 className="font-bold my-20 mb-0 p-10 text-center ">AREE DI COMPETENZA</h1>
 

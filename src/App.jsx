@@ -13,6 +13,7 @@ import ScramblerTreapyPage from "./pages/infoPages/ScramblerPage.jsx"
 import AestheticPage from "./pages/infoPages/AestheticPage.jsx"
 import RigenerazioneArticolarePage from "./pages/infoPages/RigenerazioneArticolarePage.jsx"
 import FibromialgiaPage from "./pages/infoPages/FibromialgiaPage.jsx"
+import TratMininvasiviPage from "./pages/infoPages/TratMininvasiviPage.jsx"
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/info/4" element={<ScramblerTreapyPage />} />
             <Route path="/info/5" element={<FibromialgiaPage />} />
             <Route path="/info/6" element={<RigenerazioneArticolarePage />} />
+            <Route path="/info/7" element={<TratMininvasiviPage />} />
             <Route path="/contact" element={<ReservePage />} />
           </Route>
         </Routes>

@@ -148,7 +148,7 @@ export default function ContentPage() {
 
             </div>
 
-            <h1 className="font-bold text-center mt-20">TRATTAMENTI CON NEUROSTIMOLAZIONE</h1>
+            <h1 className="font-bold text-center mt-20">PROCEDURE A RADIOFREQUENZA O INFILTRATIVE AVANZATE</h1>
             <div className="flex flex-wrap justify-center my-20 mt-0 p-10 gap-10">
 
                 {radiofrequenza.map((trat) => {
@@ -171,7 +171,7 @@ export default function ContentPage() {
 
             </div>
 
-            <h1 className="font-bold text-center mt-20">TRATTAMENTI CON NEUROSTIMOLAZIONE</h1>
+            <h1 className="font-bold text-center mt-20">TECNICHE RIGENERATIVE PERIMANTALI</h1>
             <div className="flex flex-wrap justify-center my-20 mt-0 p-10 gap-10">
 
                 {rigenerative.map((trat) => {
