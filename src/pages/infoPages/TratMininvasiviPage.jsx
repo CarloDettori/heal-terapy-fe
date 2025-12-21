@@ -91,9 +91,9 @@ export default function ContentPage() {
 
             </div>
 
-            <div className="flex flex-col border-dark-theme rounded-xl mx-auto p-15 my-30 max-w-150 ">
+            <div className="flex flex-col rounded-xl mx-auto p-15 my-30 max-w-150">
 
-                <h1 className="text-center mb-5 font-bold">VANTAGGI PRINCIPALI</h1>
+                <h1 className="text-center mb-5 font-bold text-page-size">VANTAGGI PRINCIPALI</h1>
 
                 <div className=" mt-8 w-full ">
                     {vantaggi.map((van, index) => {
@@ -181,7 +181,7 @@ export default function ContentPage() {
                 })}
             </div>
 
-            <h1 className="text-center mt-30 mb-10 font-bold">VALUTAZIONE PERONALIZZATA</h1>
+            <h1 className="text-center mt-30 mb-10 font-bold">VALUTAZIONE PERSONALIZZATA</h1>
 
             <p className="flex mx-auto rounded-xl bg-white p-10 text-center max-w-150 font-bold">
                 Ogni trattamento mini-invasivo è preceduto da una valutazione clinica approfondita, spesso supportata da ecografia, per definire il percorso terapeutico più adatto.

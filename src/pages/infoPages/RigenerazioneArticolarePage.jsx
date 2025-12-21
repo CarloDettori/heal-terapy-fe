@@ -46,15 +46,13 @@ export default function ContentPage() {
 
     const percorso = [
 
-        "Controllo ottimale del dolore durante e dopo le procedure",
+        "Valutazione clinica approfondita",
 
-        "Maggiore comfort per il paziente",
+        "Analisi della storia dolorosa e funzionale",
 
-        "Precisione nell’esecuzione dei trattamenti infiltrativi",
+        "Definizione di obiettivi realistici",
 
-        "Sicurezza e monitoraggio clinico costante",
-
-        "Necessità di soluzioni conservative prima di un eventuale intervento chirurgico"
+        "Monitoraggio dei risultati nel tempo",
 
     ]
 

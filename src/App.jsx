@@ -4,6 +4,7 @@
 import { GlobalProvider } from "./context/GlobalContext.jsx";
 import DefaultLayout from "../src/layout/DefaultLayout.jsx";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import UsPage from "./pages/UsPage.jsx";
 import ReservePage from "./pages/ReservePage.jsx";
@@ -20,6 +21,7 @@ function App() {
   return (
     <GlobalProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
