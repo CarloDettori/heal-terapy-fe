@@ -101,7 +101,7 @@ export default function ContentPage() {
     return (
         <section>
 
-            <h1 className="text-center mt-30 mb-10  text-page-size"><strong>CALMARE® / SCRAMBLER THERAPY</strong></h1>
+            <h1 className="text-center mt-30 mb-10 font-bold text-page-size">CALMARE® / SCRAMBLER THERAPY</h1>
             <img src="/scrambler-machine.png" alt="" className="flex mx-auto" />
             <h2 className="mt-10">La “Calmare® Scrambler Therapy” rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci” e “da ultimo tentativo”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata con cautela: l’evidenza è ancora in fase di consolidamento, le risposte variano e la copertura assicurativa può essere problematica.</h2>
 

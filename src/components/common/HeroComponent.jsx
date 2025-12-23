@@ -9,7 +9,7 @@ export default function HeroComponent() {
     return (
         <>
             <section className="hero-section">
-                <h1 className="hero-title text-center  absolute top-85">R.C. <br />Regenerative Clinic</h1>
+                <h1 className="hero-title text-center  absolute top-85">Ambulatorio Medico <br />Direttore Sanitario Roberto Chessa</h1>
 
                 <SphereDisintegration />
 
@@ -18,4 +18,5 @@ export default function HeroComponent() {
             <Header />
         </>
     );
+
 }
