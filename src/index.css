@@ -331,15 +331,16 @@ section {
 }
 
 .discover-btn {
-    margin-top: 150px;
+    margin: -120px;
     padding: 12px 24px;
     font-size: 1.2rem;
     color: var(--lightest-theme);
-    background: transparent;
+    background-color: var(--dark-theme);
     border: 2px solid var(--light-theme);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
+    z-index: 5000;
 }
 
 .discover-btn:hover {
@@ -489,6 +490,7 @@ section {
 
 
 @media (max-width: 1100px) {
+
     #footer-content-wrapper {
         flex-direction: column;
     }
@@ -496,8 +498,6 @@ section {
     #footer-content-wrapper {
         justify-content: center;
     }
-
-
 
     #footer-copyright-wrapper,
     #footer-info-wrapper {
@@ -508,10 +508,6 @@ section {
 
 @media (max-width: 600px) {
 
-
-
-
-
     #footer-pages-links,
     #footer-social-links {
         text-align: center;
@@ -521,9 +517,6 @@ section {
     #social-links-wrapper-f {
         justify-content: center;
     }
-
-
-
 
     #footer-img {
         margin: 0 auto

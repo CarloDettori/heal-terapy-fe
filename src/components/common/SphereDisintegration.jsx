@@ -8,6 +8,25 @@ export default function SphereDisintegration() {
     const handleDisintegration = () => {
         if (disintegrated) return;
 
+        window.dispatchEvent(new CustomEvent("hero:hide"));
+
+        const btn = document.querySelector(".discover-btn");
+        if (btn) {
+            btn.disabled = true;
+            anime({
+                targets: btn,
+                opacity: [1, 0],
+                scale: [1, 0.9],
+                translateY: -10,
+                duration: 380,
+                easing: "easeInCubic",
+                complete: () => {
+                    btn.style.pointerEvents = "none";
+                    btn.style.display = "none";
+                },
+            });
+        }
+
         const spherePaths = Array.from(document.querySelectorAll(".sphere path"));
         const gridCircles = document.querySelectorAll(".grid-circle");
         const svg = document.querySelector(".sphere");
