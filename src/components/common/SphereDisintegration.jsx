@@ -124,20 +124,20 @@ export default function SphereDisintegration() {
             const ch = container.offsetHeight || 320;
 
             // posiziona il container in modo che il suo centro corrisponda al centro della svg
-            container.style.left = `${Math.round(centerX - cw / 1.74)}px`;
-            container.style.top = `${Math.round(centerY - ch / 1.74)}px`;
+            container.style.left = `${Math.round(centerX - cw / 1.65)}px`;
+            container.style.top = `${Math.round(centerY - ch / 15)}px`;
             container.style.transform = "none";
 
             const cols = 4;
             const rows = 4;
-            const gap = 200;
+            const gap = 350;
 
             // comparsa centrale (tutti sovrapposti): opacity + scale
             anime({
                 targets: nodes,
                 opacity: [0, 1],
                 scale: [0.3, 1],
-                duration: 320,
+                duration: 120,
                 easing: "easeOutBack",
                 delay: anime.stagger(10)
             }).finished.then(() => {
@@ -170,8 +170,8 @@ export default function SphereDisintegration() {
             <div className="sphere-container">
                 <BreathingSphereComponent />
             </div>
-            <div className={`grid-container ${disintegrated ? "visible" : ""} absolute`}>
-                {Array.from({ length: 16 }).map((_, i) => (
+            <div className={`grid-container flex flex-wrap ${disintegrated ? "visible" : ""} absolute`}>
+                {Array.from({ length: 8 }).map((_, i) => (
                     <div key={i} className="grid-circle" />
                 ))}
             </div>

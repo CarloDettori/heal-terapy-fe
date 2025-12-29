@@ -18,7 +18,7 @@ export default function HeroComponent() {
     return (
         <>
             <section className="hero-section">
-                <h1 className={`hero-title text-center absolute top-85 ${hidden ? "hero-hidden-by-button" : ""}`}>RC<br />Ambulatorio Medico<br />Terapia del dolore<br />Medicina rigenerativa</h1>
+                <h1 className={`hero-title px-10 text-center absolute ${hidden ? "hero-hidden-by-button" : ""}`}>RC<br />Ambulatorio Medico<br />Terapia del dolore<br />Medicina rigenerativa</h1>
 
                 <SphereDisintegration />
 

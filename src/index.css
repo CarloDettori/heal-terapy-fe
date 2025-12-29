@@ -148,7 +148,6 @@ section {
     top: -120px;
     left: 0;
     width: 100%;
-
     background-color: rgba(10, 20, 30, 0.85);
     backdrop-filter: blur(12px);
     display: flex;
@@ -176,10 +175,11 @@ section {
     opacity: 0.9;
 }
 
+
 /* HERO SECTION */
 .hero-section {
     position: relative;
-    height: 150vh;
+    height: 100vh;
     background: radial-gradient(circle at center, #0f172a, #020617);
     color: white;
     overflow: hidden;
@@ -187,8 +187,10 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10px;
+    padding: 40px 10px 10px
 }
+
+
 
 /* Testo principale hero */
 .hero-title {
@@ -199,15 +201,15 @@ section {
     opacity: 1;
     transition: opacity 0.6s ease, filter 0.6s ease;
     z-index: 5;
-    position: relative;
+    position: absolute;
+    margin: 100px auto;
+    top: 18%;
+    /* regola per spostare il titolo verso l'alto/giù */
+
+
 }
 
-.header-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--lightest-theme, #a5c5e9);
-    letter-spacing: 2px;
-}
+
 
 /* dissolvenza con effetto “smaterializzazione” */
 
@@ -258,7 +260,6 @@ section {
 
 
 .hero-content {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -284,16 +285,13 @@ section {
 
 /*breathing sphere*/
 
-.animation-wrapper {
-    width: 50%;
-    padding-bottom: 50%;
-}
-
 .sphere-animation {
     width: 580px;
     height: 580px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
+
+
 
 .sphere path {
     fill: url(#sphereGradient);
@@ -316,16 +314,21 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 .sphere-container {
     position: relative;
     width: 580px;
     height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .discover-btn {
-    margin: -120px;
+    position: relative;
+    margin-top: -120px;
     padding: 12px 24px;
     font-size: 1.2rem;
     color: var(--lightest-theme);
@@ -346,12 +349,12 @@ section {
 .grid-container {
     position: absolute;
     /* verrà posizionato da JS */
-    width: 640px;
+    width: 90vw;
     /* adatta alla tua griglia; modifica se serve */
-    height: 640px;
+    height: 90vh;
     pointer-events: none;
-    top: 0;
-    left: 0;
+
+
 }
 
 .grid-container.visible {
@@ -362,10 +365,9 @@ section {
 .grid-circle {
     position: absolute;
     left: 50%;
-    top: 50%;
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
     opacity: 0;
     background: radial-gradient(circle at top, #3b5168, #1f2937);
     border: 1px solid var(--light-theme);
