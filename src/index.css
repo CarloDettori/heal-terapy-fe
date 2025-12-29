@@ -210,15 +210,15 @@ section {
 }
 
 /* dissolvenza con effetto “smaterializzazione” */
-.hero-title.fade-out {
+
+
+.hero-title.hero-hidden-by-button {
     opacity: 0;
     filter: blur(6px) contrast(120%) saturate(150%);
+    transition: opacity 0.6s ease, filter 0.6s ease;
 }
 
-.hero-title.fade-in {
-    opacity: 1;
-    filter: blur(0) contrast(100%) saturate(100%);
-}
+
 
 /* animazione particellare leggera per un tocco di “disgregazione” */
 @keyframes disintegrate {
@@ -255,13 +255,7 @@ section {
     }
 }
 
-.hero-title.fade-out-anim {
-    animation: disintegrate 0.8s ease forwards;
-}
 
-.hero-title.fade-in-anim {
-    animation: reintegrate 0.8s ease forwards;
-}
 
 .hero-content {
     height: 100vh;
