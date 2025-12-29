@@ -105,68 +105,28 @@ export default function SphereDisintegration() {
         tl.finished.then(() => {
             const container = document.querySelector(".grid-container");
             const nodes = Array.from(document.querySelectorAll(".grid-circle"));
-            const wrapper = document.querySelector(".sphere-disintegration-wrapper");
-            if (!container || nodes.length === 0 || !wrapper) return;
+            if (!container || nodes.length === 0) return;
 
-            // calcola centro della SVG relativo al wrapper
-            const svgRect = svg.getBoundingClientRect();
-            const wrapperRect = wrapper.getBoundingClientRect();
-            const centerX = svgRect.left + svgRect.width / 2 - wrapperRect.left;
-            const centerY = svgRect.top + svgRect.height / 2 - wrapperRect.top;
-
-            // assicura posizione assoluta e inserimento nel DOM prima di leggere dimensioni
-            container.style.position = "absolute";
+            // usa layout in-flow: rimuovi posizionamenti assoluti e abilita classe flex responsive
+            container.style.position = "relative";
             container.style.zIndex = "50";
-            container.classList.add("visible");
+            container.classList.add("visible", "flex-grid");
 
-            // forza repaint e poi leggi dimensioni reali
-            const cw = container.offsetWidth || 320;
-            const ch = container.offsetHeight || 320;
-
-            // posiziona il container in modo che il suo centro corrisponda al centro della svg
-            container.style.left = `${Math.round(centerX - cw / 1.65)}px`;
-            container.style.top = `${Math.round(centerY - ch / 15)}px`;
-            container.style.transform = "none";
-
-            const cols = 4;
-            const rows = 4;
-            const gap = 350;
-
-            // comparsa centrale (tutti sovrapposti): opacity + scale
+            // comparsa con piccolo pop e caduta: gli elementi rimangono nel flusso flex (wrap)
             anime({
                 targets: nodes,
+                translateY: [-20, 0],
                 opacity: [0, 1],
-                scale: [0.3, 1],
-                duration: 120,
+                scale: [0.85, 1],
+                duration: 600,
                 easing: "easeOutBack",
-                delay: anime.stagger(10)
-            }).finished.then(() => {
-                // calcola offset per ogni cella in modo che la griglia si apra dal centro
-                const totalW = (cols - 1) * gap;
-                const totalH = (rows - 1) * gap;
-                const startX = - totalW / 2;
-                const startY = - totalH / 2;
-
-                anime({
-                    targets: nodes,
-                    left: (el, i) => {
-                        const col = i % cols;
-                        return `${50 + (startX + col * gap) / (cw / 2) * 50}%`;
-                    },
-                    top: (el, i) => {
-                        const row = Math.floor(i / cols);
-                        return `${50 + (startY + row * gap) / (ch / 2) * 50}%`;
-                    },
-                    duration: 700,
-                    easing: "easeInOutCubic",
-                    delay: anime.stagger(20)
-                });
+                delay: anime.stagger(80)
             });
         });
     };
 
     return (
-        <div className="sphere-disintegration-wrapper relative">
+        <div className="sphere-disintegration-wrapper relative my-20">
             <div className="sphere-container">
                 <BreathingSphereComponent />
             </div>
