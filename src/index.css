@@ -179,7 +179,7 @@ section {
 /* HERO SECTION */
 .hero-section {
     position: relative;
-    min-height: 750px;
+    height: 910px;
     background: radial-gradient(circle at center, #0f172a, #020617);
     color: white;
     overflow: hidden;

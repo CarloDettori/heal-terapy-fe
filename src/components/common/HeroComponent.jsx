@@ -17,9 +17,14 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
 
     return (
         <>
-            <section className="hero-section">
-                <h1 className={`hero-title px-10 text-center absolute ${hidden ? "hero-hidden-by-button" : ""}`}>RC<br />Ambulatorio Medico<br />Terapia del dolore<br />Medicina rigenerativa</h1>
-
+            <section className="hero-section max-h-230">
+                <div className="flex justify-center max-w-100">
+                    <img
+                        src="/hero-text.png"
+                        alt=""
+                        className={`hero-title px-10 absolute left-1/2 -translate-x-1/2 w-full max-w-[700px] h-auto ${hidden ? "hero-hidden-by-button" : ""}`}
+                    />
+                </div>
                 <SphereDisintegration regenerativeRef={regenerativeRef} painRef={painRef} />
 
             </section>
