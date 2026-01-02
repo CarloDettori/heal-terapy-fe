@@ -143,7 +143,7 @@ export default function HomePage() {
     return (
         <>
 
-            <HeroComponent />
+            <HeroComponent regenerativeRef={regenerativeRef} painRef={painRef} />
 
             <section className="text-center">
 
@@ -155,7 +155,6 @@ export default function HomePage() {
                     {
                         knowledges.map((knowledges) => {
                             return (
-
 
                                 <div key={knowledges.id} className="max-w-100">
                                     <h1 className="font-bold">{knowledges.title}</h1>

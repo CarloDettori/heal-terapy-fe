@@ -1,9 +1,48 @@
 import { useState } from "react";
 import anime from "animejs";
 import BreathingSphereComponent from "./BreathingSphereComponent.jsx";
+import { Link } from "react-router-dom";
 
-export default function SphereDisintegration() {
-    const [disintegrated, setDisintegrated] = useState(false);
+export default function SphereDisintegration({ regenerativeRef, painRef }) {
+    const [disintegrated, setDisintegrated] = useState(false)
+    const links = [
+        {
+            id: 3,
+            title: "Scrambler Therapy",
+            link: "/info/4"
+        },
+        {
+            id: 4,
+            title: "Ozonoterapia",
+            link: "/info/1"
+        },
+        {
+            id: 5,
+            title: "Fibromialgia",
+            link: "/info/5"
+        },
+        {
+            id: 6,
+            title: "Rigenerazione Articolare",
+            link: "/info/6"
+        },
+        {
+            id: 7,
+            title: "Medicina Estetica",
+            link: "/info/3"
+        },
+        {
+            id: 8,
+            title: "Trattamenti Mini-invasivi",
+            link: "/info/7"
+        },
+    ]
+
+    function scrollTo(target) {
+        if (target && target.current && typeof target.current.scrollIntoView === "function") {
+            target.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }
 
     const handleDisintegration = () => {
         if (disintegrated) return;
@@ -126,21 +165,40 @@ export default function SphereDisintegration() {
     };
 
     return (
-        <div className="sphere-disintegration-wrapper relative my-20">
-            <div className="sphere-container">
+        <>
+            <div className="sphere-container mt-30">
                 <BreathingSphereComponent />
             </div>
-            <div className={`grid-container flex flex-wrap ${disintegrated ? "visible" : ""} absolute`}>
-                {Array.from({ length: 8 }).map((_, i) => (
-                    <div key={i} className="grid-circle" />
-                ))}
+            <div className="sphere-disintegration-wrapper relative my-20">
+
+                <div className={`grid-container flex flex-wrap ${disintegrated ? "visible" : ""} absolute`}>
+
+                    <button className="grid-circle hover:scale-120 cursor-pointer" onClick={() => {
+                        scrollTo(regenerativeRef)
+                    }}>
+                        <h1>Medicina Rigenerativa</h1>
+                    </button>
+
+                    <button className="grid-circle hover:scale-120 cursor-pointer" onClick={() => {
+                        scrollTo(painRef)
+                    }}>
+                        <h1>Terapia del Dolore</h1>
+                    </button>
+
+                    {links.map((link) => (
+                        <Link to={link.link} key={link.id} className="grid-circle hover:scale-120">
+                            <h1>{link.title}</h1>
+                        </Link>
+                    ))}
+
+                </div>
+                <button
+                    className="discover-btn"
+                    onClick={handleDisintegration}
+                >
+                    Scopri di più ↓
+                </button>
             </div>
-            <button
-                className="discover-btn"
-                onClick={handleDisintegration}
-            >
-                Scopri di più ↓
-            </button>
-        </div>
+        </>
     );
 }
