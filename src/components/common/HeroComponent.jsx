@@ -17,7 +17,7 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
 
     return (
         <>
-            <section className="hero-section max-h-230">
+            <section className="hero-section">
                 <BreathingSphereComponent regenerativeRef={regenerativeRef} painRef={painRef} />
             </section>
 
