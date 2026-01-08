@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4.975 -4.986 9.985 10.003">
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(255, 0, 0); transform-box: fill-box; transform-origin: 50% 50%; stroke-width: 0.5px; paint-order: stroke;" cx="-0.005" cy="-0.008" rx="1.996" ry="2.024">
+    <animateTransform type="scale" additive="sum" attributeName="transform" values="1 1;2 2" begin="0s" dur="1s" fill="freeze" repeatCount="indefinite" keyTimes="0; 1" calcMode="spline" keySplines="0 0 0.69 0.25"/>
+  </ellipse>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(255, 0, 0); stroke-width: 3px; paint-order: fill;" cx="0.023" cy="0.006" rx="1.473" ry="1.57"/>
+</svg>

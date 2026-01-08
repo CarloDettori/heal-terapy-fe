@@ -127,7 +127,7 @@ export default function ContentPage() {
                     return (
 
                         <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-80 text-center justify-center rounded-xl bg-white">
-                            <img src="" alt="icon" />
+                            <img src="/logo.png" alt="icon" />
                             <h2 className="font-bold">{target}</h2>
 
                         </div>
