@@ -3,7 +3,7 @@ import anime from "animejs";
 
 export default function ScramblerDemo() {
     const [active, setActive] = useState(false)
-    const accident = 3
+    const accident = 2
 
     let svgPain = null
     let svgNoPain = null
