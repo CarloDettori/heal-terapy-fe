@@ -2,13 +2,16 @@ import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import anime from "animejs";
 
 export default function ScramblerDemo() {
+    const [isAnimating, setIsAnimating] = useState(false);
     const [active, setActive] = useState(false)
     const accident = 2
 
     let svgPain = null
     let svgNoPain = null
-    let painPositionX = 0
-    let painPositionY = 0
+    const [painPosition, setPainPosition] = useState({
+        px: 0,
+        py: 0,
+    });
     const electrode1 = useRef()
     const electrode2 = useRef()
     const svgRef = useRef()
@@ -16,11 +19,15 @@ export default function ScramblerDemo() {
     const path2Ref = useRef()
     const electrodePosition1 = useRef()
     const electrodePosition2 = useRef()
-    let electrode1TargetY = 0
-    let electrode1TargetX = 0
-    let electrode2TargetY = 0
-    let electrode2TargetX = 0
+    const [electrodeTargets, setElectrodeTargets] = useState({
+        e1x: 0,
+        e1y: 0,
+        e2x: 0,
+        e2y: 0
+    });
     const cambleOutput = useRef()
+
+
 
     /*calcolo cordinate*/
     function getCenter(el) {
@@ -51,40 +58,100 @@ export default function ScramblerDemo() {
 
     }
 
+    function animateElectrodesIn() {
+        if (isAnimating) return;
+
+        setIsAnimating(true);
+
+        const e1 = electrode1.current.getBoundingClientRect();
+        const e2 = electrode2.current.getBoundingClientRect();
+        const t1 = electrodePosition1.current.getBoundingClientRect();
+        const t2 = electrodePosition2.current.getBoundingClientRect();
+
+        anime.timeline({
+            easing: "easeInOutCubic",
+            duration: 900,
+            update: updateCables,
+            complete: () => {
+                setActive(true);
+                setIsAnimating(false);
+                updateCables();
+            }
+        })
+            .add({
+                targets: electrode1.current,
+                translateX: t1.left - e1.left,
+                translateY: t1.top - e1.top
+            }, 0)
+            .add({
+                targets: electrode2.current,
+                translateX: t2.left - e2.left,
+                translateY: t2.top - e2.top
+            }, 0);
+    }
+
+
+    function animateElectrodesOut() {
+        if (isAnimating) return;
+
+        setIsAnimating(true);
+        setActive(false);
+
+        anime.timeline({
+            easing: "easeInOutCubic",
+            duration: 700,
+            update: updateCables,
+            complete: () => {
+                setIsAnimating(false);
+                updateCables();
+            }
+        })
+            .add({
+                targets: electrode1.current,
+                translateX: 0,
+                translateY: 0
+            }, 0)
+            .add({
+                targets: electrode2.current,
+                translateX: 0,
+                translateY: 0
+            }, 0);
+    }
+    function updateCables() {
+        if (
+            !svgRef.current ||
+            !cambleOutput.current ||
+            !electrode1.current ||
+            !electrode2.current ||
+            !path1Ref.current ||
+            !path2Ref.current
+        ) return;
+
+        const svg = svgRef.current;
+
+        const cable = toSvgCoords(svg, getCenter(cambleOutput.current));
+        const e1 = toSvgCoords(svg, getCenter(electrode1.current));
+        const e2 = toSvgCoords(svg, getCenter(electrode2.current));
+
+        path1Ref.current.setAttribute("d", makePath(cable, e1));
+        path2Ref.current.setAttribute("d", makePath(cable, e2));
+    }
+
     useLayoutEffect(() => {
-        let raf;
+        updateCables();
+        window.addEventListener("resize", updateCables);
 
-        function update() {
-            if (!svgRef.current) return;
-
-            const svg = svgRef.current;
-
-            const cable = toSvgCoords(svg, getCenter(cambleOutput.current));
-            const e1 = toSvgCoords(svg, getCenter(electrode1.current));
-            const e2 = toSvgCoords(svg, getCenter(electrode2.current));
-
-            path1Ref.current.setAttribute("d", makePath(cable, e1));
-            path2Ref.current.setAttribute("d", makePath(cable, e2));
-        }
-
-        raf = requestAnimationFrame(update);
-
-        window.addEventListener("resize", update);
         return () => {
-            cancelAnimationFrame(raf);
-            window.removeEventListener("resize", update);
+            window.removeEventListener("resize", updateCables);
         };
-    }, [active]);
+    }, []);
 
     if (accident === 1) {
+        useEffect(() => {
+            setElectrodeTargets({ e1x: 30, e1y: 43, e2x: 50, e2y: 65 });
+            setPainPosition({ px: 50, py: 46, })
+        }, [])
 
-        painPositionX = 50
-        painPositionY = 46
-
-        electrode1TargetY = 43
-        electrode1TargetX = 30
-        electrode2TargetY = 65
-        electrode2TargetX = 50
 
         // wrapper uses ternary on `active` for visible height and hides overflow
         svgPain = (
@@ -110,13 +177,11 @@ export default function ScramblerDemo() {
 
     } else if (accident === 2) {
 
-        painPositionX = 95
-        painPositionY = 51
+        useEffect(() => {
+            setElectrodeTargets({ e1x: 46, e1y: 72, e2x: 63, e2y: 115 });
+            setPainPosition({ px: 95, py: 51, })
+        }, [])
 
-        electrode1TargetY = 72
-        electrode1TargetX = 46
-        electrode2TargetY = 115
-        electrode2TargetX = 63
 
         svgPain =
             <div style={{ position: 'relative', marginTop: active ? "300px" : "-3px", marginLeft: "-13px", width: 'auto', height: active ? 300 : 600, overflow: 'hidden', objectFit: "cover", objectPosition: "fit", pointerEvents: 'none' }}>
@@ -169,13 +234,13 @@ export default function ScramblerDemo() {
 
     } else if (accident === 3) {
 
-        painPositionX = 120
-        painPositionY = 61
+        useEffect(() => {
+            setElectrodeTargets({ e1x: 54, e1y: 107, e2x: 66, e2y: 130 });
+            setPainPosition({ px: 120, py: 61, })
+        }, [])
 
-        electrode1TargetY = 107
-        electrode1TargetX = 54
-        electrode2TargetY = 130
-        electrode2TargetX = 66
+
+
 
         svgPain =
             <div style={{ position: 'relative', marginTop: active ? "440px" : "8px", marginLeft: "-30px", width: 'auto', height: active ? 170 : 600, overflow: 'hidden', objectFit: "cover", objectPosition: "fit", pointerEvents: 'none' }}>
@@ -233,10 +298,10 @@ export default function ScramblerDemo() {
 
                     <img style={{ position: "absolute", top: "12px", left: "30px", height: "85px" }} src="/human-brain.png" alt="brain" />
                     <img style={{ position: "absolute", top: "0", left: "0", height: "600px" }} src="/dermatomes-box.svg" alt="dermatomes" />
-                    <img className={`h-8 absolute top-${painPositionX} left-${painPositionY} z-60`} src="/pain.svg" alt="" />
+                    <img className={`h-8 absolute top-${painPosition.px} left-${painPosition.py} z-60`} src="/pain.svg" alt="" />
                     {svgPain}
-                    <div className={`absolute top-${electrode1TargetY} left-${electrode1TargetX}`} ref={electrodePosition1}>X</div>
-                    <div className={`absolute top-${electrode2TargetY} left-${electrode2TargetX}`} ref={electrodePosition2}>X</div>
+                    <div className={`absolute top-${electrodeTargets.e1y} left-${electrodeTargets.e1x}`} ref={electrodePosition1}>X1</div>
+                    <div className={`absolute top-${electrodeTargets.e2y} left-${electrodeTargets.e2x}`} ref={electrodePosition2}>X2</div>
                     {svgNoPain}
                 </div>
 
@@ -261,7 +326,22 @@ export default function ScramblerDemo() {
                 </svg>
             </div>
 
-            <button className={`mt-10 mx-auto max-w-65 py-5 px-8 border-theme ${active ? "text-white bg-(--theme)" : "text-(--theme)"} font-bold hover:bg-(--theme) hover:text-white rounded-4xl cursor-pointer hover:bg-color()`} onClick={() => { setActive(active ? false : true) }}>{active ? "DISATTIVA SCRAMBLER" : "ATTIVA SCRAMBLER"}</button>
+            <button
+                disabled={isAnimating}
+                className={`mt-10 mx-auto max-w-65 py-5 px-8 border-theme font-bold rounded-4xl ${isAnimating ? "opacity-50 cursor-not-allowed" : "cursor-pointer"} ${active ? "text-white bg-(--theme)" : "text-(--theme)"}`}
+                onClick={() => {
+                    if (isAnimating) return;
+
+                    if (!active) {
+                        animateElectrodesIn();
+                    } else {
+                        animateElectrodesOut();
+                    }
+                }}
+                s
+            >
+                {active ? "DISATTIVA SCRAMBLER" : "ATTIVA SCRAMBLER"}
+            </button>
 
         </div>
 
