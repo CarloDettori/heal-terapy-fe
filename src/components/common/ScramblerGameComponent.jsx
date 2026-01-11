@@ -4,7 +4,7 @@ import anime from "animejs";
 export default function ScramblerDemo() {
     const [isAnimating, setIsAnimating] = useState(false);
     const [active, setActive] = useState(false)
-    const accident = 2
+    const accident = 3
 
     let svgPain = null
     let svgNoPain = null
@@ -27,7 +27,20 @@ export default function ScramblerDemo() {
     });
     const cambleOutput = useRef()
 
-
+    useEffect(() => {
+        if (accident === 1) {
+            setElectrodeTargets({ e1x: 122, e1y: 177, e2x: 200, e2y: 250 });
+            setPainPosition({ px: 185, py: 200 });
+        }
+        else if (accident === 2) {
+            setElectrodeTargets({ e1x: 250, e1y: 460, e2x: 188, e2y: 289 });
+            setPainPosition({ px: 210, py: 390 });
+        }
+        else if (accident === 3) {
+            setElectrodeTargets({ e1x: 265, e1y: 520, e2x: 220, e2y: 435 });
+            setPainPosition({ px: 245, py: 480 });
+        }
+    }, [accident]);
 
     /*calcolo cordinate*/
     function getCenter(el) {
@@ -147,10 +160,7 @@ export default function ScramblerDemo() {
     }, []);
 
     if (accident === 1) {
-        useEffect(() => {
-            setElectrodeTargets({ e1x: 30, e1y: 43, e2x: 50, e2y: 65 });
-            setPainPosition({ px: 50, py: 46, })
-        }, [])
+
 
 
         // wrapper uses ternary on `active` for visible height and hides overflow
@@ -177,10 +187,7 @@ export default function ScramblerDemo() {
 
     } else if (accident === 2) {
 
-        useEffect(() => {
-            setElectrodeTargets({ e1x: 46, e1y: 72, e2x: 63, e2y: 115 });
-            setPainPosition({ px: 95, py: 51, })
-        }, [])
+
 
 
         svgPain =
@@ -234,10 +241,7 @@ export default function ScramblerDemo() {
 
     } else if (accident === 3) {
 
-        useEffect(() => {
-            setElectrodeTargets({ e1x: 54, e1y: 107, e2x: 66, e2y: 130 });
-            setPainPosition({ px: 120, py: 61, })
-        }, [])
+
 
 
 
@@ -292,16 +296,28 @@ export default function ScramblerDemo() {
 
         <div className="flex flex-col  max-w-215 mx-auto relative">
 
-            <div className="flex justify-between relative">
+            <div className="flex justify-between relative pt-20">
 
                 <div className="relative h-150 w-100">
 
                     <img style={{ position: "absolute", top: "12px", left: "30px", height: "85px" }} src="/human-brain.png" alt="brain" />
                     <img style={{ position: "absolute", top: "0", left: "0", height: "600px" }} src="/dermatomes-box.svg" alt="dermatomes" />
-                    <img className={`h-8 absolute top-${painPosition.px} left-${painPosition.py} z-60`} src="/pain.svg" alt="" />
+                    <img className={`h-8 z-60`} style={{
+                        position: "absolute",
+                        top: `${painPosition.py}px`,
+                        left: `${painPosition.px}px`
+                    }} src="/pain.svg" alt="" />
                     {svgPain}
-                    <div className={`absolute top-${electrodeTargets.e1y} left-${electrodeTargets.e1x}`} ref={electrodePosition1}>X1</div>
-                    <div className={`absolute top-${electrodeTargets.e2y} left-${electrodeTargets.e2x}`} ref={electrodePosition2}>X2</div>
+                    <div style={{
+                        position: "absolute",
+                        top: `${electrodeTargets.e1y}px`,
+                        left: `${electrodeTargets.e1x}px`
+                    }} ref={electrodePosition1}></div>
+                    <div style={{
+                        position: "absolute",
+                        top: `${electrodeTargets.e2y}px`,
+                        left: `${electrodeTargets.e2x}px`
+                    }} ref={electrodePosition2}></div>
                     {svgNoPain}
                 </div>
 
