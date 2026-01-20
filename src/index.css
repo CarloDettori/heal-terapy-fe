@@ -66,12 +66,28 @@ rosa sbiadito #FDF7FF
 
 /*custom border*/
 
+.thick-border {
+    border: 4px
+}
+
 .border-theme {
     border: 2px solid var(--theme)
 }
 
+.border-bottom-theme {
+    border-bottom: 2px solid var(--theme)
+}
+
+.border-right-theme {
+    border-right: 2px solid var(--theme)
+}
+
 .border-light-theme {
     border: 2px solid var(--light-theme)
+}
+
+.border-bottom-light-theme {
+    border-bottom: 2px solid var(--light-theme)
 }
 
 .border-dark-theme {
@@ -101,7 +117,16 @@ h3 {
 }
 
 
+.sidebar {
 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 100vh
+}
+
+.sidebar-space {
+    margin-left: 360px;
+}
 
 
 .nav-icon {
@@ -143,36 +168,15 @@ section {
 
 
 /* HEADER transition */
-.main-header {
-    position: fixed;
-    top: -120px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(10, 20, 30, 0.85);
-    backdrop-filter: blur(12px);
-    display: flex;
-    align-items: center;
-    transition: top 1s cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: 1000;
-    opacity: 1;
-    padding: 10px;
-}
 
-.main-header.visible {
-    top: 0;
-    opacity: 1;
-    pointer-events: auto;
-}
+
+
 
 
 
 .header-title {
     font-size: 2rem;
-    font-weight: 700;
-    color: var(--lightest-theme, #a5c5e9);
     letter-spacing: 2px;
-    transition: opacity 0.8s ease;
-    opacity: 0.9;
 }
 
 
@@ -344,7 +348,7 @@ section {
     border-radius: 50px;
     opacity: 0;
     background: radial-gradient(circle at top, #3b5168, #1f2937);
-    border: 1px solid var(--light-theme);
+    border: 2px solid var(--light-theme);
     box-sizing: border-box;
     display: flex;
     align-items: center;

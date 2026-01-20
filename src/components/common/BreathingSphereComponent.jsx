@@ -61,13 +61,17 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
         return () => hero.classList.remove('disintegrated');
     }, [disintegrated]);
 
-    const links = [
-        { id: 3, title: "Scrambler Therapy", link: "/info/4" },
+    const regenerativeLinks = [
         { id: 4, title: "Ozonoterapia", link: "/info/1" },
-        { id: 5, title: "Fibromialgia", link: "/info/5" },
+
         { id: 6, title: "Rigenerazione Articolare", link: "/info/6" },
         { id: 7, title: "Medicina Estetica", link: "/info/3" },
         { id: 8, title: "Trattamenti Mini-invasivi", link: "/info/7" },
+    ];
+
+    const painLinks = [
+        { id: 3, title: "Scrambler Therapy", link: "/info/4" },
+        { id: 5, title: "Fibromialgia", link: "/info/5" },
     ];
 
     function scrollTo(target) {
@@ -194,14 +198,14 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
 
     return (
 
-        <div className="sphere-container mt-30 flex flex-col">
+        <div className="sphere-container mt-25 flex flex-col">
 
             <div className="title-wrapper absolute
-                top-48">
+                top-45">
 
                 <img src="/hero-text.png" alt="" className={`hero-title px-10 w-full max-w-[700px] h-auto ${hidden ? "hero-hidden-by-button" : ""}`} />
                 <button className="flex mx-auto discover-btn" onClick={handleDisintegration}>
-                    Scopri di più ↓
+                    AVANTI
                 </button>
 
             </div>
@@ -244,21 +248,40 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
             </div>
 
 
-            <div className={`grid-container gap-15 flex flex-wrap justify-center items-center ${disintegrated ? "visible" : ""}`}>
+            <div className={`mt-10 grid-container gap-15 flex flex-wrap justify-center  ${disintegrated ? "visible" : ""}`}>
 
-                <button className="grid-circle hover:scale-120 cursor-pointer" onClick={() => { scrollTo(regenerativeRef) }}>
-                    <h1>Medicina Rigenerativa</h1>
-                </button>
+                <div className={` ${disintegrated ? "visible border rounded-4xl p-5" : ""}`}>
 
-                <button className="grid-circle hover:scale-120 cursor-pointer" onClick={() => { scrollTo(painRef) }}>
-                    <h1>Terapia del Dolore</h1>
-                </button>
+                    <button className=" hover:scale-120 hover:border-border-light-theme cursor-pointer text-center w-full" onClick={() => { scrollTo(painRef) }}>
+                        <h1 className="my-2">TERAPIA DEL DOLORE</h1>
+                    </button>
 
-                {links.map((link) => (
-                    <Link to={link.link} key={link.id} className="grid-circle hover:scale-120">
-                        <h1>{link.title}</h1>
-                    </Link>
-                ))}
+                    {painLinks.map((link) => (
+                        <Link to={link.link} key={link.id} className="grid-circle hover:scale-110 hover:border-light-theme ">
+                            <h1>{link.title}</h1>
+                        </Link>
+                    ))}
+
+                </div>
+
+                <div className={` ${disintegrated ? "visible border rounded-4xl p-5" : ""}`}>
+
+                    <button className="hover:scale-120 cursor-pointer text-center w-full" onClick={() => { scrollTo(regenerativeRef) }}>
+                        <h1 className="my-2">MEDICINA RIGENERATIVA</h1>
+                    </button>
+
+                    {regenerativeLinks.map((link) => (
+                        <Link to={link.link} key={link.id} className="grid-circle hover:scale-110">
+                            <h1>{link.title}</h1>
+                        </Link>
+                    ))}
+
+                </div>
+
+
+
+
+
 
             </div>
 

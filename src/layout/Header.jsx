@@ -18,37 +18,14 @@ export default function Header() {
         },
     ]
 
-    useEffect(() => {
-        const header = document.querySelector(".main-header");
-        const title = document.querySelector(".hero-title");
-        let headerVisible = false;
-
-        const handleScroll = () => {
-            if (!header) return; // evita errori se ancora non presente
-            const scrollY = window.scrollY;
-            if (scrollY > 160 && !headerVisible) {
-                header.classList.add("visible");
-                if (title) {
-                    title.classList.add("fade-out", "fade-out-anim");
-                    title.classList.remove("fade-in", "fade-in-anim");
-                }
-                headerVisible = true;
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        // esegui subito per gestire caso pagina già scrollata
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     return (
-        <header className="main-header flex justify-between">
+        <header className="fixed bg-(--dark-theme) border-bottom-theme shadow-lg  w-full flex items-center z-1000 p-3 justify-between">
             <div className="flex gap-5 relative">
                 <Link to="/">
-                    <img src={logo} alt="" className="h-20" />
+                    <img src={logo} alt="" className="h-17" />
 
-                    <h2 className="header-title my-auto absolute top-4 left-5.5">RC</h2>
+                    <h1 className=" text-(--lightest-theme)  font-bold my-auto absolute top-4 left-5.5">RC</h1>
                 </Link>
             </div>
 

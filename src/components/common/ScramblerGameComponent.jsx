@@ -4,7 +4,10 @@ import anime from "animejs";
 export default function ScramblerDemo() {
     const [isAnimating, setIsAnimating] = useState(false);
     const [active, setActive] = useState(false)
-    const accident = 3
+    const accident = 2
+
+
+
 
     let svgPain = null
     let svgNoPain = null
@@ -14,6 +17,8 @@ export default function ScramblerDemo() {
     });
     const electrode1 = useRef()
     const electrode2 = useRef()
+    const electrode1tag = useRef()
+    const electrode2tag = useRef()
     const svgRef = useRef()
     const path1Ref = useRef()
     const path2Ref = useRef()
@@ -191,7 +196,7 @@ export default function ScramblerDemo() {
 
 
         svgPain =
-            <div style={{ position: 'relative', marginTop: active ? "300px" : "-3px", marginLeft: "-13px", width: 'auto', height: active ? 300 : 600, overflow: 'hidden', objectFit: "cover", objectPosition: "fit", pointerEvents: 'none' }}>
+            <div style={{ position: 'relative', marginTop: active ? "300px" : "-3px", marginLeft: "-14px", width: 'auto', height: active ? 300 : 600, overflow: 'hidden', objectFit: "cover", objectPosition: "fit", pointerEvents: 'none' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1665.607 -474.392 775.444 1320.483" preserveAspectRatio="meet" style={{ position: 'absolute', bottom: 0, left: 0, width: 'auto', height: `600`, pointerEvents: 'none' }}>
                     <path
                         style={{
@@ -294,14 +299,28 @@ export default function ScramblerDemo() {
 
     return (
 
-        <div className="flex flex-col  max-w-215 mx-auto relative">
+        <div className="srelative flex flex-col border border-dark-theme max-w-250 p-20 mx-auto my-20 bg-white rounded-4xl">
 
-            <div className="flex justify-between relative pt-20">
+            <div className="flex justify-between relative">
 
                 <div className="relative h-150 w-100">
 
                     <img style={{ position: "absolute", top: "12px", left: "30px", height: "85px" }} src="/human-brain.png" alt="brain" />
                     <img style={{ position: "absolute", top: "0", left: "0", height: "600px" }} src="/dermatomes-box.svg" alt="dermatomes" />
+                    <p className="font-bold text-(--theme)" style={{
+                        position: "absolute",
+                        top: `${painPosition.py + 5}px`,
+                        left: `${painPosition.px + 32}px`,
+                        zIndex: "60"
+                    }}
+                    >dolore</p>
+                    <p className="font-bold text-white bg-white blur-sm" style={{
+                        position: "absolute",
+                        top: `${painPosition.py + 5}px`,
+                        left: `${painPosition.px + 32}px`,
+                        zIndex: "59"
+                    }}
+                    >dolore</p>
                     <img className={`h-8 z-60`} style={{
                         position: "absolute",
                         top: `${painPosition.py}px`,
@@ -324,14 +343,63 @@ export default function ScramblerDemo() {
                 <div className="flex">
 
                     <div className=" flex flex-col justify-center gap-5 px-10 ">
+                        <p className="font-bold text-(--theme)" style={{
+                            position: "absolute",
+                            top: `${painPosition.py + 5}px`,
+                            left: `${painPosition.px + 30}px`,
+                            zIndex: "60"
+                        }}
+                        ></p>
+                        <p className="font-bold text-white bg-white blur-sm" style={{
+                            position: "absolute",
+                            top: `${painPosition.py + 5}px`,
+                            left: `${painPosition.px + 30}px`,
+                            zIndex: "59"
+                        }}
+                        ></p>
                         <img ref={electrode1} className="h-3 w-3" src="/minimal-electrode.png" alt="elctrode1" />
+
+
+                        <p className="font-bold text-(--theme)" style={{
+                            position: "absolute",
+                            top: `${painPosition.py + 5}px`,
+                            left: `${painPosition.px + 30}px`,
+                            zIndex: "60"
+                        }}
+                        ></p>
+                        <p className="font-bold text-white bg-white blur-sm" style={{
+                            position: "absolute",
+                            top: `${painPosition.py + 5}px`,
+                            left: `${painPosition.px + 30}px`,
+                            zIndex: "59"
+                        }}
+                        ></p>
                         <img ref={electrode2} className="h-3 w-3" src="/minimal-electrode.png" alt="elctrode2" />
                     </div>
 
+                    <div className="flex flex-col items-center justify-center">
 
-                    <img ref={cambleOutput} className=" my-auto z-100" src="/scrambler-machine.png" alt="scrambler-machine" />
 
+                        <button
+                            disabled={isAnimating}
+                            className={`mt-auto max-w-65 py-5 px-8 border-theme font-bold rounded-4xl ${isAnimating ? "opacity-50 cursor-not-allowed" : "cursor-pointer"} ${active ? "text-white bg-(--theme)" : "text-(--theme)"}`}
+                            onClick={() => {
+                                if (isAnimating) return;
 
+                                if (!active) {
+                                    animateElectrodesIn();
+                                } else {
+                                    animateElectrodesOut();
+                                }
+                            }}
+
+                        >
+                            {active ? "DISATTIVA SCRAMBLER" : "ATTIVA SCRAMBLER"}
+                        </button>
+
+                        <img ref={cambleOutput} className=" mb-auto z-100" src="/scrambler-machine.png" alt="scrambler-machine" />
+
+                    </div>
                 </div>
                 <svg
                     ref={svgRef}
@@ -342,24 +410,9 @@ export default function ScramblerDemo() {
                 </svg>
             </div>
 
-            <button
-                disabled={isAnimating}
-                className={`mt-10 mx-auto max-w-65 py-5 px-8 border-theme font-bold rounded-4xl ${isAnimating ? "opacity-50 cursor-not-allowed" : "cursor-pointer"} ${active ? "text-white bg-(--theme)" : "text-(--theme)"}`}
-                onClick={() => {
-                    if (isAnimating) return;
 
-                    if (!active) {
-                        animateElectrodesIn();
-                    } else {
-                        animateElectrodesOut();
-                    }
-                }}
-                s
-            >
-                {active ? "DISATTIVA SCRAMBLER" : "ATTIVA SCRAMBLER"}
-            </button>
 
-        </div>
+        </div >
 
     )
 

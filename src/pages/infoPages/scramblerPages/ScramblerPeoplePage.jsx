@@ -1,10 +1,9 @@
-
 import React from "react";
 import ReactDOM from "react-dom/client";
-import SidebarComponent from "../../components/common/SidebarCompnent";
-import ScramblerGameComponent from "../../components/common/ScramblerGameComponent"
+import SidebarComponent from "../../../components/common/SidebarCompnent";
 
-export default function ContentPage() {
+
+export default function ScramblerPeoplePage() {
 
 
 
@@ -129,41 +128,7 @@ export default function ContentPage() {
 
             <section className="sidebar-space">
 
-                <h1 className="text-center mt-30 mb-10 font-bold text-page-size">CALMARE® / SCRAMBLER THERAPY</h1>
-                <img src="/scrambler-machine.png" alt="" className="flex mx-auto" />
-                <h2 className="mt-10">La “Calmare® Scrambler Therapy” rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci” e “da ultimo tentativo”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata con cautela: l’evidenza è ancora in fase di consolidamento, le risposte variano e la copertura assicurativa può essere problematica.</h2>
 
-
-                <h1 className="text-center mt-30 mb-20 font-bold">Cosa si intende per “Calmare” / Scrambler Therapy</h1>
-
-                <h2 className="mx-1 sm:mx-5 rounded-xl bg-white p-10 ">
-                    Elettrodi applicati sulla pelle inviano segnali a bassa intensità che “rimodulano” o “sovrascrivono” i segnali di dolore trasmessi dai nervi verso il cervello, facendo sì che il messaggio “dolore” venga sostituito da un messaggio “nessun dolore” o “non dolore”.
-
-                    <br /><br />
-
-                    Non è una stimolazione tradizionale tipo TENS (Transcutaneous Electrical Nerve Stimulation) ma, secondo i produttori e alcuni studi, un sistema che interviene sul “linguaggio” dell’informazione afferente del dolore (“no-pain message”).
-
-                </h2>
-
-                <ScramblerGameComponent />
-
-                <h1 className="text-center my-20 font-bold">PATOLOGIE INDICATE</h1>
-
-                <div className="my-10 max-w-300 mx-auto flex flex-wrap gap-10 justify-center">
-
-                    {scramblerTarget.map((target, index) => {
-                        return (
-
-                            <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-80 text-center justify-center rounded-xl bg-white">
-                                <img src="/logo.png" alt="icon" />
-                                <h2 className="font-bold">{target}</h2>
-
-                            </div>
-
-                        )
-                    })}
-
-                </div>
 
                 <h1 className="text-center font-bold mt-30">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
 
@@ -202,21 +167,7 @@ export default function ContentPage() {
                 </div>
 
 
-                <div className="my-10 p-10">
 
-                    <h1 className="mb-3 font-bold">SCRUMBLER THERAPY NEGLI STATI UNITI</h1>
-
-                    {
-                        scramblerUsa.map((info, index) => {
-                            return (
-                                <h2 key={index + 1} className="my-5">
-                                    {info}
-                                </h2>
-                            )
-                        })
-                    }
-
-                </div>
 
 
 

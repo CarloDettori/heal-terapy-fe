@@ -21,7 +21,7 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
                 <BreathingSphereComponent regenerativeRef={regenerativeRef} painRef={painRef} />
             </section>
 
-            <Header />
+
         </>
     );
 

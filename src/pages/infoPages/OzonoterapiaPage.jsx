@@ -1,45 +1,21 @@
+import SidebarComponent from "../../components/common/SidebarCompnent"
+
 export default function ContentPage() {
 
     const events = [
-        {
-            date: "1857",
-            fact: "Werner von Siemens costruisce il primo generatore di ozono."
-        },
-        {
-            date: "1870",
-            fact: "La prima relazione sull'uso terapeutico dell'ozono per purificare il sangue viene pubblicata in Germania."
-        },
-        {
-            date: "Fine XIX secolo",
-            fact: "L'ozono viene utilizzato per disinfettare l'acqua potabile in Europa e, nel 1892, The Lancet pubblica un articolo sull'uso dell'ozono per la tubercolosi."
-        },
-        {
-            date: "Prima Guerra Mondiale",
-            fact: "L'ozono viene utilizzato per curare le ferite da guerra grazie alle sue proprietà disinfettanti."
-        },
-        {
-            date: "Anni '30",
-            fact: "L'ozonoterapia inizia a essere usata in chirurgia generale per curare ulcere e fistole settiche."
-        },
-        {
-            date: "1957",
-            fact: "J. Hansler brevetta un generatore di ozono più preciso, segnando la nascita dell'ozonoterapia moderna."
-        },
-        {
-            date: "Anni successivi",
-            fact: "Diversi medici contribuiscono allo sviluppo della terapia. Nel 1985, il chirurgo vascolare italiano Raul Matassi pubblica il primo manuale italiano. Negli anni '90, i successi vengono documentati anche a Cuba e in Russia."
-        },
-        {
-            date: "2004",
-            fact: "Velio Bocci pubblica il primo trattato scientifico completo sulla materia, portando a una maggiore rigorosità scientifica e alla validazione accademica della tecnica."
-        },
+        "Dolore muscolo-scheletrico (lombalgia, cervicalgia, artrosi)",
+        "Ernie e protrusioni discali",
+        "Disturbi vascolari (insufficienza venosa, ulcere)",
+        "Processi infiammatori cronici",
+        "Infezioni (grazie all’azione ossidante, come coadiuvante)",
+        "Medicina sportiva (recupero funzionale)",
     ]
 
     const veliosLife = [
 
-        "Velio Bocci nacque in Italia, si laureò in Medicina e Chirurgia presso l’Università di Siena nel 1954. ",
+        "Prof. Velio Bocci nacque in Italia, si laureò in Medicina e Chirurgia presso l’Università di Siena nel 1954.",
 
-        "Dopo la laurea iniziò come assistente prima in Clinica chirurgica generale, poi in Fisiologia generale, sempre presso la stessa università. ",
+        "Dopo la laurea iniziò come assistente prima in Clinica chirurgica generale, poi in Fisiologia generale, sempre presso la stessa università.",
 
         "Nel 1981 divenne Direttore dell’Istituto di Fisiologia generale (poi Fisiologia generale e Scienza dell’alimentazione) della Facoltà di Farmacia presso l’Università di Siena. ",
 
@@ -49,7 +25,6 @@ export default function ContentPage() {
 
         "Venne nominato Professore Emerito all’Università di Siena nel maggio 2003.",
 
-        "Morì nel 2019; l’Ateneo di Siena ha espresso cordoglio per la sua scomparsa. "
 
     ]
 
@@ -91,115 +66,118 @@ export default function ContentPage() {
 
     ]
 
+    const sideInfo = [
+        {
+            id: 1,
+            route: "/info/1",
+            title: "OZONOTERAPIA"
+        },
+        {
+            id: 2,
+            route: "/info/1/2",
+            title: "Storia Ozonoterapia"
+        },
+        {
+            id: 3,
+            route: "/info/1/3",
+            title: "Esponenti Ozonoterapia"
+        },
+        {
+            id: 4,
+            route: "",
+            title: "Cose Ozonoterapia"
+        },
+
+    ]
+
     return (
-        <section>
+        <>
+            <SidebarComponent infos={sideInfo} />
+            <div className="flex sidebar-space">
 
-            <h1 className="text-center mt-30 mb-20  text-page-size"><strong>STORIA DELL'OZONOTERAPIA</strong></h1>
 
-            <p className="mx-1 sm:mx-5 rounded-xl bg-white p-10 ">
-                L'ozonoterapia ha una storia che risale alla scoperta dell'ozono da parte di Christian Friedrich Schönbein nel 1839. Il suo utilizzo medico è documentato a partire dal 1870 con applicazioni per la purificazione del sangue. Durante la Prima Guerra Mondiale, l'ozono fu impiegato per disinfettare le ferite dei soldati. La moderna ozonoterapia è fiorita negli anni '50, grazie a pionieri come J. Hansler, che creò il primo apparecchio per la produzione precisa di ozono per uso medico.
-                Le tappe fondamentali
-                1839: Christian Friedrich Schönbein scopre l'ozono, che chiama così dal greco ozein (puzzare), in riferimento al suo odore pungente.
+                <section>
 
-            </p>
-            <div className="my-10 w-full ">
-                {events.map((event) => {
-                    return (
+                    <h1 className="text-center mt-30 mb-20  text-page-size"><strong>OZONOTERAPIA</strong></h1>
 
-                        <div key={event.id} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
-                            <h1 className="font-bold">{event.date}</h1>
-                            <h2>{event.fact}</h2>
+                    <p className="mx-1 sm:mx-5 rounded-xl bg-white p-10 ">
+                        L’ozonoterapia è una pratica che utilizza una miscela di ossigeno e ozono (O₃) a scopo terapeutico. L’ozono impiegato è ozono medicale, prodotto da apparecchi certificati e usato in concentrazioni controllate.
+
+                    </p>
+                    <div className="my-10 w-full ">
+                        {events.map((event) => {
+                            return (
+
+                                <div key={event.id} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
+                                    <h1 className="font-bold">{event.date}</h1>
+                                    <h2>{event.fact}</h2>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    <h1 className="text-center mt-30 mb-20">Non sostituisce le terapie standard: quando usata, lo è come complemento.</h1>
+
+                    <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
+
+                        <div className="lg:flex lg:gap-5">
+
+
+                            <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/doctor.png" alt="" />
+
+
+                            <div className="text-(--dark-theme) gap-5 my-auto">
+
+                                <h1 className="pb-5">
+                                    <strong className="text-(--dark-theme) ">Dtt. Velio Bocci</strong>
+                                </h1>
+
+                                <p>
+                                    Velio Bocci è stato un medico-ricercatore italiano che ha operato all’Università di Siena, è stato pioniere nello studio delle citochine e dell’interferone, e ha concentrato buona parte della sua produzione scientifica sull’ozonoterapia, scrivendo testi e articoli che hanno contribuito a formalizzare questo campo. La sua importanza risiede tanto nei risultati e nella produzione scientifica quanto nel ruolo di “innovatore” che ha attraversato i confini tra fisiologia tradizionale e medicina integrativa.
+                                </p>
+
+
+
+                            </div>
+
                         </div>
-                    )
-                })}
-            </div>
 
-            <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
+                        <div className="mt-5">
+                            {
+                                veliosLife.map((info, index) => {
+                                    return (
+                                        <p className="my-5" key={index + 1}>
+                                            {info}
+                                        </p>
+                                    )
+                                })
+                            }
+                        </div>
 
-                <div className="lg:flex lg:gap-5">
 
 
-                    <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/doctor.png" alt="" />
+                        <div className="my-10 p-10">
 
+                            <h1 className="mb-3">Cosa ha fatto / principali contributi</h1>
 
-                    <div className="text-(--dark-theme) gap-5 my-auto">
+                            {
+                                veliosWork.map((info, index) => {
+                                    return (
+                                        <h2 key={index + 1}>
+                                            {info}
+                                        </h2>
+                                    )
+                                })
+                            }
 
-                        <h1 className="pb-5">
-                            <strong className="text-(--dark-theme) ">Dtt. Velio Bocci</strong>
-                        </h1>
+                        </div>
 
-                        <p>
-                            Velio Bocci è stato un medico-ricercatore italiano che ha operato all’Università di Siena, è stato pioniere nello studio delle citochine e dell’interferone, e ha concentrato buona parte della sua produzione scientifica sull’ozonoterapia, scrivendo testi e articoli che hanno contribuito a formalizzare questo campo. La sua importanza risiede tanto nei risultati e nella produzione scientifica quanto nel ruolo di “innovatore” che ha attraversato i confini tra fisiologia tradizionale e medicina integrativa.
-                        </p>
 
 
 
                     </div>
-
-                </div>
-
-                <div className="mt-5">
-                    {
-                        veliosLife.map((info, index) => {
-                            return (
-                                <p className="my-5" key={index + 1}>
-                                    {info}
-                                </p>
-                            )
-                        })
-                    }
-                </div>
-
-
-
-                <div className="my-10 p-10">
-
-                    <h1 className="mb-3">Cosa ha fatto / principali contributi</h1>
-
-                    {
-                        veliosWork.map((info, index) => {
-                            return (
-                                <h2 key={index + 1}>
-                                    {info}
-                                </h2>
-                            )
-                        })
-                    }
-
-                </div>
-
-                <div className="my-10 p-10">
-
-                    <h1 className="mb-3">Perché è importante</h1>
-
-                    {
-                        veliosWorth.map((info, index) => {
-                            return (
-                                <h2 key={index + 1}>
-                                    {info}
-                                </h2>
-                            )
-                        })
-                    }
-
-                </div>
-
-                <div className="my-10 p-10">
-
-                    <h1 className="mb-3">Criticità e contesto</h1>
-
-                    {
-                        veliosContext.map((info, index) => {
-                            return (
-                                <h2 key={index + 1}>
-                                    {info}
-                                </h2>
-                            )
-                        })
-                    }
-
-                </div>
+                </section>
             </div>
-        </section>
+        </>
     )
 }
