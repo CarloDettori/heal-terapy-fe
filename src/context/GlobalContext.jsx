@@ -4,7 +4,8 @@ const GlobalContext = createContext()
 const GlobalProvider = ({ children }) => {
 
 
-    const [showbar, setShowbar] = useState("light")
+    const [showbar, setShowbar] = useState(false)
+    const [sidebarLinks, setSidebarLinks] = useState([]);
 
 
     /*async function fetchData(url) {
@@ -21,7 +22,7 @@ const GlobalProvider = ({ children }) => {
     }, [])*/
 
     return (
-        <GlobalContext.Provider value={{ showbar, setShowbar }}>
+        <GlobalContext.Provider value={{ showbar, setShowbar, sidebarLinks, setSidebarLinks }}>
             {children}
         </GlobalContext.Provider>
     )

@@ -2,12 +2,12 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { useContext } from "react"
 import { GlobalContext } from "../../context/GlobalContext"
-function SidebarComponent({ infos }) {
+function SidebarComponent({ infos, show }) {
 
     const { showbar, setShowbar } = useContext(GlobalContext)
 
     return (
-        <div className={`sidebar flex flex-col border-right-theme shadow-lg bg-(--dark-theme) text-(--lightest-theme) overflow-y-scroll hide-scrollbar p-2  pt-25 z-1 unshrink`}>
+        <div className={`sidebar flex flex-col border-right-theme shadow-lg bg-(--dark-theme) text-(--lightest-theme) overflow-y-scroll hide-scrollbar p-2 max-w-90 pt-25 z-1 unshrink`}>
             <button className="cursor-pointer ms-auto" onClick={showbar ? () => { setShowbar(false) } : () => { setShowbar(true) }}>
                 {showbar ?
                     <i class=" w-full fa-solid fa-right-from-bracket rotate-180 text-left"></i>

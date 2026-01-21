@@ -198,12 +198,11 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
 
     return (
 
-        <div className="sphere-container mt-0 flex flex-col">
+        <div className="sphere-container  flex flex-col">
 
-            <div className="sticky
-                top-55">
+            <div className="sticky">
 
-                <img src="/hero-text.png" alt="" className={`hero-title px-10 w-full max-w-[700px] h-auto ${hidden ? "hero-hidden-by-button" : ""}`} />
+                <img src="/hero-text.png" alt="" className={`hero-title px-10 w-full  max-w-[700px] h-auto ${hidden ? "hero-hidden-by-button" : ""}`} />
                 <button className="flex mx-auto discover-btn" onClick={handleDisintegration}>
                     AVANTI
                 </button>
@@ -248,7 +247,7 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
             </div>
 
 
-            <div className={`mt-40 grid-container gap-15 flex flex-wrap justify-center  ${disintegrated ? "visible" : ""}`}>
+            <div className={`mt-55 grid-container gap-15 flex flex-wrap justify-center  ${disintegrated ? "visible" : ""}`}>
 
                 <div className={` ${disintegrated ? "visible border rounded-4xl p-5" : ""}`}>
 

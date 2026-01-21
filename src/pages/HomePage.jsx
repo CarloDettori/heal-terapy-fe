@@ -1,11 +1,67 @@
 
-import buttonText from "@material-tailwind/react/theme/components/button/buttonText.js"
 import HeroComponent from "../components/common/HeroComponent.jsx"
-import { useRef } from "react"
+import { useEffect, useContext, useRef } from "react";
+import { GlobalContext } from "../context/GlobalContext"
 export default function HomePage() {
 
+    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
     const regenerativeRef = useRef()
     const painRef = useRef()
+
+
+    useEffect(() => {
+        // Imposta i link specifici per questa pagina
+        setSidebarLinks(
+            [
+
+                {
+                    id: 1,
+                    route: "/info/1",
+                    title: "Ozonoterapia",
+
+                },
+
+                {
+                    id: 3,
+                    route: "/info/3",
+                    title: "Medicina estetica",
+
+                },
+                {
+                    id: 4,
+                    route: "/info/4",
+                    title: "Scrambler Therapy (Calmare®)",
+
+
+                },
+                {
+                    id: 5,
+                    route: "/info/5",
+                    title: "Fibromialgia",
+
+
+                },
+                {
+                    id: 6,
+                    route: "/info/6",
+                    title: "Rigenerazione articolare",
+
+
+                },
+
+                {
+                    id: 7,
+                    route: "/info/7",
+                    title: "Trattamenti mini-invasivi",
+
+
+                },
+
+            ]);
+
+        // Cleanup: reset ai link di default quando esci dalla pagina
+
+    }, []);
 
     {/*dati cards*/ }
     const knowledges = [

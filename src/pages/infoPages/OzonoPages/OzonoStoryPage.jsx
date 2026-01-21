@@ -98,33 +98,10 @@ export default function OzonoStoryPage() {
 
     ]
 
-    const sideInfo = [
-        {
-            id: 1,
-            route: "/info/4",
-            title: "SCRAMBLER THERAPY®"
-        },
-        {
-            id: 2,
-            route: "/info/4/2",
-            title: "Storia scrambler"
-        },
-        {
-            id: 3,
-            route: "/info/4/3",
-            title: "Esponenti scrambler"
-        },
-        {
-            id: 4,
-            route: "",
-            title: "Cose scramblers"
-        },
-
-    ]
 
     return (
         <div className="flex">
-            <SidebarComponent infos={sideInfo} />
+
 
             <section className="sidebar-space">
 
@@ -133,7 +110,7 @@ export default function OzonoStoryPage() {
 
                 <div className="my-10 p-10">
 
-                    <h1 className="mb-3 font-bold">SCRUMBLER THERAPY NEGLI STATI UNITI</h1>
+                    <h1 className="mb-3 font-bold">STORIA OZONOTERAPIA</h1>
 
                     {
                         scramblerUsa.map((info, index) => {

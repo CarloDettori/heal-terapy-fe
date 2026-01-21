@@ -1,6 +1,31 @@
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
+
 export default function ContentPage() {
 
 
+
+    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
+
+
+    useEffect(() => {
+
+        // Imposta i link specifici per questa pagina
+        setSidebarLinks(
+            [
+
+                {
+                    id: 1,
+                    route: "/info/5",
+                    title: "FIBROMIALGIA",
+                },
+
+
+
+            ]);
+
+
+    }, []);
 
     const percutanei = [
         {

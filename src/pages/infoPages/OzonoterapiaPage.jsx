@@ -1,6 +1,43 @@
-import SidebarComponent from "../../components/common/SidebarCompnent"
-
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
 export default function ContentPage() {
+
+    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
+
+
+    useEffect(() => {
+        setShowbar(true)
+        // Imposta i link specifici per questa pagina
+        setSidebarLinks(
+            [
+
+                {
+                    id: 1,
+                    route: "/info/1",
+                    title: "OZONOTERAPIA",
+
+                },
+
+                {
+                    id: 3,
+                    route: "/info/1/2",
+                    title: "Storia Ozonoterapia",
+
+                },
+                {
+                    id: 4,
+                    route: "/info/1/3",
+                    title: "Esponenti Ozonoterapia",
+
+
+                },
+
+
+            ]);
+
+
+
+    }, []);
 
     const events = [
         "Dolore muscolo-scheletrico (lombalgia, cervicalgia, artrosi)",
@@ -66,33 +103,11 @@ export default function ContentPage() {
 
     ]
 
-    const sideInfo = [
-        {
-            id: 1,
-            route: "/info/1",
-            title: "OZONOTERAPIA"
-        },
-        {
-            id: 2,
-            route: "/info/1/2",
-            title: "Storia Ozonoterapia"
-        },
-        {
-            id: 3,
-            route: "/info/1/3",
-            title: "Esponenti Ozonoterapia"
-        },
-        {
-            id: 4,
-            route: "",
-            title: "Cose Ozonoterapia"
-        },
 
-    ]
 
     return (
         <>
-            <SidebarComponent infos={sideInfo} />
+
             <div className="flex sidebar-space">
 
 

@@ -98,29 +98,7 @@ export default function OzonoPeoplePage() {
 
     ]
 
-    const sideInfo = [
-        {
-            id: 1,
-            route: "/info/4",
-            title: "SCRAMBLER THERAPY®"
-        },
-        {
-            id: 2,
-            route: "/info/4/2",
-            title: "Storia scrambler"
-        },
-        {
-            id: 3,
-            route: "/info/4/3",
-            title: "Esponenti scrambler"
-        },
-        {
-            id: 4,
-            route: "",
-            title: "Cose scramblers"
-        },
 
-    ]
 
     return (
         <div className="flex">
@@ -130,7 +108,7 @@ export default function OzonoPeoplePage() {
 
 
 
-                <h1 className="text-center font-bold mt-30">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
+                <h1 className="text-center font-bold mt-30">PRINCIPALE ESPONENTE DELL'OZONOTERAPIA</h1>
 
                 <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
 
@@ -142,7 +120,7 @@ export default function OzonoPeoplePage() {
 
                         <div className="text-(--dark-theme) gap-5 my-auto">
 
-                            <h1 className="mb-5 mt-3 font-bold text-center lg:text-left">Dtt. Giuseppe Marineo</h1>
+                            <h1 className="mb-5 mt-3 font-bold text-center lg:text-left">Prof. Velio Bocci</h1>
 
                             <p>
                                 Ricercatore/ingegnere/biofisico italiano legato all’Università di Roma Tor Vergata e al centro Delta Research & Development; Marineo è riconosciuto come l’inventore e il principale autore della teoria e della tecnologia Scrambler
