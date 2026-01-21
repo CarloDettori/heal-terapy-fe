@@ -28,7 +28,7 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="p-10 flex flex-col z-500 text-white bg-(--dark-theme) text-(--lightest-theme)">
+        <footer className="p-10 flex flex-col z-500 text-white bg-(--dark-theme) text-(--lightest-theme) border-top-theme">
 
             <div className="my-20 mx-auto p-10 flex flex-col gap-5 max-w-130 border rounded-4xl">
 

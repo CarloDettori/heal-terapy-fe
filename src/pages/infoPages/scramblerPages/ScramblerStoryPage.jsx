@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import SidebarComponent from "../../../components/common/SidebarCompnent";
+
 
 
 export default function ScramblerStoryPage() {
@@ -124,7 +124,7 @@ export default function ScramblerStoryPage() {
 
     return (
         <div className="flex">
-            <SidebarComponent infos={sideInfo} />
+
 
             <section className="sidebar-space">
 
