@@ -30,7 +30,14 @@ export default function ContentPage() {
                     title: "Esponenti Ozonoterapia",
 
 
+                }, {
+                    id: 5,
+                    route: "/info/1/4",
+                    title: "Domande frequenti",
+
+
                 },
+
 
 
             ]);

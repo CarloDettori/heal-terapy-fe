@@ -167,8 +167,8 @@ export default function ScramblerStoryPage() {
 
                     <h1 className="text-center mt-30 mb-20  text-page-size font-bold">TUTTO NASCE DALLA NECESSITA' DI UNA TERAPIA PER IL DOLORE CRONICO NEUROPATICO ED ONCOLOGICO</h1>
 
-                    <div className="flex w-full rounded-xl bg-white p-10 mb-10">
-                        <img src="/scrambler-story-image.jpg" alt="" />
+                    <div className="flex w-full rounded-4xl bg-white p-10 mb-10">
+                        <img className="rounded-2xl" src="/scrambler-story-image.jpg" alt="" />
 
                         <h2 className="ms-10">
                             Verso la metà degli anni ’80 ho completato lo sviluppo di un modello teorico che interpretava su base biofisica le dinamiche dei processi patologici cronico-degenerativi, ed in maniera più generale dell’invecchiamento organico. Sulla base di questo modello teorico ho successivamente sviluppato una tecnologia (Sistemi a Variazione di Entropia Delta-S) che coerentemente con questi principi era potenzialmente in grado di riattivare processi rigenerativi di tessuti ed organi senza l’utilizzo di cellule staminali.

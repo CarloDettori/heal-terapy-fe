@@ -148,7 +148,7 @@ export default function ScramblerPeoplePage() {
                 <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
 
                     <div className="lg:flex lg:gap-5">
-                        <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/doctor.png" alt="" />
+                        <img className="rounded-2xl my-auto lg:my-auto max-w-50 mx-auto" src="/scrambler-story-image.jpg" alt="" />
 
 
                         <div className="text-(--dark-theme) gap-5 my-auto">

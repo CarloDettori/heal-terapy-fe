@@ -22,6 +22,7 @@ import ScramblerAskPage from "./pages/infoPages/scramblerPages/ScramblerAskPage.
 import ScramblerTutorialPage from "./pages/infoPages/scramblerPages/ScramblerTutorialPage.jsx";
 import OzonoStoryPage from "./pages/infoPages/OzonoPages/OzonoStoryPage.jsx";
 import OzonoPeoplePage from "./pages/infoPages/OzonoPages/OzonoPeoplePage.jsx";
+import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
 function App() {
 
   return (
@@ -36,7 +37,7 @@ function App() {
             <Route path="/info/1" element={<OzonoterapiaPage />} />
             <Route path="/info/1/2" element={<OzonoStoryPage />} />
             <Route path="/info/1/3" element={<OzonoPeoplePage />} />
-            <Route path="/info/1/4" element={<ScramblerStoryPage />} />
+            <Route path="/info/1/4" element={<OzonoAskPage />} />
             <Route path="/info/2" element={<OzonoterapiaPage />} />
             <Route path="/info/3" element={<AestheticPage />} />
             <Route path="/info/4" element={<ScramblerTreapyPage />} />

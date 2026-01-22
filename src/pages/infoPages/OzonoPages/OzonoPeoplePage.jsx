@@ -33,6 +33,13 @@ export default function OzonoPeoplePage() {
 
 
                 },
+                {
+                    id: 5,
+                    route: "/info/1/4",
+                    title: "Domande frequenti",
+
+
+                },
 
 
             ]);
@@ -83,7 +90,7 @@ export default function OzonoPeoplePage() {
             <div className="bg-white rounded-2xl p-10 lg:flex lg:gap-5">
 
 
-                <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/doctor.png" alt="" />
+                <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/velio-bocci.jpg" alt="" />
 
 
                 <div className="text-(--dark-theme) gap-5 my-auto">
