@@ -160,18 +160,18 @@ export default function ContentPage() {
 
                 <ScramblerGameComponent />
 
-                <h1 className="text-center mb-20 font-bold">PATOLOGIE INDICATE</h1>
+                <h1 className=" mb-5 font-bold">PATOLOGIE INDICATE</h1>
 
-                <div className="my-10 max-w-300 mx-auto flex flex-wrap gap-10 justify-center">
+                <div className=" mx-5 mb-20 flex flex-col gap-3">
 
                     {scramblerTarget.map((target, index) => {
                         return (
 
-                            <div key={index + 1} className="flex flex-col p-10 gap-3 max-w-80 text-center justify-center rounded-xl bg-white">
-                                <img src="/logo.png" alt="icon" />
-                                <h2 className="font-bold">{target}</h2>
 
-                            </div>
+
+                            <h2 key={index + 1}>{target}</h2>
+
+
 
                         )
                     })}
@@ -179,7 +179,23 @@ export default function ContentPage() {
                 </div>
 
 
+                <h1 className=" mb-5 font-bold">SCRAMBLER THERAPY NEGLI STATI UNITI</h1>
 
+                <div className=" mx-5 mb-20 flex flex-col gap-3">
+
+                    {scramblerUsa.map((target, index) => {
+                        return (
+
+
+
+                            <h2 key={index + 1}>{target}</h2>
+
+
+
+                        )
+                    })}
+
+                </div>
 
             </section>
         </div>
