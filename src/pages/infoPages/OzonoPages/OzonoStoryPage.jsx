@@ -1,132 +1,171 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import SidebarComponent from "../../../components/common/SidebarCompnent";
+
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../../../context/GlobalContext";
 
 
 export default function OzonoStoryPage() {
 
+    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
+
+    useEffect(() => {
+        setShowbar(true)
+        // Imposta i link specifici per questa pagina
+        setSidebarLinks(
+            [
+
+                {
+                    id: 1,
+                    route: "/info/1",
+                    title: "OZONOTERAPIA",
+
+                },
+
+                {
+                    id: 3,
+                    route: "/info/1/2",
+                    title: "Storia Ozonoterapia",
+
+                },
+                {
+                    id: 4,
+                    route: "/info/1/3",
+                    title: "Esponenti Ozonoterapia",
 
 
-    const scramblerTarget = [
+                },
 
-        "dolore neuropatico cronico",
 
-        "dolore oncologico",
-
-        "dolore post-chirurgico resistente ad altre terapie",
-
-    ]
+            ]);
 
 
 
-    const scramblerUsa = [
+    }, []);
 
-        "In USA, la distribuzione/commercializzazione della versione “Calmare” è stata curata da organizzazioni come Delta International Services & Logistics (DIS&L) che ha l’accordo internazionale per la tecnologia. ",
+    const timeline = [
 
-        "Clinici e centri che la presentano e applicano: ad esempio il centro citato a Los Angeles: Calmare® Scrambler Therapy Los Angeles con il Dr. Damon Orlando, che rende nota l’applicazione negli USA",
-
-        "Nelle Forze Armate USA e sistemi sanitari militari: citato l’uso alla Joint Base Andrews, come detto sopra",
-
-    ]
-
-    const scramblerTimeline = [
         {
             id: 1,
-            year: "2001–2003",
-            event: "deposito di brevetti e prime sperimentazioni cliniche/pilot (es. studi su dolore viscerale da tumore)"
+            title: "XIX secolo – La scoperta dell’ozono",
+            list: [
+                "1840: il chimico tedesco Christian Friedrich Schönbein identifica l’ozono come gas distinto dall’ossigeno",
+                "Viene presto notata la sua forte capacità ossidante e il potere disinfettante.",
+            ]
+
         },
         {
             id: 2,
-            year: "2000–2005",
-            event: "articoli descrittivi/introduzione della tecnica su riviste tecniche e cliniche."
+            title: "Fine XIX – inizi XX secolo – I primi usi medici",
+            list: [
+                "L’ozono viene impiegato per disinfettare acqua e ambienti ospedalieri.",
+                "Nascono i primi generatori di ozono per uso medico.",
+                "In Germania e Francia si sperimenta l’uso su ferite infette e ulcere.",
+            ]
+
         },
         {
             id: 3,
-            year: "2009",
-            event: "clearance FDA 510(k) per il dispositivo MC-5A (documento FDA 2009)"
+            title: "Prima Guerra Mondiale (1914–1918)",
+            list: [
+                "L’ozono viene usato per trattare ferite dei soldati, gangrene e infezioni, in assenza di antibiotici.",
+                "Risultati considerati incoraggianti per la riduzione delle infezioni e degli odori necrotici.",
+            ]
+
         },
         {
             id: 4,
-            year: "2012",
-            event: "pilot RCT guidato da Marineo che mostra riduzione del dolore rispetto al trattamento farmacologico standard in un piccolo studio randomizzato"
+            title: "Anni ’30–’50 – Sviluppo delle tecniche",
+            list: [
+                "Si diffonde la autoemotrasfusione ozonizzata.",
+                "L’ozonoterapia entra nella pratica di alcuni medici europei, soprattutto in Germania, Svizzera e Italia.",
+                "Con l’avvento degli antibiotici, l’interesse scientifico diminuisce.",
+            ]
+
         },
         {
             id: 5,
-            year: "2013",
-            event: "emissione di brevetto USA (es. US 8,380,317 collegato alla tecnologia)."
+            title: "Anni ’60–’70 – Periodo di marginalità",
+            list: [
+                "La medicina ufficiale privilegia farmaci e chirurgia.",
+                "L’ozonoterapia resta confinata a pratiche complementari, spesso senza standard condivisi.",
+            ]
+
         },
         {
             id: 6,
-            year: "2019",
-            event: "review/descrizione estesa di Marineo che espone il modello teorico su Integrative Cancer Therapies"
+            title: "Anni ’80–’90 – Ripresa e standardizzazione",
+            list: [
+                "Migliorano i generatori medicali (dosaggi più precisi).",
+                "In Italia nascono le prime società scientifiche di ozonoterapia",
+                "Si studiano i meccanismi biochimici: stress ossidativo controllato e risposta antiossidante",
+            ]
+
         },
         {
             id: 7,
-            year: "2020 e oltre:",
-            event: "versioni aggiornate del dispositivo e articoli successivi; nel settore permangono studi, revisioni e discussioni sull’efficacia e sui protocolli"
+            title: "XXI secolo – Uso selettivo e ricerca",
+            list: [
+                "L’ozonoterapia viene studiata soprattutto per:",
+                {
+                    sublist: [
+                        "dolore lombare ed ernia del disco",
+                        "medicina del dolore",
+                        "patologie vascolari croniche",
+                    ],
+                },
+                "Rimane terapia complementare, con accettazione variabile a livello internazionale.",
+                "In Italia è atto medico se praticata da personale formato.",
+            ]
+
         },
-    ]
-
-    const ScramblerWorth = [
-
-        "Alternativa non farmacologica: in un’epoca in cui il dolore cronico – e la dipendenza da oppioidi – è un grande problema negli Stati Uniti, una tecnologia che promette sollievo senza farmaci assunzione è molto rilevante. Ad esempio, la nota della Forza Aerea evidenzia che “NST (Nerve Scrambler Therapy) ha dimostrato di essere una valida alternativa agli oppioidi per ridurre o eliminare questo tipo di dolore”",
-
-        "Trattamento del dolore resistente: la tecnologia si rivolge a casi in cui altre terapie hanno fallito (dolore neuropatico refrattario, dolore oncologico, neuropatia da chemioterapia). Questo la rende un’opzione “ultima risorsa” per molti pazienti. ",
-
-        "Non invasiva e con tollerabilità elevata: essendo elettro-stimolazione cutanea, non chirurgica, senza gli effetti collaterali degli oppioidi (secondo i produttori e alcuni studi) e quindi attraente per pazienti e clinici",
-
-        "Innovazione nel concetto: l’idea di “messaggio no-dolore” che sostituisce il segnale di dolore è una modalità meno tradizionale rispetto ai trattamenti tradizionali del dolore (farmaci, blocchi nervosi, stimolatori spinali). Quindi in questo senso può considerarsi innovativa",
-
-        "Potenziale impatto organizativo: se efficace, può ridurre costi di gestione del dolore cronico, ospedalizzazioni, uso di farmaci, dipendenze e migliorare qualità di vita.",
-
 
     ]
 
-    const scramblerLimits = [
 
-        "L’evidenza scientifica non è ancora consolidata: una politica assicurativa (Optum) dichiara che “Calmare (‘scrambler’) pain therapy treatment … è considerato sperimentale e non medico-necessario per il trattamento del dolore neuropatico non oncologico” per mancanza di studi a lungo termine e dati funzionali/disabilità correlati. ",
-
-        "Metanalisi recenti suggeriscono che ci sia “evidenza iniziale” ma non forte per certe indicazioni. Ad esempio su Wikipedia si riporta che la ricerca è “limitata”",
-
-        "Non tutti i pazienti rispondono: uno studio multicentrico su 147 pazienti ha trovato un tasso di successo (~>50% di sollievo >1 mese) solo nel 38,1% dei casi",
-
-        "Costo e copertura assicurativa: in alcuni casi la terapia non è coperta da assicurazione, richiede pagamento diretto. Esempio: uno studio di centro a New York afferma che la terapia “non è coperta dall’assicurazione” per Scrambler/Calmare ",
-
-        "Innovativa sì, ma rimane una tecnologia con prove limitate: l’innovazione sta nel concetto informazionale e nella modalità di stimolazione, ma finché non ci sono grandi RCT (randomised controlled trials) indipendenti con follow up lungo, rimane “promettente” più che “definitivamente comprovata” ",
-
-        "Non adatta a tutti i tipi di dolore: ad esempio, un sito specifica che non tutti i tipi di dolore (non neuropatici) sono candidabili.",
-
-    ]
 
 
     return (
-        <div className="flex">
 
+        <section>
 
-            <section className="sidebar-space">
-
-
-
-
-                <div className="my-10 p-10">
-
-                    <h1 className="mb-3 font-bold">STORIA OZONOTERAPIA</h1>
-
-                    {
-                        scramblerUsa.map((info, index) => {
-                            return (
-                                <h2 key={index + 1} className="my-5">
-                                    {info}
-                                </h2>
-                            )
-                        })
-                    }
-
-                </div>
+            <h1 className="text-center mt-30 mb-20  text-page-size"><strong>STORIA DELL' OZONOTERAPIA</strong></h1>
+            <h2 className="mx-1 rounded-xl bg-white p-10 text-center font-bold">
+                La storia dell’ozonoterapia si intreccia con la scoperta dell’ozono, l’evoluzione della chimica moderna e l’uso medico dei gas.
+            </h2>
 
 
 
-            </section>
-        </div>
+            <h1 className="mt-10 px-5 mb-3 font-bold">LINEA DEL TEMPO</h1>
+            <div className="w-full px-10 mb-20 flex flex-col gap-5">
+                {timeline.map((event) => {
+                    return (
+
+                        <div key={event.id} className="flex flex-col gap-1  ">
+                            <h2 className="font-bold">{event.title}</h2>
+
+                            {event.list.map((li, index) => {
+                                return (
+                                    <div key={index} className=" flex flex-col px-5">
+                                        {typeof li === 'string' ? (
+                                            <h2>{li}</h2>
+                                        ) : (
+                                            <ul className="px-5">
+                                                {li.sublist.map((subli, subindex) => (
+                                                    <li key={subindex + 1}>-{subli}</li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )
+                })}
+            </div>
+
+
+
+
+
+        </section>
     )
 }

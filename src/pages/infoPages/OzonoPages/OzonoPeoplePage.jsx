@@ -1,155 +1,142 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../../../context/GlobalContext";
 
 
 
 export default function OzonoPeoplePage() {
 
+    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
+
+    useEffect(() => {
+        setShowbar(true)
+        // Imposta i link specifici per questa pagina
+        setSidebarLinks(
+            [
+
+                {
+                    id: 1,
+                    route: "/info/1",
+                    title: "OZONOTERAPIA",
+
+                },
+
+                {
+                    id: 3,
+                    route: "/info/1/2",
+                    title: "Storia Ozonoterapia",
+
+                },
+                {
+                    id: 4,
+                    route: "/info/1/3",
+                    title: "Esponenti Ozonoterapia",
 
 
-    const scramblerTarget = [
+                },
 
-        "dolore neuropatico cronico",
 
-        "dolore oncologico",
-
-        "dolore post-chirurgico resistente ad altre terapie",
-
-    ]
+            ]);
 
 
 
-    const scramblerUsa = [
+    }, []);
 
-        "In USA, la distribuzione/commercializzazione della versione “Calmare” è stata curata da organizzazioni come Delta International Services & Logistics (DIS&L) che ha l’accordo internazionale per la tecnologia. ",
+    const veliosLife = [
 
-        "Clinici e centri che la presentano e applicano: ad esempio il centro citato a Los Angeles: Calmare® Scrambler Therapy Los Angeles con il Dr. Damon Orlando, che rende nota l’applicazione negli USA",
+        "Prof. Velio Bocci nacque in Italia, si laureò in Medicina e Chirurgia presso l’Università di Siena nel 1954.",
 
-        "Nelle Forze Armate USA e sistemi sanitari militari: citato l’uso alla Joint Base Andrews, come detto sopra",
+        "Dopo la laurea iniziò come assistente prima in Clinica chirurgica generale, poi in Fisiologia generale, sempre presso la stessa università.",
 
-    ]
+        "Nel 1981 divenne Direttore dell’Istituto di Fisiologia generale (poi Fisiologia generale e Scienza dell’alimentazione) della Facoltà di Farmacia presso l’Università di Siena. ",
 
-    const scramblerTimeline = [
-        {
-            id: 1,
-            year: "2001–2003",
-            event: "deposito di brevetti e prime sperimentazioni cliniche/pilot (es. studi su dolore viscerale da tumore)"
-        },
-        {
-            id: 2,
-            year: "2000–2005",
-            event: "articoli descrittivi/introduzione della tecnica su riviste tecniche e cliniche."
-        },
-        {
-            id: 3,
-            year: "2009",
-            event: "clearance FDA 510(k) per il dispositivo MC-5A (documento FDA 2009)"
-        },
-        {
-            id: 4,
-            year: "2012",
-            event: "pilot RCT guidato da Marineo che mostra riduzione del dolore rispetto al trattamento farmacologico standard in un piccolo studio randomizzato"
-        },
-        {
-            id: 5,
-            year: "2013",
-            event: "emissione di brevetto USA (es. US 8,380,317 collegato alla tecnologia)."
-        },
-        {
-            id: 6,
-            year: "2019",
-            event: "review/descrizione estesa di Marineo che espone il modello teorico su Integrative Cancer Therapies"
-        },
-        {
-            id: 7,
-            year: "2020 e oltre:",
-            event: "versioni aggiornate del dispositivo e articoli successivi; nel settore permangono studi, revisioni e discussioni sull’efficacia e sui protocolli"
-        },
-    ]
+        "Iniziò ricerche fin dagli anni ’60‐’70 su molecole quali le citochine e l’interferone, ponendosi come “pioniere” in tali ambiti della fisiologia e fisiopatologia. ",
 
-    const ScramblerWorth = [
+        "Fu visiting scholar nel programma Fulbright Program (Anno accademico 1967-1968) presso la University at Buffalo (USA) come studioso non-statunitense. ",
 
-        "Alternativa non farmacologica: in un’epoca in cui il dolore cronico – e la dipendenza da oppioidi – è un grande problema negli Stati Uniti, una tecnologia che promette sollievo senza farmaci assunzione è molto rilevante. Ad esempio, la nota della Forza Aerea evidenzia che “NST (Nerve Scrambler Therapy) ha dimostrato di essere una valida alternativa agli oppioidi per ridurre o eliminare questo tipo di dolore”",
-
-        "Trattamento del dolore resistente: la tecnologia si rivolge a casi in cui altre terapie hanno fallito (dolore neuropatico refrattario, dolore oncologico, neuropatia da chemioterapia). Questo la rende un’opzione “ultima risorsa” per molti pazienti. ",
-
-        "Non invasiva e con tollerabilità elevata: essendo elettro-stimolazione cutanea, non chirurgica, senza gli effetti collaterali degli oppioidi (secondo i produttori e alcuni studi) e quindi attraente per pazienti e clinici",
-
-        "Innovazione nel concetto: l’idea di “messaggio no-dolore” che sostituisce il segnale di dolore è una modalità meno tradizionale rispetto ai trattamenti tradizionali del dolore (farmaci, blocchi nervosi, stimolatori spinali). Quindi in questo senso può considerarsi innovativa",
-
-        "Potenziale impatto organizativo: se efficace, può ridurre costi di gestione del dolore cronico, ospedalizzazioni, uso di farmaci, dipendenze e migliorare qualità di vita.",
+        "Venne nominato Professore Emerito all’Università di Siena nel maggio 2003.",
 
 
     ]
 
-    const scramblerLimits = [
+    const veliosWork = [
 
-        "L’evidenza scientifica non è ancora consolidata: una politica assicurativa (Optum) dichiara che “Calmare (‘scrambler’) pain therapy treatment … è considerato sperimentale e non medico-necessario per il trattamento del dolore neuropatico non oncologico” per mancanza di studi a lungo termine e dati funzionali/disabilità correlati. ",
+        "Bocci fu autore di numerose pubblicazioni scientifiche, in particolare nel campo della fisiologia, delle citochine, e poi soprattutto della terapia mediante ozono (ozonoterapia). ",
 
-        "Metanalisi recenti suggeriscono che ci sia “evidenza iniziale” ma non forte per certe indicazioni. Ad esempio su Wikipedia si riporta che la ricerca è “limitata”",
+        "Un’opera di rilievo è il libro titolato Ozone: A New Medical Drug che esplora le basi biologiche dell’ozono e la sua applicazione medica.",
 
-        "Non tutti i pazienti rispondono: uno studio multicentrico su 147 pazienti ha trovato un tasso di successo (~>50% di sollievo >1 mese) solo nel 38,1% dei casi",
+        "Ha contribuito a standardizzare l’uso della ozonoterapia proponendo che l’ozono, molecola fortemente ossidante, “attivasse” risposte biologiche generando messaggeri chimici che potessero stimolare funzioni fisiologiche essenziali.",
 
-        "Costo e copertura assicurativa: in alcuni casi la terapia non è coperta da assicurazione, richiede pagamento diretto. Esempio: uno studio di centro a New York afferma che la terapia “non è coperta dall’assicurazione” per Scrambler/Calmare ",
+        "È spesso citato come “padre della ozonoterapia moderna” da associazioni specializzate. ",
 
-        "Innovativa sì, ma rimane una tecnologia con prove limitate: l’innovazione sta nel concetto informazionale e nella modalità di stimolazione, ma finché non ci sono grandi RCT (randomised controlled trials) indipendenti con follow up lungo, rimane “promettente” più che “definitivamente comprovata” ",
-
-        "Non adatta a tutti i tipi di dolore: ad esempio, un sito specifica che non tutti i tipi di dolore (non neuropatici) sono candidabili.",
+        "Ha promosso l’idea che terapie alternative a basso costo e con efficacia potenziale potessero essere integrate nei sistemi sanitari pubblici. ",
 
     ]
-
-
 
     return (
-        <div className="flex">
-
-
-            <section className="sidebar-space">
 
 
 
-                <h1 className="text-center font-bold mt-30">PRINCIPALE ESPONENTE DELL'OZONOTERAPIA</h1>
+        <section>
 
-                <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
+            <h1 className="text-center mt-30 mb-20  text-page-size"><strong>PRINCIPALE ESPONENTE DELL'OZONOTERAPIA IN ITALIA</strong></h1>
 
-                    <div className="lg:flex lg:gap-5">
-
-
-                        <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/doctor.png" alt="" />
+            <div className="bg-white rounded-2xl p-10 lg:flex lg:gap-5">
 
 
-                        <div className="text-(--dark-theme) gap-5 my-auto">
+                <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/doctor.png" alt="" />
 
-                            <h1 className="mb-5 mt-3 font-bold text-center lg:text-left">Prof. Velio Bocci</h1>
 
-                            <p>
-                                Ricercatore/ingegnere/biofisico italiano legato all’Università di Roma Tor Vergata e al centro Delta Research & Development; Marineo è riconosciuto come l’inventore e il principale autore della teoria e della tecnologia Scrambler
-                            </p>
+                <div className="text-(--dark-theme) gap-5 my-auto">
 
-                        </div>
+                    <h1 className="pb-5">
+                        <strong className="text-(--dark-theme) ">Dtt. Velio Bocci</strong>
+                    </h1>
 
-                    </div>
+                    <p>
+                        Velio Bocci è stato un medico-ricercatore italiano che ha operato all’Università di Siena, è stato pioniere nello studio delle citochine e dell’interferone, e ha concentrato buona parte della sua produzione scientifica sull’ozonoterapia, scrivendo testi e articoli che hanno contribuito a formalizzare questo campo. La sua importanza risiede tanto nei risultati e nella produzione scientifica quanto nel ruolo di “innovatore” che ha attraversato i confini tra fisiologia tradizionale e medicina integrativa.
+                    </p>
 
-                    <div className="my-10 w-full ">
-                        {scramblerTimeline.map((event) => {
-                            return (
 
-                                <div key={event.id} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
-                                    <h1 className="font-bold">{event.year}</h1>
-                                    <h2>{event.event}</h2>
-                                </div>
-                            )
-                        })}
-                    </div>
 
                 </div>
 
+            </div>
+
+            <div className="m-10 font-bold">
+                {
+                    veliosLife.map((info, index) => {
+                        return (
+                            <h2 className="my-5" key={index + 1}>
+                                {info}
+                            </h2>
+                        )
+                    })
+                }
+            </div>
+
+            <h1 className=" mt-20 mb-3 px-5 font-bold ">COSA HA FATTO / PRINCIPALI CONTRIBUTI</h1>
+
+            <div className=" flex flex-col gap-3 mb-10 px-10">
+
+
+
+                {
+                    veliosWork.map((info, index) => {
+                        return (
+                            <h2 key={index + 1}>
+                                {info}
+                            </h2>
+                        )
+                    })
+                }
+
+            </div>
 
 
 
 
 
-            </section>
-        </div>
+
+        </section>
     )
 }

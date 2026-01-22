@@ -17,6 +17,9 @@ import FibromialgiaPage from "./pages/infoPages/FibromialgiaPage.jsx"
 import TratMininvasiviPage from "./pages/infoPages/TratMininvasiviPage.jsx"
 import ScramblerStoryPage from "./pages/infoPages/scramblerPages/ScramblerStoryPage.jsx";
 import ScramblerPeoplePage from "./pages/infoPages/scramblerPages/ScramblerPeoplePage.jsx";
+import ScramblerMythsPage from "./pages/infoPages/scramblerPages/ScramblerMythPage.jsx";
+import ScramblerAskPage from "./pages/infoPages/scramblerPages/ScramblerAskPage.jsx";
+import ScramblerTutorialPage from "./pages/infoPages/scramblerPages/ScramblerTutorialPage.jsx";
 import OzonoStoryPage from "./pages/infoPages/OzonoPages/OzonoStoryPage.jsx";
 import OzonoPeoplePage from "./pages/infoPages/OzonoPages/OzonoPeoplePage.jsx";
 function App() {
@@ -39,7 +42,9 @@ function App() {
             <Route path="/info/4" element={<ScramblerTreapyPage />} />
             <Route path="/info/4/2" element={<ScramblerStoryPage />} />
             <Route path="/info/4/3" element={<ScramblerPeoplePage />} />
-            <Route path="/info/4/4" element={<ScramblerTreapyPage />} />
+            <Route path="/info/4/4" element={<ScramblerMythsPage />} />
+            <Route path="/info/4/5" element={<ScramblerAskPage />} />
+            <Route path="/info/4/6" element={<ScramblerTutorialPage />} />
             <Route path="/info/5" element={<FibromialgiaPage />} />
             <Route path="/info/6" element={<RigenerazioneArticolarePage />} />
             <Route path="/info/7" element={<TratMininvasiviPage />} />

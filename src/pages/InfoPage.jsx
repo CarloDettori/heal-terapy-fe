@@ -189,6 +189,7 @@ export default function InfoPage() {
                                 {info.lists ?
                                     <ul className="flex flex-col gap-3">
 
+
                                         {info.lists.map((li) => {
 
                                             return (

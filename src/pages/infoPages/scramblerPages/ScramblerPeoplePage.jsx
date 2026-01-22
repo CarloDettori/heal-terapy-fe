@@ -1,11 +1,48 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../../../context/GlobalContext";
 
 
 export default function ScramblerPeoplePage() {
 
+    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
 
+    useEffect(() => {
+        setShowbar(true)
+        setSidebarLinks(
+            [
+                {
+                    id: 1,
+                    route: "/info/4",
+                    title: "SCRAMBLER THERAPY®",
+                },
+                {
+                    id: 2,
+                    route: "/info/4/2",
+                    title: "Storia Scrambler Therapy®",
+                },
+                {
+                    id: 3,
+                    route: "/info/4/3",
+                    title: "Esponenti Scrambler Therapy®",
+                },
+                {
+                    id: 4,
+                    route: "/info/4/4",
+                    title: "Miti infondati sulla Scrambler Therapy®",
+                },
+                {
+                    id: 5,
+                    route: "/info/4/5",
+                    title: "Domande frequenti",
+                },
+                {
+                    id: 6,
+                    route: "/info/4/6",
+                    title: "Video Conferenza Giuseppe Marineo",
+                },
+            ]);
+    }, []);
 
     const scramblerTarget = [
 
@@ -106,15 +143,11 @@ export default function ScramblerPeoplePage() {
 
             <section className="sidebar-space">
 
-
-
-                <h1 className="text-center font-bold mt-30">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
+                <h1 className="text-center font-bold mt-30 text-page-size">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
 
                 <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
 
                     <div className="lg:flex lg:gap-5">
-
-
                         <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/doctor.png" alt="" />
 
 
@@ -122,32 +155,26 @@ export default function ScramblerPeoplePage() {
 
                             <h1 className="mb-5 mt-3 font-bold text-center lg:text-left">Dtt. Giuseppe Marineo</h1>
 
-                            <p>
-                                Ricercatore/ingegnere/biofisico italiano legato all’Università di Roma Tor Vergata e al centro Delta Research & Development; Marineo è riconosciuto come l’inventore e il principale autore della teoria e della tecnologia Scrambler
-                            </p>
+                            <h2>
+                                Ricercatore / ingegnere / biofisico italiano legato all’Università di Roma Tor Vergata e al centro Delta Research & Development; Marineo è riconosciuto come l’inventore e il principale autore della teoria e della tecnologia Scrambler
+                            </h2>
 
                         </div>
-
-                    </div>
-
-                    <div className="my-10 w-full ">
-                        {scramblerTimeline.map((event) => {
-                            return (
-
-                                <div key={event.id} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
-                                    <h1 className="font-bold">{event.year}</h1>
-                                    <h2>{event.event}</h2>
-                                </div>
-                            )
-                        })}
                     </div>
 
                 </div>
 
+                <div className="my-10 w-full ">
+                    {scramblerTimeline.map((event) => {
+                        return (
 
-
-
-
+                            <div key={event.id} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
+                                <h1 className="font-bold">{event.year}</h1>
+                                <h2>{event.event}</h2>
+                            </div>
+                        )
+                    })}
+                </div>
 
             </section>
         </div>

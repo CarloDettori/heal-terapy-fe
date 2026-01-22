@@ -1,19 +1,71 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../../../context/GlobalContext";
 
 
 export default function ScramblerStoryPage() {
 
+    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
+
+    useEffect(() => {
+        setShowbar(true)
+        setSidebarLinks(
+            [
+                {
+                    id: 1,
+                    route: "/info/4",
+                    title: "SCRAMBLER THERAPY®",
+                },
+                {
+                    id: 2,
+                    route: "/info/4/2",
+                    title: "Storia Scrambler Therapy®",
+                },
+                {
+                    id: 3,
+                    route: "/info/4/3",
+                    title: "Esponenti Scrambler Therapy®",
+                },
+                {
+                    id: 4,
+                    route: "/info/4/4",
+                    title: "Miti infondati sulla Scrambler Therapy®",
+                },
+                {
+                    id: 5,
+                    route: "/info/4/5",
+                    title: "Domande frequenti",
+                },
+                {
+                    id: 6,
+                    route: "/info/4/6",
+                    title: "Video Conferenza Giuseppe Marineo",
+                },
+            ]);
+    }, []);
 
 
-    const scramblerTarget = [
+    const timeline = [
 
-        "dolore neuropatico cronico",
+        "Nel 2003 la ricerca ottenne l’approvazione europea per l’uso nella cirrosi epatica, con risultati di fase II pubblicati su riviste scientifiche indicizzate. Tuttavia, l’assenza di sponsor industriali impedì la prosecuzione verso studi clinici di fase III.",
 
-        "dolore oncologico",
+        "Successivamente questa linea di ricerca fu superata, nella diffusione scientifica, dagli studi sul dolore cronico che portarono alla Scrambler Therapy. Quest’ultima nacque indirettamente dagli studi sulla rigenerazione, inizialmente considerata solo un supporto secondario.",
 
-        "dolore post-chirurgico resistente ad altre terapie",
+        "Già alla fine degli anni ’80 avevo avviato due principali linee sperimentali per verificare l’applicabilità clinica delle mie ipotesi teoriche. La prima riguardava la cirrosi epatica, favorita dall’elevata capacità rigenerativa del fegato.",
+
+        "Nel 2003 tale ricerca fu approvata a livello europeo e i risultati di fase II pubblicati, ma la mancanza di risorse economiche ne bloccò lo sviluppo clinico avanzato. Nel frattempo, gli studi sul dolore cronico e la nascita della Scrambler Therapy presero il sopravvento, pur derivando dagli stessi presupposti rigenerativi.",
+
+        "La seconda linea di ricerca si concentrava sulla rigenerazione delle fibre nervose, allora considerata quasi irrealizzabile, nonostante le recenti scoperte sull’NGF. Questo ambito mi portò a confrontarmi con il dolore neuropatico, che rendeva estremamente difficile qualsiasi studio rigenerativo, e scoraggiava anche gli specialisti del dolore.",
+
+        "Per molto tempo cercai soluzioni attraverso numerose discipline, incluse agopuntura e ipnosi, senza risultati significativi. Stavo quindi valutando di abbandonare lo studio delle lesioni nervose per concentrarmi esclusivamente sulla cirrosi epatica, dove avevo già dati preliminari promettenti.",
+
+        "Proprio in quel periodo un’associazione di pazienti mi invitò a un incontro. Il confronto diretto con la loro sofferenza mi convinse che l’assenza di una cura non equivaleva necessariamente alla sua impossibilità.",
+
+        "Grazie alla mia formazione in neurofisiologia, integrai rapidamente le conoscenze sulla fisiopatologia del dolore cronico. Studiando la teoria del Gate Control, mi resi conto che essa spiegava efficacemente solo il dolore acuto, risultando invece illogica nel dolore cronico.",
+
+        "Consapevole del carattere eretico di questa conclusione, continuai ad approfondire la letteratura scientifica. Più studiavo, più si rafforzava in me la convinzione che la teoria dominante non fosse applicabile al dolore cronico, in particolare a quello neuropatico.",
+
+        "È in questo momento che nasce la Scrambler Therapy: individuato quello che ritenevo un errore concettuale, emerse anche una possibile soluzione, oggi divenuta una realtà clinica consolidata.",
 
     ]
 
@@ -109,25 +161,33 @@ export default function ScramblerStoryPage() {
 
 
 
-                <div className="my-10 p-10">
+                <div className="my-20">
 
-                    <h1 className="mb-3 font-bold">SCRUMBLER THERAPY NEGLI STATI UNITI</h1>
+                    <h1 className="text-center mt-30 mb-20 text-page-size font-bold">STORIA DELLA SCRAMBLER THERAPY®</h1>
 
-                    {
-                        scramblerUsa.map((info, index) => {
+                    <h1 className="text-center mt-30 mb-20  text-page-size font-bold">TUTTO NASCE DALLA NECESSITA' DI UNA TERAPIA PER IL DOLORE CRONICO NEUROPATICO ED ONCOLOGICO</h1>
+
+                    <div className="flex w-full rounded-xl bg-white p-10 mb-10">
+                        <img src="/scrambler-story-image.jpg" alt="" />
+
+                        <h2 className="ms-10">
+                            Verso la metà degli anni ’80 ho completato lo sviluppo di un modello teorico che interpretava su base biofisica le dinamiche dei processi patologici cronico-degenerativi, ed in maniera più generale dell’invecchiamento organico. Sulla base di questo modello teorico ho successivamente sviluppato una tecnologia (Sistemi a Variazione di Entropia Delta-S) che coerentemente con questi principi era potenzialmente in grado di riattivare processi rigenerativi di tessuti ed organi senza l’utilizzo di cellule staminali.
+
+                        </h2>
+                    </div>
+                    <div className="mx-10">
+                        {timeline.map((line) => {
                             return (
-                                <h2 key={index + 1} className="my-5">
-                                    {info}
+                                <h2 className="mb-10">
+                                    {line}
                                 </h2>
                             )
-                        })
-                    }
-
+                        })}
+                    </div>
                 </div>
 
-
-
             </section>
+
         </div>
     )
 }
