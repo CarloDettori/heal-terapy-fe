@@ -16,6 +16,12 @@ export default function Header() {
             route: "info",
             icon: "fa-solid fa-circle-info"
         },
+        {
+            id: 3,
+            name: "PRENOTA VISITA",
+            route: "reserve",
+            icon: "fa-solid fa-calendar-check"
+        },
     ]
 
 
@@ -36,7 +42,7 @@ export default function Header() {
                     return (
                         <NavLink key={page.id} id={`link-${page.id}`} className="navlink flex flex-col w-full px-2 text-center text-(--light-theme) cursor-pointer" to={page.route}>
                             <i className={`${page.icon} max-h-(--title-size) mx-auto mt-2`}></i>
-                            <h2 className="mx-auto">{page.name}</h2>
+                            <h2 className="mx-auto my-auto">{page.name}</h2>
                         </NavLink>
                     )
 

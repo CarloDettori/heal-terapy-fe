@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import UsPage from "./pages/UsPage.jsx";
 import ReservePage from "./pages/ReservePage.jsx";
+import PaymentSuccesPage from "./pages/booking/PaymentSuccesPage.jsx";
 import InfoPage from "./pages/InfoPage.jsx";
 import OzonoterapiaPage from "./pages/infoPages/OzonoterapiaPage.jsx"
 import ScramblerTreapyPage from "./pages/infoPages/ScramblerPage.jsx"
@@ -23,6 +24,7 @@ import ScramblerTutorialPage from "./pages/infoPages/scramblerPages/ScramblerTut
 import OzonoStoryPage from "./pages/infoPages/OzonoPages/OzonoStoryPage.jsx";
 import OzonoPeoplePage from "./pages/infoPages/OzonoPages/OzonoPeoplePage.jsx";
 import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
+
 function App() {
 
   return (
@@ -49,7 +51,8 @@ function App() {
             <Route path="/info/5" element={<FibromialgiaPage />} />
             <Route path="/info/6" element={<RigenerazioneArticolarePage />} />
             <Route path="/info/7" element={<TratMininvasiviPage />} />
-            <Route path="/contact" element={<ReservePage />} />
+            <Route path="/reserve" element={<ReservePage />} />
+            <Route path="/success" element={<PaymentSuccesPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
