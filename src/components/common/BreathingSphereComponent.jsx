@@ -70,8 +70,8 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
     ];
 
     const painLinks = [
-        { id: 3, title: "Scrambler Therapy", link: "/info/4" },
-        { id: 5, title: "Fibromialgia", link: "/info/5" },
+        { id: 4, title: "Patologie Trattate", link: "/info/8" },
+        { id: 3, title: "Le Tecniche", link: "/info/9" },
     ];
 
     function scrollTo(target) {

@@ -24,7 +24,8 @@ import ScramblerTutorialPage from "./pages/infoPages/scramblerPages/ScramblerTut
 import OzonoStoryPage from "./pages/infoPages/OzonoPages/OzonoStoryPage.jsx";
 import OzonoPeoplePage from "./pages/infoPages/OzonoPages/OzonoPeoplePage.jsx";
 import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
-
+import PatologyPage from "./pages/PatologyPage.jsx";
+import TherapiesPage from "./pages/TherapiesPage.jsx";
 function App() {
 
   return (
@@ -51,6 +52,8 @@ function App() {
             <Route path="/info/5" element={<FibromialgiaPage />} />
             <Route path="/info/6" element={<RigenerazioneArticolarePage />} />
             <Route path="/info/7" element={<TratMininvasiviPage />} />
+            <Route path="/info/8" element={<PatologyPage />} />
+            <Route path="/info/9" element={<TherapiesPage />} />
             <Route path="/reserve" element={<ReservePage />} />
             <Route path="/success" element={<PaymentSuccesPage />} />
           </Route>
