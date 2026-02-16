@@ -6,7 +6,7 @@ export default function Header() {
     const pages = [
         {
             id: 1,
-            name: "HOME",
+            name: "PAGINA INIZIALE",
             route: "",
             icon: "fa-solid fa-house"
         },

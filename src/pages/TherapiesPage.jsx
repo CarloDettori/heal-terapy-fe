@@ -15,7 +15,7 @@ export default function TherapiesPage() {
 
         },
         {
-            id: 2,
+            id: 4,
             title: "Scrambler Therapy (Calmare®)",
             subtitle: "calmare il dolore neuropatico",
             img: "/scrumbler.png",
