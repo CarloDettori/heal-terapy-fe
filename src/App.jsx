@@ -26,6 +26,8 @@ import OzonoPeoplePage from "./pages/infoPages/OzonoPages/OzonoPeoplePage.jsx";
 import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
 import PatologyPage from "./pages/PatologyPage.jsx";
 import TherapiesPage from "./pages/TherapiesPage.jsx";
+import BookingPage from "./pages/booking/BookingPage.jsx";
+import PrenotaPage from "./pages/booking/PrenotaPage.jsx";
 function App() {
 
   return (
@@ -37,6 +39,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/us" element={<UsPage />} />
             <Route path="/info" element={<InfoPage />} />
+            <Route path="/prenota" element={<PrenotaPage />} />
             <Route path="/info/1" element={<OzonoterapiaPage />} />
             <Route path="/info/1/2" element={<OzonoStoryPage />} />
             <Route path="/info/1/3" element={<OzonoPeoplePage />} />
