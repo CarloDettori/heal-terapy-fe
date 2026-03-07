@@ -1,6 +1,3 @@
-
-
-
 import { GlobalProvider } from "./context/GlobalContext.jsx";
 import DefaultLayout from "../src/layout/DefaultLayout.jsx";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -26,8 +23,12 @@ import OzonoPeoplePage from "./pages/infoPages/OzonoPages/OzonoPeoplePage.jsx";
 import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
 import PatologyPage from "./pages/PatologyPage.jsx";
 import TherapiesPage from "./pages/TherapiesPage.jsx";
-import BookingPage from "./pages/booking/BookingPage.jsx";
+import CheckoutPage from "./pages/booking/CheckoutPage.jsx";
 import PrenotaPage from "./pages/booking/PrenotaPage.jsx";
+import ConfermataPage from "./pages/booking/ConfermataPage.jsx";
+import AdminBookingsPage from "./pages/booking/AdminBookingsPage.jsx";
+import AdminClosedDaysPage from "./pages/booking/AdminClosedDaysPage.jsx";
+import AdminLoginPage from "./pages/booking/AdminLoginPage.jsx";
 function App() {
 
   return (
@@ -39,7 +40,10 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/us" element={<UsPage />} />
             <Route path="/info" element={<InfoPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/success" element={<PaymentSuccesPage />} />
             <Route path="/prenota" element={<PrenotaPage />} />
+            <Route path="/confermata" element={<ConfermataPage />} />
             <Route path="/info/1" element={<OzonoterapiaPage />} />
             <Route path="/info/1/2" element={<OzonoStoryPage />} />
             <Route path="/info/1/3" element={<OzonoPeoplePage />} />
@@ -58,7 +62,9 @@ function App() {
             <Route path="/info/8" element={<PatologyPage />} />
             <Route path="/info/9" element={<TherapiesPage />} />
             <Route path="/reserve" element={<ReservePage />} />
-            <Route path="/success" element={<PaymentSuccesPage />} />
+            <Route path="/admin/prenotazioni" element={<AdminBookingsPage />} />
+            <Route path="/admin/giorni-chiusi" element={<AdminClosedDaysPage />} />
+            <Route path="/admin/login" element={<AdminLoginPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

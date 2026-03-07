@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { NavLink, Link } from "react-router-dom";
 import logo from "/logo.png"
 
@@ -19,7 +19,7 @@ export default function Header() {
         {
             id: 3,
             name: "PRENOTA VISITA",
-            route: "reserve",
+            route: "checkout",
             icon: "fa-solid fa-calendar-check"
         },
     ]
@@ -37,7 +37,7 @@ export default function Header() {
 
             <nav className="flex justify-evenly gap-3 me-3">
 
-                {pages.map((page, index) => {
+                {pages.map((page) => {
 
                     return (
                         <NavLink key={page.id} id={`link-${page.id}`} className="navlink flex flex-col w-full px-2 text-center text-(--light-theme) cursor-pointer" to={page.route}>
