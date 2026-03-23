@@ -28,28 +28,44 @@ export default function CheckoutPage() {
     };
 
     return (
-        <div className="m-20 mt-30">
-            <h1 className="text-2xl font-bold mb-6">Prenota visita</h1>
+        <div className="mt-30">
+            <h1 className="text-center text-page-size font-bold mb-20 mt-30">PRENOTA UNA VISITA</h1>
 
-            <label className="block mb-2">Email</label>
-            <input
-                className="border p-2 rounded w-full max-w-md"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="nome@esempio.com"
-            />
+            <h2 className="font-bold text-center text-(--theme)">puoi prenotare online una visita in clinica</h2>
 
-            <p className="mt-4">
-                Tipo visita: <b>In presenza</b> (visite online non disponibili)
-            </p>
 
-            <button
-                className="mt-6 px-5 p-3 rounded-3xl border-theme text-(--theme) font-bold hover:text-white hover:bg-(--theme)"
-                onClick={startCheckout}
-                disabled={loading}
-            >
-                {loading ? "Reindirizzo..." : "Vai al pagamento"}
-            </button>
+
+            <div className="flex flex-col mx-auto p-20 max-w-180 h-full rounded-xl bg-white p-10 mt-10 gap-10">
+
+                <h1 className="font-bold">PRENOTAZIONE ONLINE</h1>
+
+
+                <h2>Inserisci la tua mail per prenotare una visita in ambulatorio. <br /> Per poter prenotare una visita è previsto un'acconto di <strong>30€</strong></h2>
+
+
+
+
+                <div>
+                    <label className="block mb-2">Email</label>
+                    <input
+                        className="border p-2 rounded w-full max-w-md"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="nome@esempio.com"
+                    />
+
+                    <p className="mt-4">
+                        Tipo visita: <b>In presenza</b> (visite online non disponibili)
+                    </p>
+                </div>
+                <button
+                    className="mt-6 px-5 p-3 rounded-3xl border-theme text-(--theme) font-bold hover:text-white hover:bg-(--theme)"
+                    onClick={startCheckout}
+                    disabled={loading}
+                >
+                    {loading ? "Reindirizzo..." : "Vai al pagamento"}
+                </button>
+            </div>
         </div>
     );
 }

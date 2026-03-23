@@ -2,6 +2,9 @@
 import HeroComponent from "../components/common/HeroComponent.jsx"
 import { useEffect, useContext, useRef } from "react";
 import { GlobalContext } from "../context/GlobalContext"
+import WhiteCard from "../components/ui/WhiteCard.jsx";
+import TextInfo from "../components/ui/TextInfo.jsx";
+
 export default function HomePage() {
 
     const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
@@ -140,32 +143,22 @@ export default function HomePage() {
 
     ]
 
-    const products = [
+    const healInfo = [
 
         {
             id: 1,
-            icon: "/acupunture.png",
-            description: "Agopuntura per anestesia",
+            title: "Stimolare i meccanismi biologici naturali",
+            description: "Alla base della medicina rigenerativa vi è l’utilizzo di metodiche che sfruttano le capacità intrinseche dell’organismo di riparare tessuti come cartilagine, tendini, legamenti, muscoli e ossa. L’obiettivo è favorire una guarigione biologica, non solo sintomatica.",
         },
         {
             id: 2,
-            icon: "/injection.png",
-            description: "Iniezione di anestetico in nervo periferico per analgesia",
+            title: "Approccio minimamente invasivo",
+            description: "I trattamenti rigenerativi sono generalmente mini-invasivi e mirano a ridurre il trauma chirurgico, i tempi di recupero e il rischio di complicanze, quando indicati e appropriati per il quadro clinico del paziente.",
         },
         {
             id: 3,
-            icon: "/laser.png",
-            description: "Laser terapia antalgica",
-        },
-        {
-            id: 4,
-            icon: "/ozone.png",
-            description: "Ozonoterapia",
-        },
-        {
-            id: 5,
-            icon: "/scrumbler.png",
-            description: "Innibizione dolore cronico tramite elettro-analgesia",
+            title: "Integrazione con altre terapie",
+            description: "La medicina rigenerativa non sostituisce la medicina tradizionale, ma si integra con essa. Può essere associata a programmi di riabilitazione, terapia del dolore e prevenzione, in un percorso terapeutico completo e coordinato.",
         }
 
     ]
@@ -202,10 +195,12 @@ export default function HomePage() {
             <HeroComponent regenerativeRef={regenerativeRef} painRef={painRef} />
 
             <section className="text-center">
+                <TextInfo customColor="--theme" customClass="text-page-size font-bold" >
+                    Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore cronico e alla rigenerazione dei tessuti.
+                </TextInfo>
 
-                <h1 className="my-20 pb-30 font-bold text-(--theme) text-page-size">
-                    Approccio innovativo, mini-invasivo e personalizzato <br />alla cura del dolore cronico e alla rigenerazione dei tessuti.
-                </h1>
+
+
                 <div className="flex flex-wrap justify-around my-20 gap-30">
 
                     {
@@ -233,92 +228,71 @@ export default function HomePage() {
 
                 {/* TERAPIA DEL DOLORE */}
                 <div className="mb-50" ref={painRef}></div>
-                <h1 className="text-center mb-10 font-bold text-page-size">PRINCIPI DELLA TERAPIA DELA DOLORE</h1>
+                <TextInfo customClass="text-page-size font-bold">PRINCIPI DELLA TERAPIA DELA DOLORE</TextInfo>
+                <TextInfo size={1}>La terapia del dolore è una disciplina medica dedicata alla diagnosi e al trattamento del dolore acuto e cronico, con l’obiettivo di migliorare la qualità di vita del paziente e ripristinare il miglior livello possibile di funzionalità.</TextInfo>
 
-                <h2 className="mt-10 mx-auto max-w-150">La terapia del dolore è una disciplina medica dedicata alla diagnosi e al trattamento del dolore acuto e cronico, con l’obiettivo di migliorare la qualità di vita del paziente e ripristinare il miglior livello possibile di funzionalità.</h2>
 
-                <h1 className="text-center mt-30 mb-10 font-bold text-page-size">Approccio centrato sul paziente</h1>
+                <TextInfo size={1} customClass="font-bold">Approccio centrato sul paziente</TextInfo>
 
-                <h2 className="mt-10 mx-auto max-w-200">Il trattamento del dolore si basa su una valutazione approfondita e personalizzata, che considera non solo la causa fisica del dolore, ma anche i fattori funzionali, psicologici e sociali che possono influenzarlo. Ogni percorso terapeutico è costruito sulle esigenze specifiche del paziente.</h2>
+                <TextInfo>Il trattamento del dolore si basa su una valutazione approfondita e personalizzata, che considera non solo la causa fisica del dolore, ma anche i fattori funzionali, psicologici e sociali che possono influenzarlo. Ogni percorso terapeutico è costruito sulle esigenze specifiche del paziente.</TextInfo>
 
-                <div className="rounded-xl bg-white p-20 mt-30 mx-auto max-w-150">
+                <WhiteCard>
 
-                    <h1 className="mb-10 font-bold">Trattamento multimodale</h1>
+                    <h1 className="font-bold">Trattamento multimodale</h1>
 
-                    <h2 className="mb-10 font-bold">La terapia del dolore utilizza un approccio integrato che può includere:</h2>
+                    <h2 className="font-bold">La terapia del dolore utilizza un approccio integrato che può includere:</h2>
 
-                    <div className="my-10 w-full">
+                    <div className="w-full">
                         {trattamentiMultimodali.map((trat, index) => {
                             return (
 
-                                <div key={index + 1} className="flex flex-col py-3 max-w-100 mx-auto justify-center">
+                                <div key={index + 1} className="flex flex-col py-3 mx-auto justify-center">
                                     <h2 className="">{trat}</h2>
                                 </div>
                             )
                         })}
                     </div>
 
-                    <h2 className=" font-bold">L’obiettivo non è solo ridurre il sintomo doloroso, ma agire sulle sue cause e prevenire la cronicizzazione.</h2>
+                    <h2 className="font-bold">L’obiettivo non è solo ridurre il sintomo doloroso, ma agire sulle sue cause e prevenire la cronicizzazione.</h2>
 
-                </div>
+                </WhiteCard>
 
-                <h1 className="mt-10 font-bold">Riduzione dell’impatto del dolore sulla vita quotidiana</h1>
+                <TextInfo size={1} customColor="--theme" customClass="font-bold">Riduzione dell’impatto del dolore sulla vita quotidiana</TextInfo>
 
-                <h2 className="mt-10 max-w-100 mx-auto">Il controllo del dolore permette al paziente di recuperare autonomia, migliorare il sonno, l’umore e la capacità di svolgere le attività quotidiane, riducendo il ricorso prolungato ai farmaci quando possibile.</h2>
+                <TextInfo customClass="font-bold">Il controllo del dolore permette al paziente di recuperare autonomia, migliorare il sonno, l’umore e la capacità di svolgere le attività quotidiane, riducendo il ricorso prolungato ai farmaci quando possibile.</TextInfo>
 
 
                 {/* MEDICINA RIGENERATIVA */}
                 <div className="mb-50" ref={regenerativeRef}></div>
-                <h1 className="text-center mb-10 font-bold text-page-size">PRINCIPI DELLA MEDICINA RIGENERATIVA</h1>
+                <TextInfo customClass="text-page-size font-bold">PRINCIPI DELLA MEDICINA RIGENERATIVA</TextInfo>
 
-                <h2 className="mt-10 mx-auto max-w-150">La medicina rigenerativa è un ambito innovativo della medicina che mira a stimolare i naturali processi di riparazione e rigenerazione dei tessuti danneggiati, favorendo il recupero funzionale.</h2>
-                <div className="flex flex-wrap gap-10 justify-center mt-20">
-                    <div className="rounded-xl bg-white p-20 max-w-150">
-                        <h1 className="text-center mb-10 font-bold text-page-size">Stimolare i meccanismi biologici naturali</h1>
+                <TextInfo size={1}>La medicina rigenerativa è un ambito innovativo della medicina che mira a stimolare i naturali processi di riparazione e rigenerazione dei tessuti danneggiati, favorendo il recupero funzionale.</TextInfo>
+                <div className="flex flex-wrap justify-center">
 
-                        <h2 className="mt-10 mx-auto">Alla base della medicina rigenerativa vi è l’utilizzo di metodiche che sfruttano le capacità intrinseche dell’organismo di riparare tessuti come cartilagine, tendini, legamenti, muscoli e ossa. L’obiettivo è favorire una guarigione biologica, non solo sintomatica.</h2>
-                    </div>
-
-                    <div className="rounded-xl bg-white p-20 max-w-150">
-                        <h1 className="text-center mb-10 font-bold text-page-size">Approccio minimamente invasivo</h1>
-
-                        <h2 className="mt-10 mx-auto max-w-200">I trattamenti rigenerativi sono generalmente mini-invasivi e mirano a ridurre il trauma chirurgico, i tempi di recupero e il rischio di complicanze, quando indicati e appropriati per il quadro clinico del paziente.</h2>
-                    </div>
-
-                    <div className="rounded-xl bg-white p-20  max-w-150">
-                        <h1 className="text-center mb-10 font-bold text-page-size">Integrazione con altre terapie</h1>
-
-                        <h2 className="mt-10 mx-auto max-w-200">La medicina rigenerativa non sostituisce la medicina tradizionale, ma si integra con essa. Può essere associata a programmi di riabilitazione, terapia del dolore e prevenzione, in un percorso terapeutico completo e coordinato.</h2>
-                    </div>
-                </div>
-                {/*<h1 className="my-20 mt-30 font-bold">COSA OFFRO?</h1>
-                <div className="flex mb-10 flex-wrap gap-10 justify-center">
                     {
-                        products.map((product) => {
+                        healInfo.map((card) => {
                             return (
-
-
-                                <div key={product.id} className=" max-w-50 bg-white p-5 rounded-2xl">
-                                    <img src={product.icon} alt="" />
-                                    <h2 className="home-corpo mt-3" >{product.description}</h2>
-                                </div>
-
+                                <WhiteCard key={card.id}>
+                                    <h1 className="font-bold">{card.title}</h1>
+                                    <h2>{card.description}</h2>
+                                </WhiteCard>
                             )
                         })
                     }
-                </div>*/}
+
+                </div>
 
                 <div className="flex flex-wrap gap-5 justify-center mt-30">
 
-                    <div>
-                        <h1 className="font-bold max-w-150  min-h-20 mx-auto">Integrazione tra Terapia del Dolore e Medicina Rigenerativa</h1>
-                        <div className="rounded-xl bg-white p-20 mt-10 mx-auto max-w-150">
+                    <div className="h-full">
+                        <TextInfo size={1} customClass="font-bold max-w-100">Integrazione tra Terapia del Dolore <br /> e Medicina Rigenerativa</TextInfo>
+                        <WhiteCard>
 
 
 
-                            <h2 className="mb-10 font-bold">L’unione tra terapia del dolore e medicina rigenerativa consente di affrontare il problema in modo globale:</h2>
+                            <h2 className="font-bold">L’unione tra terapia del dolore e medicina rigenerativa consente di affrontare il problema in modo globale:</h2>
 
-                            <div className="my-10 w-full">
+                            <div className=" w-full">
                                 {noDoloreSiRigenerazione.map((trat, index) => {
                                     return (
 
@@ -331,21 +305,21 @@ export default function HomePage() {
 
                             <h2 className="flex mt-auto font-bold">Questo approccio integrato è particolarmente indicato nelle patologie muscolo-scheletriche, degenerative e post-traumatiche.</h2>
 
-                        </div>
+                        </WhiteCard>
                     </div>
 
-                    <div>
-                        <h1 className="font-bold  max-w-150 min-h-20 mx-auto">Sicurezza, Appropriatezza e Personalizzazione</h1>
-                        <div className="rounded-xl bg-white p-20 mt-10 mx-auto max-w-150">
+                    <div className="h-full">
+                        <TextInfo size={1} customClass="font-bold">Sicurezza, Appropriatezza <br /> e Personalizzazione</TextInfo>
+                        <WhiteCard >
 
 
 
-                            <h2 className="mb-10 font-bold">Ogni trattamento viene proposto solo dopo una valutazione clinica accurata e nel rispetto delle linee guida scientifiche.
+                            <h2 className="font-bold">Ogni trattamento viene proposto solo dopo una valutazione clinica accurata e nel rispetto delle linee guida scientifiche.
                                 <br />
                                 La scelta terapeutica si basa su:
                             </h2>
 
-                            <div className="my-10 w-full">
+                            <div className="w-full">
                                 {sceltaTerapeutica.map((trat, index) => {
                                     return (
 
@@ -358,19 +332,19 @@ export default function HomePage() {
 
                             <h2 className=" font-bold">La sicurezza e l’efficacia del percorso terapeutico rappresentano elementi fondamentali dell’attività clinica.</h2>
 
-                        </div>
+                        </WhiteCard>
                     </div>
 
                 </div>
 
-                <div className="rounded-xl bg-white p-20 mt-30 mx-auto max-w-150">
+                <WhiteCard>
 
-                    <h1 className="mb-10 font-bold">Obiettivo della Clinica</h1>
+                    <h1 className="font-bold">OBBIETTIVO DELLA CLINICA</h1>
 
-                    <h2 className="mb-10 font-bold">L’obiettivo è offrire al paziente un percorso di cura <br /> basato su:
+                    <h2 className="font-bold">L’obiettivo è offrire al paziente un percorso di cura <br /> basato su:
                     </h2>
 
-                    <div className="my-10 w-full">
+                    <div className="w-full">
                         {obbiettiviClinica.map((trat, index) => {
                             return (
 
@@ -381,13 +355,13 @@ export default function HomePage() {
                         })}
                     </div>
 
-                    <h2 className=" font-bold">La sicurezza e l’efficacia del percorso terapeutico rappresentano elementi fondamentali dell’attività clinica.</h2>
+                    <h2 className="font-bold">La sicurezza e l’efficacia del percorso terapeutico rappresentano elementi fondamentali dell’attività clinica.</h2>
 
-                </div>
+                </WhiteCard>
 
 
 
-                <h1 className="mt-20 mb-10 mt-50 font-bold">COSA ASPETTARSI</h1>
+                <TextInfo size={1} customClass="font-bold mt-50 text-page-size">COSA ASPETTARSI</TextInfo>
                 <div className="flex flex-col gap-40 pb-30">
                     {
                         guides.map((guide) => {
@@ -404,7 +378,7 @@ export default function HomePage() {
                     }
                 </div>
 
-            </section>
+            </section >
 
         </>
     )
