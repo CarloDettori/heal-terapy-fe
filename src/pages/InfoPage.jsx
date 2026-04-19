@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom"
+import TextContainer from "../components/ui/TextContainer.jsx"
+import WhiteCard from "../components/ui/WhiteCard.jsx"
+import TextInfo from "../components/ui/TextInfo.jsx"
 
 export default function InfoPage() {
 
@@ -134,9 +137,9 @@ export default function InfoPage() {
 
             <h1 className="text-center text-page-size font-bold mb-20 mt-30">INFORMAZIONI</h1>
 
-            <div className="flex text-(--dark-theme) flex-col gap-10 mt-20 mb-10 p-10 bg-white rounded-4xl text-center max-w-230 mx-auto">
+            <WhiteCard>
 
-                <div className="flex flex-col gap-3">
+                <TextContainer>
 
                     <h1 className="font-bold">
                         Clinica di Terapia del Dolore e Medicina Rigenerativa
@@ -146,11 +149,11 @@ export default function InfoPage() {
                         Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore cronico e alla rigenerazione dei tessuti.
                     </h2>
 
-                </div>
+                </TextContainer>
 
 
 
-                <div className="flex flex-col gap-3">
+                <TextContainer>
 
                     <h1 className="font-bold" >
                         Visione e Filosofia
@@ -166,9 +169,9 @@ export default function InfoPage() {
                         <li><p>Selezione accurata del paziente, per garantire trattamenti mirati ed efficaci.</p></li>
                     </ul>
 
-                </div>
+                </TextContainer>
 
-            </div>
+            </WhiteCard>
 
             <h1 className="font-bold my-20 mb-0 p-10 text-center ">AREE DI COMPETENZA</h1>
 
@@ -178,7 +181,7 @@ export default function InfoPage() {
 
                     return (
 
-                        <Link to={`/info/${info.id}`} key={info.id} className="border-dark-theme p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100 hover:scale-102">
+                        <Link to={`/info/${info.id}`} key={info.id} className="shadow-lg p-10 flex flex-col gap-5 p-10 rounded-4xl bg-white max-w-100 hover:scale-102 hover:border">
                             <img className="max-w-50 mx-auto" src={info.img} alt="info-img" />
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-3">
@@ -217,13 +220,13 @@ export default function InfoPage() {
 
 
 
-            <h1 className="font-bold text-center">DOMANDE FREQUENTI</h1>
+            <TextInfo size={1} customClass="font-bold">DOMANDE FREQUENTI</TextInfo>
 
-            <div className="flex flex-col gap-5 m-20  p-20 bg-white border-dark-theme rounded-4xl">
+            <WhiteCard customClass="max-w-360 text-left">
                 {
                     faqs.map((faq) => {
                         return (
-                            <div key={faq.id} className="flex flex-col ">
+                            <div key={faq.id} className="flex flex-col gap-3">
                                 <h1 className="font-bold">{faq.question}</h1>
                                 <h2>{faq.answer}</h2>
                             </div>
@@ -232,9 +235,9 @@ export default function InfoPage() {
 
                     })
                 }
-            </div>
+            </WhiteCard>
 
-            <h1 className="text-center text-(--dark-theme) font-bold p-30">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</h1>
+            <TextInfo size={1} customClass="font-bold p-30 max-w-full" customColor="--theme">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</TextInfo>
 
 
 

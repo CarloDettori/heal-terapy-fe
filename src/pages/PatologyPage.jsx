@@ -1,4 +1,5 @@
-
+import TextContainer from "../components/ui/TextContainer.jsx"
+import TextInfo from "../components/ui/TextInfo"
 export default function PatologyPage() {
 
     const pathology = [
@@ -40,9 +41,9 @@ export default function PatologyPage() {
     return (
         <section>
 
-            <h1 className="text-center text-page-size font-bold mb-20 mt-30">PATOLOGIE TRATTATE IN TERAPIA DEL DOLORE</h1>
+            <TextInfo customClass=" text-page-size font-bold mt-30">PATOLOGIE TRATTATE IN TERAPIA DEL DOLORE</TextInfo>
 
-            <div className="flex flex-col gap-5 m-20  p-20">
+            <TextContainer customClass="gap-5 p-20">
                 {
                     pathology.map((pat, index) => {
                         return (
@@ -54,9 +55,9 @@ export default function PatologyPage() {
 
                     })
                 }
-            </div>
+            </TextContainer>
 
-            <h1 className="text-center text-(--dark-theme) font-bold p-30">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</h1>
+            <TextInfo size={1} customClass="font-bold p-30 max-w-full" customColor="--theme">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</TextInfo>s
 
 
 

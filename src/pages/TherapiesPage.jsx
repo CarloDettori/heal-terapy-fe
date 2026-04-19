@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import TextInfo from "../components/ui/TextInfo"
 
 export default function TherapiesPage() {
 
@@ -29,7 +30,7 @@ export default function TherapiesPage() {
     return (
         <section>
 
-            <h1 className="text-center text-page-size font-bold mb-20 mt-30">TECNICHE UTILIZZATE IN THERAPIA DEL DOLORE</h1>
+            <TextInfo customClass="text-page-size font-bold mt-30">TECNICHE UTILIZZATE IN THERAPIA DEL DOLORE</TextInfo>
 
             <div className="flex flex-wrap justify-center my-20 mt-0 p-10 gap-10">
 
@@ -73,7 +74,7 @@ export default function TherapiesPage() {
 
             </div>
 
-            <h1 className="text-center text-(--dark-theme) font-bold p-30">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</h1>
+            <TextInfo size={1} customColor="--theme" customClass="font-bold max-w-full">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</TextInfo>
 
 
 

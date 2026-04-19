@@ -249,9 +249,9 @@ export default function AdminBookingsPage() {
     };
 
     return (
-        <div className="m-10">
-            <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
-                <h1 className="text-2xl font-bold">Dashboard Prenotazioni</h1>
+        <section>
+            <div className="mt-30 flex items-center justify-between mb-6 gap-4 flex-wrap">
+                <h1 className="text-2xl font-bold">PRENOTAZIONI</h1>
 
                 <div className="flex gap-3">
                     <button
@@ -600,6 +600,6 @@ export default function AdminBookingsPage() {
                     {toast.message}
                 </div>
             )}
-        </div>
+        </section>
     );
 }

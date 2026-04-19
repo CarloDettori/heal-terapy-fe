@@ -4,7 +4,6 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import UsPage from "./pages/UsPage.jsx";
-import ReservePage from "./pages/ReservePage.jsx";
 import PaymentSuccesPage from "./pages/booking/PaymentSuccesPage.jsx";
 import InfoPage from "./pages/InfoPage.jsx";
 import OzonoterapiaPage from "./pages/infoPages/OzonoterapiaPage.jsx"
@@ -24,7 +23,6 @@ import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
 import PatologyPage from "./pages/PatologyPage.jsx";
 import TherapiesPage from "./pages/TherapiesPage.jsx";
 import CheckoutPage from "./pages/booking/CheckoutPage.jsx";
-import PrenotaPage from "./pages/booking/PrenotaPage.jsx";
 import ConfermataPage from "./pages/booking/ConfermataPage.jsx";
 import AdminBookingsPage from "./pages/booking/AdminBookingsPage.jsx";
 import AdminClosedDaysPage from "./pages/booking/AdminClosedDaysPage.jsx";
@@ -42,7 +40,6 @@ function App() {
             <Route path="/info" element={<InfoPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/success" element={<PaymentSuccesPage />} />
-            <Route path="/prenota" element={<PrenotaPage />} />
             <Route path="/confermata" element={<ConfermataPage />} />
             <Route path="/info/1" element={<OzonoterapiaPage />} />
             <Route path="/info/1/2" element={<OzonoStoryPage />} />
@@ -61,7 +58,6 @@ function App() {
             <Route path="/info/7" element={<TratMininvasiviPage />} />
             <Route path="/info/8" element={<PatologyPage />} />
             <Route path="/info/9" element={<TherapiesPage />} />
-            <Route path="/reserve" element={<ReservePage />} />
             <Route path="/admin/prenotazioni" element={<AdminBookingsPage />} />
             <Route path="/admin/giorni-chiusi" element={<AdminClosedDaysPage />} />
             <Route path="/admin/login" element={<AdminLoginPage />} />

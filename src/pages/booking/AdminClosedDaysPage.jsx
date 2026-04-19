@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import WhiteCard from "../../components/ui/WhiteCard.jsx"
+import TextInfo from "../../components/ui/TextInfo";
+import TextContainer from "../../components/ui/TextContainer";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
@@ -124,9 +127,9 @@ export default function AdminClosedDaysPage() {
     };
 
     return (
-        <div className="m-10">
-            <div className="flex justify-between items-center mb-6 gap-4 flex-wrap">
-                <h1 className="text-2xl font-bold">Giorni chiusi / ferie</h1>
+        <section>
+            <TextContainer customClass="mt-30 flex-row max-w-150 justify-between items-center gap-4">
+                <h1 className="text-page-size font-bold TEXT-LEFT">GIORNI CHIUSI</h1>
 
                 <button
                     className="px-4 py-2 rounded border text-red-600 border-red-300 hover:bg-red-50"
@@ -134,10 +137,10 @@ export default function AdminClosedDaysPage() {
                 >
                     Logout
                 </button>
-            </div>
+            </TextContainer>
 
-            <div className="bg-white border rounded-2xl p-6 shadow-sm mb-8">
-                <h2 className="text-lg font-bold mb-4">Blocca un giorno</h2>
+            <WhiteCard customClass="border text-left">
+                <h1 className="font-bold mb-4">BLOCCA UN GIORNO</h1>
 
                 <div className="mb-4">
                     <label className="block font-semibold mb-2">Seleziona la data</label>
@@ -184,7 +187,7 @@ export default function AdminClosedDaysPage() {
                 >
                     {loading ? "Salvo..." : "Blocca giorno"}
                 </button>
-            </div>
+            </WhiteCard>
 
             <div className="bg-white border rounded-2xl p-6 shadow-sm">
                 <h2 className="text-lg font-bold mb-4">Giorni già bloccati</h2>
@@ -232,6 +235,6 @@ export default function AdminClosedDaysPage() {
                     {toast.message}
                 </div>
             )}
-        </div>
+        </section>
     );
 }
