@@ -1,7 +1,8 @@
 
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
-
+import TextContainer from "../../../components/ui/TextContainer";
+import WhiteCard from "../../../components/ui/WhiteCard";
 
 export default function ScramblerStoryPage() {
 
@@ -153,41 +154,36 @@ export default function ScramblerStoryPage() {
 
 
     return (
-        <div className="flex">
+
+        <section>
+
+            <TextContainer>
+
+                <h1 className="text-center text-page-size font-bold">STORIA DELLA SCRAMBLER THERAPY®</h1>
+
+                <h1 className="text-center text-page-size font-bold">Tutto nasce dalla necessità' di una terapia per il dolore cronico neuropatico ed oncologico</h1>
+
+                <WhiteCard customClass="md:flex-row w-full rounded-4xl bg-white mb-10">
+                    <img className="rounded-2xl my-auto" src="/scrambler-story-image.jpg" alt="" />
+
+                    <h2>
+                        Verso la metà degli anni ’80 ho completato lo sviluppo di un modello teorico che interpretava su base biofisica le dinamiche dei processi patologici cronico-degenerativi, ed in maniera più generale dell’invecchiamento organico. Sulla base di questo modello teorico ho successivamente sviluppato una tecnologia (Sistemi a Variazione di Entropia Delta-S) che coerentemente con questi principi era potenzialmente in grado di riattivare processi rigenerativi di tessuti ed organi senza l’utilizzo di cellule staminali.
+
+                    </h2>
+                </WhiteCard>
+                <TextContainer className="mx-10">
+                    {timeline.map((line) => {
+                        return (
+                            <h2 className="mb-10">
+                                {line}
+                            </h2>
+                        )
+                    })}
+                </TextContainer>
+            </TextContainer>
+
+        </section>
 
 
-            <section className="sidebar-space">
-
-
-
-
-                <div className="my-20">
-
-                    <h1 className="text-center mt-30 mb-20 text-page-size font-bold">STORIA DELLA SCRAMBLER THERAPY®</h1>
-
-                    <h1 className="text-center mt-30 mb-20  text-page-size font-bold">TUTTO NASCE DALLA NECESSITA' DI UNA TERAPIA PER IL DOLORE CRONICO NEUROPATICO ED ONCOLOGICO</h1>
-
-                    <div className="flex w-full rounded-4xl bg-white p-10 mb-10">
-                        <img className="rounded-2xl" src="/scrambler-story-image.jpg" alt="" />
-
-                        <h2 className="ms-10">
-                            Verso la metà degli anni ’80 ho completato lo sviluppo di un modello teorico che interpretava su base biofisica le dinamiche dei processi patologici cronico-degenerativi, ed in maniera più generale dell’invecchiamento organico. Sulla base di questo modello teorico ho successivamente sviluppato una tecnologia (Sistemi a Variazione di Entropia Delta-S) che coerentemente con questi principi era potenzialmente in grado di riattivare processi rigenerativi di tessuti ed organi senza l’utilizzo di cellule staminali.
-
-                        </h2>
-                    </div>
-                    <div className="mx-10">
-                        {timeline.map((line) => {
-                            return (
-                                <h2 className="mb-10">
-                                    {line}
-                                </h2>
-                            )
-                        })}
-                    </div>
-                </div>
-
-            </section>
-
-        </div>
     )
 }

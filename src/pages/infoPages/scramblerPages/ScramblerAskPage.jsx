@@ -1,6 +1,8 @@
 
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
+import TextInfo from "../../../components/ui/TextInfo";
+import TextContainer from "../../../components/ui/TextContainer";
 
 
 export default function ScramblerAskPage() {
@@ -143,18 +145,12 @@ export default function ScramblerAskPage() {
 
     return (
 
+        <section>
+
+            <TextInfo customClass="text-page-size font-bold">DOMANDE FREQUENTI SULLA SCRAMBLER THERAPY®</TextInfo>
 
 
-        <section className="sidebar-space">
-
-
-
-
-            <div className="my-20">
-
-                <h1 className="text-center mt-30 mb-20 text-page-size font-bold">DOMANDE FREQUENTI SULLA SCRAMBLER THERAPY®</h1>
-
-
+            <TextContainer>
                 <div className="flex flex-col gap-8 px-5">
                     {faqs.map((faq) => {
                         return (
@@ -166,7 +162,7 @@ export default function ScramblerAskPage() {
                         )
                     })}
                 </div>
-            </div>
+            </TextContainer>
 
         </section>
 

@@ -1,6 +1,7 @@
 
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
+import TextContainer from "../../../components/ui/TextContainer";
 
 
 export default function OzonoAskPage() {
@@ -78,13 +79,13 @@ export default function OzonoAskPage() {
         },
         {
             id: 6,
-            question: "chi può sottoporsi all'ozonoterapia?",
-            truth: "La maggior parte delle persone può sottoporsi a questo trattamento, ma è importante consultare un medico specialista per determinare se è adatta al proprio caso specifico.",
+            question: "Chi può sottoporsi all'ozonoterapia?",
+            answer: "La maggior parte delle persone può sottoporsi a questo trattamento, ma è importante consultare un medico specialista per determinare se è adatta al proprio caso specifico.",
 
         },
         {
             id: 7,
-            question: "come viene somministrata l'ozonoterapia?",
+            question: "Come viene somministrata l'ozonoterapia?",
             answer: "Può essere somministrata tramite iniezioni locali, insufflazioni o altre modalità, a seconda della condizione da trattare.",
 
         },
@@ -148,27 +149,23 @@ export default function OzonoAskPage() {
 
 
 
-        <section className="sidebar-space">
+        <section>
 
 
+            <h1 className="text-page-size text-center font-bold">DOMANDE FREQUENTI SULL'OZONOTERAPIA'</h1>
 
 
-            <div className="my-20">
+            <TextContainer>
+                {faqs.map((faq) => {
+                    return (
+                        <div className="flex flex-col gap-2">
+                            <h1 className="font-bold">{faq.question}</h1>
+                            <h2 className="mx-5" >{faq.answer}</h2>
+                        </div>
+                    )
+                })}
+            </TextContainer>
 
-                <h1 className="text-center mt-30 mb-20 text-page-size font-bold">DOMANDE FREQUENTI SULL'OZONOTERAPIA'</h1>
-
-
-                <div className="flex flex-col gap-8 px-5">
-                    {faqs.map((faq) => {
-                        return (
-                            <div className="flex flex-col gap-2">
-                                <h1 className="font-bold">{faq.question}</h1>
-                                <h2 className="mx-5" >{faq.answer}</h2>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
 
         </section>
 

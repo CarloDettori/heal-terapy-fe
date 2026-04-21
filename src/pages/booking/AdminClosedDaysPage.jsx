@@ -129,7 +129,7 @@ export default function AdminClosedDaysPage() {
     return (
         <section>
             <TextContainer customClass="mt-30 flex-row max-w-150 justify-between items-center gap-4">
-                <h1 className="text-page-size font-bold TEXT-LEFT">GIORNI CHIUSI</h1>
+                <h1 className="text-page-size font-bold">GIORNI CHIUSI</h1>
 
                 <button
                     className="px-4 py-2 rounded border text-red-600 border-red-300 hover:bg-red-50"

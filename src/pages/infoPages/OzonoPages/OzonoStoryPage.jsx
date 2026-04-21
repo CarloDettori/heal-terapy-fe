@@ -1,6 +1,9 @@
 
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
+import WhiteCard from "../../../components/ui/WhiteCard";
+import TextInfo from "../../../components/ui/TextInfo";
+import TextContainer from "../../../components/ui/TextContainer";
 
 
 export default function OzonoStoryPage() {
@@ -134,15 +137,15 @@ export default function OzonoStoryPage() {
 
         <section>
 
-            <h1 className="text-center mt-30 mb-20  text-page-size"><strong>STORIA DELL' OZONOTERAPIA</strong></h1>
-            <h2 className="mx-1 rounded-xl bg-white p-10 text-center font-bold">
+            <TextInfo customClass="text-page-size"><strong>STORIA DELL' OZONOTERAPIA</strong></TextInfo>
+            <WhiteCard customClass="font-bold">
                 La storia dell’ozonoterapia si intreccia con la scoperta dell’ozono, l’evoluzione della chimica moderna e l’uso medico dei gas.
-            </h2>
+            </WhiteCard>
 
 
 
-            <h1 className="mt-10 px-5 mb-3 font-bold">LINEA DEL TEMPO</h1>
-            <div className="w-full px-10 mb-20 flex flex-col gap-5">
+            <TextInfo customClass="font-bold">LINEA DEL TEMPO</TextInfo>
+            <TextContainer customClass="px-10">
                 {timeline.map((event) => {
                     return (
 
@@ -167,7 +170,7 @@ export default function OzonoStoryPage() {
                         </div>
                     )
                 })}
-            </div>
+            </TextContainer>
 
 
 

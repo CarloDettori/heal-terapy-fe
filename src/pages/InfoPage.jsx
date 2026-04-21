@@ -135,11 +135,11 @@ export default function InfoPage() {
     return (
         <section>
 
-            <h1 className="text-center text-page-size font-bold mb-20 mt-30">INFORMAZIONI</h1>
+            <TextInfo customClass="text-page-size">INFORMAZIONI</TextInfo>
 
             <WhiteCard>
 
-                <TextContainer>
+                <div>
 
                     <h1 className="font-bold">
                         Clinica di Terapia del Dolore e Medicina Rigenerativa
@@ -149,11 +149,9 @@ export default function InfoPage() {
                         Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore cronico e alla rigenerazione dei tessuti.
                     </h2>
 
-                </TextContainer>
+                </div>
 
-
-
-                <TextContainer>
+                <div>
 
                     <h1 className="font-bold" >
                         Visione e Filosofia
@@ -169,7 +167,7 @@ export default function InfoPage() {
                         <li><p>Selezione accurata del paziente, per garantire trattamenti mirati ed efficaci.</p></li>
                     </ul>
 
-                </TextContainer>
+                </div>
 
             </WhiteCard>
 

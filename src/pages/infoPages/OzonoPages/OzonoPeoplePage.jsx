@@ -1,5 +1,8 @@
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
+import TextInfo from "../../../components/ui/TextInfo";
+import WhiteCard from "../../../components/ui/WhiteCard";
+import TextContainer from "../../../components/ui/TextContainer";
 
 
 
@@ -85,9 +88,9 @@ export default function OzonoPeoplePage() {
 
         <section>
 
-            <h1 className="text-center mt-30 mb-20  text-page-size"><strong>PRINCIPALE ESPONENTE DELL'OZONOTERAPIA IN ITALIA</strong></h1>
+            <TextInfo customClass="text-page-size"><strong>PRINCIPALE ESPONENTE DELL'OZONOTERAPIA IN ITALIA</strong></TextInfo>
 
-            <div className="bg-white rounded-2xl p-10 lg:flex lg:gap-5">
+            <WhiteCard customClass="flex-row lg:flex lg:gap-5">
 
 
                 <img className="rounded-4xl my-auto lg:my-auto max-w-50 mx-auto" src="/velio-bocci.jpg" alt="" />
@@ -107,19 +110,19 @@ export default function OzonoPeoplePage() {
 
                 </div>
 
-            </div>
+            </WhiteCard>
 
-            <div className="m-10 font-bold">
+            <TextContainer customClass="mx-10">
                 {
                     veliosLife.map((info, index) => {
                         return (
-                            <h2 className="my-5" key={index + 1}>
+                            <h2 className="my-1" key={index + 1}>
                                 {info}
                             </h2>
                         )
                     })
                 }
-            </div>
+            </TextContainer>
 
             <h1 className=" mt-20 mb-3 px-5 font-bold ">COSA HA FATTO / PRINCIPALI CONTRIBUTI</h1>
 

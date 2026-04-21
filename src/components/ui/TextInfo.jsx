@@ -1,4 +1,4 @@
-export default function TextInfo({ children, customClass = "", customColor = "--dark-theme", size = 2 }) {
+export default function TextInfo({ children, customClass = "", customColor = "--dark-theme", size = 2, place = "center" }) {
     let Tag = "h2"
 
     switch (size) {
@@ -19,7 +19,7 @@ export default function TextInfo({ children, customClass = "", customColor = "--
     }
 
     return (
-        <div className={`my-20 text-center max-w-180 mx-auto text-(${customColor}) ${customClass}`}>
+        <div className={`my-20 text-center mx-auto text-(${customColor}) ${customClass} text-${place}`}>
             <Tag>{children}</Tag>
         </div>
     )

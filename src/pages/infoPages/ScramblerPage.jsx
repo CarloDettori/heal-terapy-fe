@@ -2,6 +2,9 @@
 import ScramblerGameComponent from "../../components/common/ScramblerGameComponent.jsx"
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
+import TextInfo from "../../components/ui/TextInfo.jsx";
+import WhiteCard from "../../components/ui/WhiteCard.jsx";
+import TextContainer from "../../components/ui/TextContainer.jsx";
 export default function ContentPage() {
 
     const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
@@ -137,30 +140,32 @@ export default function ContentPage() {
 
 
     return (
-        <div className="flex">
 
 
-            <section className="sidebar-space">
 
-                <h1 className="text-center mt-30 mb-10 font-bold text-page-size">CALMARE® / SCRAMBLER THERAPY®</h1>
-                <img src="/scrambler-machine.png" alt="" className="flex mx-auto" />
-                <h2 className="mx-1 sm:mx-5 rounded-xl bg-white p-10 mt-10">La “Calmare® Scrambler Therapy” rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci” e “da ultimo tentativo”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata con cautela: l’evidenza è ancora in fase di consolidamento, le risposte variano e la copertura assicurativa può essere problematica.</h2>
+        <section>
+
+            <TextInfo customClass="font-bold text-page-size">CALMARE® / SCRAMBLER THERAPY®</TextInfo>
+            <img src="/scrambler-machine.png" alt="" className="flex mx-auto" />
+            <WhiteCard customClass="">La “Calmare® Scrambler Therapy” rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci” e “da ultimo tentativo”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata con cautela: l’evidenza è ancora in fase di consolidamento, le risposte variano e la copertura assicurativa può essere problematica.</WhiteCard>
 
 
-                <h1 className="text-center mt-30 mb-20 font-bold">Cosa si intende per “Calmare” / Scrambler Therapy</h1>
+            <TextInfo size={1} customClass="font-bold"></TextInfo>
 
-                <h2 className="">
-                    Elettrodi applicati sulla pelle inviano segnali a bassa intensità che “rimodulano” o “sovrascrivono” i segnali di dolore trasmessi dai nervi verso il cervello, facendo sì che il messaggio “dolore” venga sostituito da un messaggio “nessun dolore” o “non dolore”.
+            <TextContainer customClass="gap-10">
+
+                <h1 className="text-center font-bold">Cosa si intende per “Calmare” / Scrambler Therapy</h1>
+                <h2>Elettrodi applicati sulla pelle inviano segnali a bassa intensità che “rimodulano” o “sovrascrivono” i segnali di dolore trasmessi dai nervi verso il cervello, facendo sì che il messaggio “dolore” venga sostituito da un messaggio “nessun dolore” o “non dolore”.
 
                     <br /><br />
 
-                    Non è una stimolazione tradizionale tipo TENS (Transcutaneous Electrical Nerve Stimulation) ma, secondo i produttori e alcuni studi, un sistema che interviene sul “linguaggio” dell’informazione afferente del dolore (“no-pain message”).
+                    Non è una stimolazione tradizionale tipo TENS (Transcutaneous Electrical Nerve Stimulation) ma, secondo i produttori e alcuni studi, un sistema che interviene sul “linguaggio” dell’informazione afferente del dolore (“no-pain message”).</h2>
+            </TextContainer>
 
-                </h2>
+            <ScramblerGameComponent />
 
-                <ScramblerGameComponent />
-
-                <h1 className=" mb-5 font-bold">PATOLOGIE INDICATE</h1>
+            <TextContainer>
+                <h1 className="font-bold">PATOLOGIE INDICATE</h1>
 
                 <div className=" mx-5 mb-20 flex flex-col gap-3">
 
@@ -179,7 +184,7 @@ export default function ContentPage() {
                 </div>
 
 
-                <h1 className=" mb-5 font-bold">SCRAMBLER THERAPY NEGLI STATI UNITI</h1>
+                <h1 className="mb-5 font-bold">SCRAMBLER THERAPY NEGLI STATI UNITI</h1>
 
                 <div className=" mx-5 mb-20 flex flex-col gap-3">
 
@@ -196,8 +201,8 @@ export default function ContentPage() {
                     })}
 
                 </div>
+            </TextContainer>
+        </section >
 
-            </section>
-        </div>
     )
 }

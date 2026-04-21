@@ -1,5 +1,8 @@
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
+import TextInfo from "../../components/ui/TextInfo";
+import WhiteCard from "../../components/ui/WhiteCard";
+import TextContainer from "../../components/ui/TextContainer";
 export default function ContentPage() {
 
     const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
@@ -107,17 +110,22 @@ export default function ContentPage() {
 
         <section>
 
-            <h1 className="text-center mt-30 mb-20  text-page-size"><strong>OZONOTERAPIA</strong></h1>
-            <h2 className="mx-1 rounded-xl bg-white p-10 text-center font-bold">
-                L’ozonoterapia è una pratica che utilizza una miscela di ossigeno e ozono (O₃) a scopo terapeutico. L’ozono impiegato è ozono medicale, prodotto da apparecchi certificati e usato in concentrazioni controllate.
+            <TextInfo customClass="text-page-size"><strong>OZONOTERAPIA</strong></TextInfo>
+            <WhiteCard>
+                <h2 className="font-bold">
+                    L’Ozonoterapia è una pratica che utilizza una miscela di ossigeno e ozono (O₃) a scopo terapeutico. L’ozono impiegato è ozono medicale, prodotto da apparecchi certificati e usato in concentrazioni controllate.
 
-            </h2>
+                </h2>
+            </WhiteCard>
 
-            <div className="mx-5">
 
-                <h1 className="mt-20 mb-3 font-bold">PER COSA E' INDICATA</h1>
+
+
+
+            <TextContainer>
+                <h1 className="font-bold">PER COSA E' INDICATA</h1>
                 <h2 className="font-bold px-5">In ambito clinico o para-clinico viene utilizzata soprattutto come terapia di supporto per:</h2>
-                <div className="flex flex-col py-3 px-5 gap-1">
+                <div className="flex flex-col py-3 px-10 gap-1">
                     {events.map((event, index) => {
                         return (
 
@@ -126,8 +134,10 @@ export default function ContentPage() {
                     })}
                 </div>
                 <h2 className="font-bold  px-5">Non sostituisce le terapie standard: quando usata, lo è come complemento.</h2>
+            </TextContainer>
 
-                <h1 className="mt-10 mb-3 font-bold">PRINCIPALI MODALITA' DI SOMMINISTRAZIONE</h1>
+            <TextContainer>
+                <h1 className="font-bold">PRINCIPALI MODALITA' DI SOMMINISTRAZIONE</h1>
                 <div className="w-full px-5">
                     {somministrazioni.map((metodo) => {
                         return (
@@ -139,8 +149,10 @@ export default function ContentPage() {
                         )
                     })}
                 </div>
+            </TextContainer>
 
-                <h1 className="mt-8 mb-3 font-bold">MECCANISMI D'AZIONE (proposti)</h1>
+            <TextContainer>
+                <h1 className="font-bold">MECCANISMI D'AZIONE (proposti)</h1>
                 <div className="flex flex-col px-5 gap-1">
                     {effetti.map((effetto, index) => {
                         return (
@@ -149,9 +161,12 @@ export default function ContentPage() {
                         )
                     })}
                 </div>
+            </TextContainer>
 
-                <h1 className="mt-10 mb-3 font-bold">EFFICACIA: cosa dice la scienza</h1>
-                <div className="flex flex-col px-5 gap-1">
+            <TextContainer>
+                <h1 className="font-bold">EFFICACIA: cosa dice la scienza</h1>
+                <div className="mx-5">
+
                     {efficacia.map((effic, index) => {
                         return (
 
@@ -159,8 +174,10 @@ export default function ContentPage() {
                         )
                     })}
                 </div>
+            </TextContainer>
 
-                <h1 className="mt-10 mb-3 font-bold">SICUREZZA E CONTROINDICAZIONI</h1>
+            <TextContainer>
+                <h1 className="font-bold">SICUREZZA E CONTROINDICAZIONI</h1>
                 <h2 className="font-bold px-5 mb-3">Se eseguita correttamente da personale medico:</h2>
                 <div className="flex flex-col px-5 gap-1">
                     {sicurezza.map((sicur, index) => {
@@ -170,13 +187,13 @@ export default function ContentPage() {
                         )
                     })}
                 </div>
+            </TextContainer>
 
-            </div>
 
-            <h1 className="py-20 text-center text-(--theme) font-bold">
+            <TextInfo size={1} customClass="font-bold" customColor="--theme">
                 In sintesi l’ozonoterapia può avere un ruolo integrativo in alcune condizioni, soprattutto nel trattamento del dolore, ma non è una cura universale e va valutata caso per caso con un medico.
 
-            </h1>
+            </TextInfo>
 
 
         </section>

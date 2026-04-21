@@ -1,6 +1,8 @@
 
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
+import TextContainer from "../../../components/ui/TextContainer";
+import TextInfo from "../../../components/ui/TextInfo";
 
 
 export default function ScramblerMythsPage() {
@@ -95,34 +97,32 @@ export default function ScramblerMythsPage() {
 
 
     return (
-        <div className="flex">
-
-
-            <section className="sidebar-space">
 
 
 
+        <section>
 
-                <div className="my-20">
+            <TextInfo customClass="text-page-size font-bold">MITI INFONDATI SULLA SCRAMBLER THERAPY®</TextInfo>
+            <TextContainer>
 
-                    <h1 className="text-center mt-30 mb-20 text-page-size font-bold">MITI INFONDATI SULLA SCRAMBLER THERAPY®</h1>
 
-                    <h2 className="text-center mb-20 font-bold">Come accade in tutte le innovazioni scientifiche, “esperti” autoreferenti, di solito non appartenenti al mondo della ricerca, generano una serie quasi infinita di parziali od errate informazioni che si tramandano in maniera incontrollata da persona a persona, e finiscono per creare dei miti infondati. In questa pagina ne sono raccolti alcuni dei più frequentemente incontrati.</h2>
 
-                    <div className="flex flex-col gap-8 px-5">
-                        {scramblerMyth.map((quote) => {
-                            return (
-                                <div className="flex flex-col gap-2">
-                                    <h1 className="font-bold">{quote.myth}</h1>
-                                    <h2 className="mx-5" >{quote.truth}</h2>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <h1 className="text-center mb-20 font-bold">Come accade in tutte le innovazioni scientifiche, “esperti” autoreferenti, di solito non appartenenti al mondo della ricerca, generano una serie quasi infinita di parziali od errate informazioni che si tramandano in maniera incontrollata da persona a persona, e finiscono per creare dei miti infondati. In questa pagina ne sono raccolti alcuni dei più frequentemente incontrati.</h1>
+
+                <div className="flex flex-col gap-8 px-5">
+                    {scramblerMyth.map((quote) => {
+                        return (
+                            <div className="flex flex-col gap-2">
+                                <h1 className="font-bold">{quote.myth}</h1>
+                                <h2 className="mx-5" >{quote.truth}</h2>
+                            </div>
+                        )
+                    })}
                 </div>
+            </TextContainer>
 
-            </section>
+        </section>
 
-        </div>
+
     )
 }

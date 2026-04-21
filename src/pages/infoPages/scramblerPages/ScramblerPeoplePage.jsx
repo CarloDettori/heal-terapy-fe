@@ -1,6 +1,8 @@
 
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
+import TextInfo from "../../../components/ui/TextInfo";
+import TextContainer from "../../../components/ui/TextContainer";
 
 
 export default function ScramblerPeoplePage() {
@@ -135,48 +137,44 @@ export default function ScramblerPeoplePage() {
 
     ]
 
-
-
     return (
-        <div className="flex">
+
+        <section>
+
+            <TextInfo customClass="text-page-size font-bold">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</TextInfo>
+
+            <TextContainer customClass="lg:flex-row lg:gap-5" >
 
 
-            <section className="sidebar-space">
-
-                <h1 className="text-center font-bold mt-30 text-page-size">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</h1>
-
-                <div className="mt-20 flex flex-col justify-center gap-5 rounded-xl bg-white p-20 gap-5" >
-
-                    <div className="lg:flex lg:gap-5">
-                        <img className="rounded-2xl my-auto lg:my-auto max-w-50 mx-auto" src="/scrambler-story-image.jpg" alt="" />
+                <img className="rounded-2xl my-auto lg:my-auto max-w-50 mx-auto" src="/scrambler-story-image.jpg" alt="" />
 
 
-                        <div className="text-(--dark-theme) gap-5 my-auto">
+                <div className="text-(--dark-theme) gap-5 my-auto">
 
-                            <h1 className="mb-5 mt-3 font-bold text-center lg:text-left">Dtt. Giuseppe Marineo</h1>
+                    <h1 className="mb-5 mt-3 font-bold text-center lg:text-left">Dtt. Giuseppe Marineo</h1>
 
-                            <h2>
-                                Ricercatore / ingegnere / biofisico italiano legato all’Università di Roma Tor Vergata e al centro Delta Research & Development; Marineo è riconosciuto come l’inventore e il principale autore della teoria e della tecnologia Scrambler
-                            </h2>
+                    <h2>
+                        Ricercatore / ingegnere / biofisico italiano legato all’Università di Roma Tor Vergata e al centro Delta Research & Development; Marineo è riconosciuto come l’inventore e il principale autore della teoria e della tecnologia Scrambler
+                    </h2>
 
+                </div>
+
+
+            </TextContainer>
+
+            <TextContainer className="my-10 w-full ">
+                {scramblerTimeline.map((event) => {
+                    return (
+
+                        <div key={event.id} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
+                            <h1 className="font-bold">{event.year}</h1>
+                            <h2>{event.event}</h2>
                         </div>
-                    </div>
+                    )
+                })}
+            </TextContainer>
 
-                </div>
+        </section>
 
-                <div className="my-10 w-full ">
-                    {scramblerTimeline.map((event) => {
-                        return (
-
-                            <div key={event.id} className="flex flex-col p-10 gap-3 max-w-100 text-center mx-auto justify-center">
-                                <h1 className="font-bold">{event.year}</h1>
-                                <h2>{event.event}</h2>
-                            </div>
-                        )
-                    })}
-                </div>
-
-            </section>
-        </div>
     )
 }
