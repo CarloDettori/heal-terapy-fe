@@ -23,6 +23,7 @@ import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
 import PatologyPage from "./pages/PatologyPage.jsx";
 import TherapiesPage from "./pages/TherapiesPage.jsx";
 import CheckoutPage from "./pages/booking/CheckoutPage.jsx";
+import PrenotaPage from "./pages/booking/PrenotaPage.jsx";
 import ConfermataPage from "./pages/booking/ConfermataPage.jsx";
 import AdminBookingsPage from "./pages/booking/AdminBookingsPage.jsx";
 import AdminClosedDaysPage from "./pages/booking/AdminClosedDaysPage.jsx";
@@ -40,6 +41,7 @@ function App() {
             <Route path="/info" element={<InfoPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/success" element={<PaymentSuccesPage />} />
+            <Route path="/prenota" element={<PrenotaPage />} />
             <Route path="/confermata" element={<ConfermataPage />} />
             <Route path="/info/1" element={<OzonoterapiaPage />} />
             <Route path="/info/1/2" element={<OzonoStoryPage />} />

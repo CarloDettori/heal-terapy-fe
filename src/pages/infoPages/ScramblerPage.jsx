@@ -1,6 +1,6 @@
 
 import ScramblerGameComponent from "../../components/common/ScramblerGameComponent.jsx"
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import TextInfo from "../../components/ui/TextInfo.jsx";
 import WhiteCard from "../../components/ui/WhiteCard.jsx";
@@ -8,6 +8,19 @@ import TextContainer from "../../components/ui/TextContainer.jsx";
 export default function ContentPage() {
 
     const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1440);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsDesktop(window.innerWidth > 1440);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     useEffect(() => {
         setShowbar(true)
@@ -162,7 +175,9 @@ export default function ContentPage() {
                     Non è una stimolazione tradizionale tipo TENS (Transcutaneous Electrical Nerve Stimulation) ma, secondo i produttori e alcuni studi, un sistema che interviene sul “linguaggio” dell’informazione afferente del dolore (“no-pain message”).</h2>
             </TextContainer>
 
-            <ScramblerGameComponent />
+            {isDesktop && <ScramblerGameComponent />}
+
+
 
             <TextContainer>
                 <h1 className="font-bold">PATOLOGIE INDICATE</h1>

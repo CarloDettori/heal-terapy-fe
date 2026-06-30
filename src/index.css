@@ -587,8 +587,17 @@ section {
     }
 
 
+ .sphere-animation {
+    width: 400px;
+    margin-top: -350px
+ }
 
+}
 
+@media (max-width: 580px) {
+  .hide-below-580 {
+    display: none;
+  }
 }
 
 

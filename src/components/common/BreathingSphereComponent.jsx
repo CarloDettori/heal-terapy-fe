@@ -198,11 +198,12 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
 
     return (
 
-        <div className="sphere-container  flex flex-col">
+        <div className="sphere-container  flex flex-col mt-50">
 
             <div className="sticky">
 
-                <img src="/hero-text.png" alt="" className={`hero-title px-10 w-full  max-w-[700px] h-auto ${hidden ? "hero-hidden-by-button" : ""}`} />
+                <img src="/hero-text.png" alt="" className={`hero-title px-10 w-100 md:w-140  ${hidden ? "hero-hidden-by-button" : ""}`} />
+
                 <button className="flex mx-auto discover-btn" onClick={handleDisintegration}>
                     AVANTI
                 </button>
