@@ -3,6 +3,8 @@ import DefaultLayout from "../src/layout/DefaultLayout.jsx";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import TerapiaDolorePage from "./pages/TerapiaDolorePage.jsx";
+import MedicinaRigenerativaPage from "./pages/MedicinaRigenerativaPage.jsx";
 import UsPage from "./pages/UsPage.jsx";
 import PaymentSuccesPage from "./pages/booking/PaymentSuccesPage.jsx";
 import InfoPage from "./pages/InfoPage.jsx";
@@ -37,6 +39,8 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/ter-dol" element={<TerapiaDolorePage />} />
+            <Route path="/med-rig" element={<MedicinaRigenerativaPage />} />
             <Route path="/us" element={<UsPage />} />
             <Route path="/info" element={<InfoPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />

@@ -74,7 +74,7 @@ export default function TherapiesPage() {
 
             </div>
 
-            <TextInfo size={1} customColor="--theme" customClass="font-bold max-w-full">“Curare il dolore non significa solo eliminarlo,<br />ma ristabilire l’equilibrio del corpo e permettere alla persona di tornare a vivere in piena autonomia.<br />La scienza moderna ci offre strumenti innovativil’obiettivo è usarli con rigore, esperienza e umanità.”</TextInfo>
+
 
 
 

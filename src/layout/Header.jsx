@@ -33,9 +33,7 @@ export default function Header() {
 
                     <h1 className=" text-(--lightest-theme)  font-bold my-auto absolute top-4 left-5.5">CR</h1>
                 </Link>
-                <Link className="hide-below-580 text-(--lightest-theme) my-auto px-3 font-bold" to="/">
-                    <h1 className="">Clinica Rigenerativa</h1>
-                </Link>
+
             </div>
 
             <nav className="flex justify-evenly sm:gap-3 sm:me-3">

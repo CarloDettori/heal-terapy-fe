@@ -184,7 +184,7 @@ section {
 
 /* HERO SECTION */
 .hero-section {
-    height: 900px;
+    
     background: radial-gradient(circle at center, #0f172a, #020617);
     color: white;
     overflow: hidden;

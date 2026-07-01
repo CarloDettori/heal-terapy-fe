@@ -252,9 +252,9 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
 
                 <div className={` ${disintegrated ? "visible border rounded-4xl p-5" : ""}`}>
 
-                    <button className=" hover:scale-120 hover:border-border-light-theme cursor-pointer text-center w-full" onClick={() => { scrollTo(painRef) }}>
+                    <Link to="/ter-dol" className="hover:scale-120 cursor-pointer text-center w-full">
                         <h1 className="my-2">TERAPIA DEL DOLORE</h1>
-                    </button>
+                    </Link>
 
                     {painLinks.map((link) => (
                         <Link to={link.link} key={link.id} className="grid-circle hover:scale-110 hover:border-light-theme ">
@@ -266,9 +266,9 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
 
                 <div className={` ${disintegrated ? "visible border rounded-4xl p-5" : ""}`}>
 
-                    <button className="hover:scale-120 cursor-pointer text-center w-full" onClick={() => { scrollTo(regenerativeRef) }}>
+                    <Link to="/med-rig" className="hover:scale-120 cursor-pointer text-center w-full">
                         <h1 className="my-2">MEDICINA RIGENERATIVA</h1>
-                    </button>
+                    </Link>
 
                     {regenerativeLinks.map((link) => (
                         <Link to={link.link} key={link.id} className="grid-circle hover:scale-110">

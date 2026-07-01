@@ -32,7 +32,7 @@ export default function OzonoPeoplePage() {
                 {
                     id: 4,
                     route: "/info/1/3",
-                    title: "Esponenti Ozonoterapia",
+                    title: "",
 
 
                 },
@@ -88,7 +88,7 @@ export default function OzonoPeoplePage() {
 
         <section>
 
-            <TextInfo customClass="text-page-size"><strong>PRINCIPALE ESPONENTE DELL'OZONOTERAPIA IN ITALIA</strong></TextInfo>
+            <TextInfo customClass="text-page-size"><strong>L'OSSIGENO OZONOTERAPIA IN ITALIA</strong></TextInfo>
 
             <WhiteCard customClass="flex-row lg:flex lg:gap-5">
 
