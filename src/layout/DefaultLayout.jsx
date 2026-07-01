@@ -24,14 +24,14 @@ export default function DefaultLayout() {
             <Header />
             <div className="flex">
                 <SidebarComponent infos={sidebarLinks} />
-                <main className="h-screen bg-(--lightest-theme) text-(--dark-theme) overflow-y-scroll hide-scrollbar w-full">
+                <main className="h-full bg-(--lightest-theme) text-(--dark-theme) overflow-y-scroll hide-scrollbar w-full">
                     <div ref={scrollRef}></div>
                     <Outlet />
                 </main>
             </div>
 
-            <Footer />
 
-        </>
+            <Footer />
+        </ >
     )
 }

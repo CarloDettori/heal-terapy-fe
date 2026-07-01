@@ -32,7 +32,7 @@ export default function OzonoPeoplePage() {
                 {
                     id: 4,
                     route: "/info/1/3",
-                    title: "",
+                    title: "Esponenti Ozonoterapia",
 
 
                 },

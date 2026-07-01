@@ -12,9 +12,7 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
         <>
             <section className="hero-section">
                 <BreathingSphereComponent regenerativeRef={regenerativeRef} painRef={painRef} />
-                {/* <TextInfo customColor="--light-theme" customClass="text-page-size font-bold mb-30" >
-                    Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore acuto e cronico.
-                </TextInfo> */}
+
             </section>
 
 
