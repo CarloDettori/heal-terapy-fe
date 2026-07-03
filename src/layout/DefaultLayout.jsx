@@ -6,7 +6,7 @@ import { GlobalContext } from "../context/GlobalContext"
 import SidebarComponent from "../components/common/SidebarCompnent.jsx";
 export default function DefaultLayout() {
 
-    const { sidebarLinks } = useContext(GlobalContext);
+    //const { sidebarLinks } = useContext(GlobalContext);
     const scrollRef = useRef(null)
     const { pathname } = useLocation()
 
@@ -21,17 +21,17 @@ export default function DefaultLayout() {
 
     return (
         <>
-            <Header />
+            <Header ref={scrollRef} />
             <div className="flex">
-                <SidebarComponent infos={sidebarLinks} />
-                <main className="h-full bg-(--lightest-theme) text-(--dark-theme) overflow-y-scroll hide-scrollbar w-full">
-                    <div ref={scrollRef}></div>
+
+                <main className=" bg-(--lightest-theme) text-(--dark-theme) overflow-y-scroll hide-scrollbar w-full">
+
                     <Outlet />
                 </main>
             </div>
 
 
-            <Footer />
+
         </ >
     )
 }

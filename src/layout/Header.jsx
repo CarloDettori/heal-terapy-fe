@@ -26,7 +26,7 @@ export default function Header() {
 
 
     return (
-        <header className="fixed bg-(--dark-theme) border-bottom-theme shadow-lg w-full flex items-center z-1000 p-3 justify-between">
+        <header className=" bg-(--dark-theme) border-bottom-theme shadow-lg w-full flex items-center z-1000 p-3 justify-between">
             <div className="flex relative">
                 <Link className="flex-shrink-0" to="/">
                     <img src={logo} alt="" className="h-17 w-auto flex-shrink-0" />

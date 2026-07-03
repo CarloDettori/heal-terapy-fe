@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import anime from "animejs";
 import { Link } from "react-router-dom";
+import TextInfo from "../ui/TextInfo";
 
 export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
     const [disintegrated, setDisintegrated] = useState(false);
@@ -198,13 +199,24 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
 
     return (
 
-        <div className="sphere-container  flex flex-col mt-50">
+        <div className="sphere-container  flex flex-col mb-30">
 
             <div className="sticky">
 
-                <img src="/hero-text.png" alt="" className={`hero-title px-10 w-100 md:w-140  ${hidden ? "hero-hidden-by-button" : ""}`} />
 
-                <button className="flex mx-auto discover-btn" onClick={handleDisintegration}>
+                {/* <img src="/hero-text.png" alt="" className={`hero-title px-10 w-100 md:w-140  ${hidden ? "hero-hidden-by-button" : ""}`} /> */}
+                <div>
+                    <TextInfo size={1} customColor="--ligthest-theme" customClass={`hero-title px-10 text-page-size ${hidden ? "hero-hidden-by-button" : ""}`}>
+                        CR<br />
+                    </TextInfo>
+                    <TextInfo size={4} customColor="--ligthest-theme" customClass={`hero-title px-10 font-bold ${hidden ? "hero-hidden-by-button" : ""}`}>
+                        Ambulatorio Medico specialistico in:<br /><br />
+                        Terapia del dolore<br />
+                        &<br />
+                        Medicina rigenerativa</TextInfo>
+                    <TextInfo size={4} customColor="--ligthest-theme" customClass={`hero-title ${hidden ? "hero-hidden-by-button" : ""}`}>Direttore Sanitario: Dott. Roberto Chessa</TextInfo>
+                </div>
+                <button className="flex mx-auto discover-btn mt-15" onClick={handleDisintegration}>
                     AVANTI
                 </button>
 

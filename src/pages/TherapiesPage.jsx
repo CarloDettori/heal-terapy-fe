@@ -12,7 +12,7 @@ export default function TherapiesPage() {
             subtitle: "La storia e l’innovazione",
             img: "/ozone.png",
             lists: "",
-            description: "L’ozonoterapia utilizza una miscela di ossigeno e ozono con finalità terapeutiche, in particolare per dolori articolari, lombalgie e patologie infiammatorie. Uno dei massimi studiosi italiani del settore, Velio Bocci, ha contribuito a definirne le basi scientifiche, evidenziando il ruolo antinfiammatorio e modulatore dell’ozono. Oggi l’ozonoterapia rappresenta un supporto sicuro e versatile, applicabile in ambito ambulatoriale e privo di incisioni chirurgiche."
+            description: "L’ozonoterapia utilizza una miscela di ossigeno e ozono con finalità terapeutiche, in particolare per dolori articolari, lombalgie e patologie infiammatorie. Uno dei massimi studiosi italiani del settore, Prof. Velio Bocci, ha contribuito a definirne le basi scientifiche, evidenziando il ruolo antinfiammatorio e modulatore dell’ozono. Oggi l’ozonoterapia rappresenta un supporto sicuro e versatile, applicabile in ambito ambulatoriale e privo di incisioni chirurgiche."
 
         },
         {
@@ -21,7 +21,7 @@ export default function TherapiesPage() {
             subtitle: "calmare il dolore neuropatico",
             img: "/scrumbler.png",
             lists: "",
-            description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del fuoco di Sant’Antonio e di altre neuropatie croniche. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
+            description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del dolore neuropatico acuto e cronico. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
 
         },
     ]
@@ -30,7 +30,7 @@ export default function TherapiesPage() {
     return (
         <section>
 
-            <TextInfo customClass="text-page-size font-bold mt-30">TECNICHE UTILIZZATE IN THERAPIA DEL DOLORE</TextInfo>
+            <TextInfo customClass="text-page-size font-bold mt-30">TECNICHE UTILIZZATE IN TERAPIA DEL DOLORE</TextInfo>
 
             <div className="flex flex-wrap justify-center my-20 mt-0 p-10 gap-10">
 
