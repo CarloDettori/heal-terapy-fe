@@ -32,7 +32,7 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
                         </Link>
 
                         {painLinks.map((link) => (
-                            <Link to={link.link} key={link.id} className="grid-circle hover:scale-110 hover:border-light-theme ">
+                            <Link to={link.link} key={link.id} className="grid-circle hover:scale-110 hover:border-light-theme opacity-100">
                                 <h1>{link.title}</h1>
                             </Link>
                         ))}
@@ -41,7 +41,7 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
 
                     <div className="visible border rounded-4xl p-5">
 
-                        <Link to="/med-rig" className="hover:scale-120 cursor-pointer text-center w-full">
+                        <Link to="/med-rig" className="hover:scale-120 cursor-pointer text-center w-full" >
                             <h1 className="hover:scale-120 my-2">MEDICINA RIGENERATIVA</h1>
                         </Link>
 
@@ -59,7 +59,7 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
 
 
                 </div>
-            </section>
+            </section >
 
 
         </>

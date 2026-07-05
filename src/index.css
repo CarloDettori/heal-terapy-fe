@@ -353,7 +353,7 @@ section {
     width: 300px;
     height: 100px;
     border-radius: 50px;
-    opacity: 0;
+    opacity: 1; /* provvisoriamente a 1 deve stare a 0 */
     background: radial-gradient(circle at top, #3b5168, #1f2937);
     border: 2px solid var(--light-theme);
     box-sizing: border-box;
