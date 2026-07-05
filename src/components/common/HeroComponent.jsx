@@ -21,9 +21,9 @@ export default function HeroComponent({ regenerativeRef, painRef }) {
 
     return (
         <>
-            <section className="hero-section h-screen">
+            <section className="hero-section">
                 {/* <BreathingSphereComponent regenerativeRef={regenerativeRef} painRef={painRef} /> */}
-                <div className={"mt-55  gap-15 flex flex-wrap justify-center"}>
+                <div className={"my-5  gap-15 flex flex-wrap justify-center"}>
 
                     <div className="border rounded-4xl p-5">
 
