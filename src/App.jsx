@@ -19,9 +19,6 @@ import ScramblerPeoplePage from "./pages/infoPages/scramblerPages/ScramblerPeopl
 import ScramblerMythsPage from "./pages/infoPages/scramblerPages/ScramblerMythPage.jsx";
 import ScramblerAskPage from "./pages/infoPages/scramblerPages/ScramblerAskPage.jsx";
 import ScramblerTutorialPage from "./pages/infoPages/scramblerPages/ScramblerTutorialPage.jsx";
-import OzonoStoryPage from "./pages/infoPages/OzonoPages/OzonoStoryPage.jsx";
-import OzonoPeoplePage from "./pages/infoPages/OzonoPages/OzonoPeoplePage.jsx";
-import OzonoAskPage from "./pages/infoPages/OzonoPages/OzonoAskPage.jsx";
 import PatologyPage from "./pages/PatologyPage.jsx";
 import TherapiesPage from "./pages/TherapiesPage.jsx";
 import CheckoutPage from "./pages/booking/CheckoutPage.jsx";
@@ -48,9 +45,6 @@ function App() {
             <Route path="/prenota" element={<PrenotaPage />} />
             <Route path="/confermata" element={<ConfermataPage />} />
             <Route path="/info/1" element={<OzonoterapiaPage />} />
-            <Route path="/info/1/2" element={<OzonoStoryPage />} />
-            <Route path="/info/1/3" element={<OzonoPeoplePage />} />
-            <Route path="/info/1/4" element={<OzonoAskPage />} />
             <Route path="/info/2" element={<OzonoterapiaPage />} />
             <Route path="/info/3" element={<AestheticPage />} />
             <Route path="/info/4" element={<ScramblerTreapyPage />} />

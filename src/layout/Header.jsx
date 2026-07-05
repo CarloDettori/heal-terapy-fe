@@ -31,7 +31,7 @@ export default function Header() {
                 <Link className="flex-shrink-0" to="/">
                     <img src={logo} alt="" className="h-17 w-auto flex-shrink-0" />
 
-                    <h1 className=" text-(--lightest-theme)  font-bold my-auto absolute top-4 left-5.5">CR</h1>
+                    <h1 className=" text-(--lightest-theme)  font-bold my-auto absolute top-4 left-5.5">RC</h1>
                 </Link>
 
             </div>

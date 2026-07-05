@@ -207,7 +207,7 @@ export default function BreathingSphereComponent({ regenerativeRef, painRef }) {
                 {/* <img src="/hero-text.png" alt="" className={`hero-title px-10 w-100 md:w-140  ${hidden ? "hero-hidden-by-button" : ""}`} /> */}
                 <div>
                     <TextInfo size={1} customColor="--ligthest-theme" customClass={`hero-title px-10 text-page-size ${hidden ? "hero-hidden-by-button" : ""}`}>
-                        CR<br />
+                        RC<br />
                     </TextInfo>
                     <TextInfo size={4} customColor="--ligthest-theme" customClass={`hero-title px-10 font-bold ${hidden ? "hero-hidden-by-button" : ""}`}>
                         Ambulatorio Medico specialistico in:<br /><br />
