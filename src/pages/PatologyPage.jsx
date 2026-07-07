@@ -5,7 +5,7 @@ export default function PatologyPage() {
     const pathology = [
         "Patologie autoimmuni",
         "Patologie vascolari",
-        "Patologie osteoartritiche",
+        "Patologie osteoarticolari",
         "Patologie Neurologiche",
 
     ]
