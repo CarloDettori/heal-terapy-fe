@@ -83,9 +83,9 @@ export default function ContentPage() {
     ]
 
     return (
-        <section>
+        <div className="box">
 
-            <h1 className="text-center mt-30 mb-20 font-bold text-page-size">RIGENERAZIONE ARTICOLARE</h1>
+            <h1 className="text-center mb-20 font-bold text-page-size">RIGENERAZIONE ARTICOLARE</h1>
 
             <p className="mx-1 sm:mx-5 rounded-xl bg-white p-10 ">
                 La rigenerazione articolare è un insieme di trattamenti medici finalizzati a stimolare i naturali processi di riparazione dei tessuti articolari, riducendo dolore e limitazioni funzionali senza ricorrere, quando possibile, alla chirurgia.
@@ -168,6 +168,6 @@ export default function ContentPage() {
                 </div>
             </div>
 
-        </section>
+        </div>
     )
 }

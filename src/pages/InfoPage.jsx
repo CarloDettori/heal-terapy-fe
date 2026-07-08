@@ -133,7 +133,7 @@ export default function InfoPage() {
     ]
 
     return (
-        <section>
+        <div className="box">
 
             <TextInfo customClass="text-page-size">INFORMAZIONI</TextInfo>
 
@@ -239,6 +239,6 @@ export default function InfoPage() {
 
 
 
-        </section>
+        </div>
     )
 }

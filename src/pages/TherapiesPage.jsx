@@ -28,7 +28,7 @@ export default function TherapiesPage() {
 
 
     return (
-        <section>
+        <div className="box">
 
             <TextInfo customClass="text-page-size font-bold mt-30">TECNICHE UTILIZZATE IN TERAPIA DEL DOLORE</TextInfo>
 
@@ -78,6 +78,6 @@ export default function TherapiesPage() {
 
 
 
-        </section>
+        </div>
     )
 }

@@ -155,7 +155,7 @@ export default function ScramblerStoryPage() {
 
     return (
 
-        <section>
+        <div className="box">
 
             <TextContainer>
 
@@ -182,7 +182,7 @@ export default function ScramblerStoryPage() {
                 </TextContainer>
             </TextContainer>
 
-        </section>
+        </div>
 
 
     )

@@ -97,7 +97,7 @@ export default function ContentPage() {
 
 
     return (
-        <section>
+        <div className="box">
 
             <h1 className="text-center mt-30 mb-20 font-bold text-page-size">MEDICINA ESTETICA</h1>
 
@@ -203,6 +203,6 @@ export default function ContentPage() {
             <h1 className="text-center mt-30 mb-10 font-bold">L’obiettivo non è trasformare, ma valorizzare. Ogni trattamento viene calibrato per ottenere risultati naturali, armonici, progressivi, adatti all'età e alla struttura del paziente</h1>
 
             <h1 className="text-center mt-30 mb-10 font-bold">La medicina estetica moderna punta a far apparire il paziente riposato, fresco e in equilibrio, senza eccessi.</h1>
-        </section>
+        </div>
     )
 }

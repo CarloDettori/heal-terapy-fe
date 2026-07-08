@@ -19,8 +19,10 @@ export default function TextInfo({ children, customClass = "", customColor = "--
     }
 
     return (
-        <div className={`text-center text-(${customColor}) ${customClass} text-${place}`}>
-            <Tag className=" px-5">{children}</Tag>
+        <div className="flex justify-center">
+            <div className={`my-10 text-center text-(${customColor}) ${customClass} text-${place}`}>
+                <Tag className=" px-5">{children}</Tag>
+            </div>
         </div>
     )
 }

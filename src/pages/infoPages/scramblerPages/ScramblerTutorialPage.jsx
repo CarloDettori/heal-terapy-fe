@@ -55,7 +55,7 @@ export default function ScramblerTutorialPage() {
 
 
 
-        <section>
+        <div className="box">
 
 
 
@@ -70,7 +70,7 @@ export default function ScramblerTutorialPage() {
                 </div>
             </div>
 
-        </section>
+        </div>
 
 
     )

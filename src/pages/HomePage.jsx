@@ -76,7 +76,7 @@ export default function HomePage() {
         {
             id: 2,
             img: "/blood-test.png",
-            text: "Esami mirati (lisosomiali, neurologici, funzionali) per pianificare il trattamento più adatto",
+            text: "Esami mirati (biochimici, neurologici, funzionali) per pianificare il trattamento più adatto",
         },
         {
             id: 3,
@@ -105,11 +105,11 @@ export default function HomePage() {
 
 
     return (
-        <div className="box">
+        <div>
 
             <HeroComponent regenerativeRef={regenerativeRef} painRef={painRef} />
 
-            <TextInfo customColor="--theme" customClass="page-text-size font-bold mt-0" size={1} >
+            <TextInfo size={1} customColor="--theme" customClass="page-text-size font-bold mt-30"  >
                 Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore acuto e cronico.
             </TextInfo>
 

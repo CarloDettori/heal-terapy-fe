@@ -30,8 +30,8 @@ export default function CheckoutPage() {
     };
 
     return (
-        <section>
-            <TextInfo customClass=" text-page-size font-bold mt-30">PRENOTA UNA VISITA</TextInfo>
+        <div className="box">
+            <TextInfo customClass=" text-page-size font-bold">PRENOTA UNA VISITA</TextInfo>
 
             <TextInfo customColor="text-(--theme)" customClass="font-bold">Puoi prenotare online una visita in clinica</TextInfo>
 
@@ -65,6 +65,6 @@ export default function CheckoutPage() {
                     {loading ? "Reindirizzo..." : "Vai al pagamento"}
                 </button>
             </WhiteCard>
-        </section>
+        </div>
     );
 }

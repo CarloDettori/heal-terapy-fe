@@ -26,14 +26,14 @@ export default function PaymentSuccesPage() {
     }, [sessionId]);
 
     return (
-        <section>
+        <sectdiv className="box" ion>
 
             <h1 className="text-center text-page-size font-bold my-30">PAGAMENTO COMPLETATO CON SUCCESSO!</h1>
 
             <h1 className="text-center font-bold my-30">Controlla la tua email per completare la prenotazione.</h1>
 
             <div className="my-30">{msg}</div>
-        </section>
+        </sectdiv>
     );
 
 };

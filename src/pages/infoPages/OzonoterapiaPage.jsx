@@ -3,6 +3,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 import TextInfo from "../../components/ui/TextInfo";
 import WhiteCard from "../../components/ui/WhiteCard";
 import TextContainer from "../../components/ui/TextContainer";
+import WaveBox from "../../components/ui/WaveBox";
 export default function ContentPage() {
 
 
@@ -269,11 +270,11 @@ export default function ContentPage() {
 
     return (
 
-        <section>
+        <div className="box">
 
-            <TextInfo customClass="text-page-size"><strong>OZONOTERAPIA</strong></TextInfo>
-            <WhiteCard>
-                <h2 className="font-bold">
+            <TextInfo customClass="text-page-size font-bold">OZONOTERAPIA</TextInfo>
+            <WhiteCard place="center" customClass="max-w-250">
+                <h2 className="font-bold ">
                     L’Ozonoterapia è una pratica che utilizza una miscela di ossigeno e ozono (O₃) a scopo terapeutico. L’ozono impiegato è ozono medicale, prodotto da apparecchi certificati e usato in concentrazioni controllate.
 
                 </h2>
@@ -310,44 +311,44 @@ export default function ContentPage() {
                     })}
                 </div>
             </TextContainer>
+            <WaveBox>
+                <TextInfo customClass="text-page-size"><strong>STORIA DELL' OZONOTERAPIA</strong></TextInfo>
+                <TextInfo place="center" customClass="font-bold mx-auto py-20">
+                    La storia dell’ozonoterapia si intreccia con la scoperta dell’ozono, l’evoluzione della chimica moderna e l’uso medico dei gas.
+                </TextInfo>
 
-            <TextInfo customClass="text-page-size"><strong>STORIA DELL' OZONOTERAPIA</strong></TextInfo>
-            <WhiteCard customClass="font-bold">
-                La storia dell’ozonoterapia si intreccia con la scoperta dell’ozono, l’evoluzione della chimica moderna e l’uso medico dei gas.
-            </WhiteCard>
 
 
+                <TextInfo customClass="font-bold">LINEA DEL TEMPO</TextInfo>
+                <TextContainer>
+                    {timeline.map((event) => {
+                        return (
 
-            <TextInfo customClass="font-bold">LINEA DEL TEMPO</TextInfo>
-            <TextContainer customClass="px-10">
-                {timeline.map((event) => {
-                    return (
+                            <div key={event.id} className="flex flex-col gap-1  ">
+                                <h2 className="font-bold">{event.title}</h2>
 
-                        <div key={event.id} className="flex flex-col gap-1  ">
-                            <h2 className="font-bold">{event.title}</h2>
-
-                            {event.list.map((li, index) => {
-                                return (
-                                    <div key={index} className=" flex flex-col px-5">
-                                        {typeof li === 'string' ? (
-                                            <h2>{li}</h2>
-                                        ) : li && typeof li === 'object' && 'sublist' in li ? (
-                                            <ul className="px-5">
-                                                {li.sublist.map((subli, subindex) => (
-                                                    <li key={subindex + 1}>-{subli}</li>
-                                                ))}
-                                            </ul>
-                                        ) : (
-                                            <div>{li}</div>
-                                        )}
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    )
-                })}
-            </TextContainer>
-
+                                {event.list.map((li, index) => {
+                                    return (
+                                        <div key={index} className=" flex flex-col px-5">
+                                            {typeof li === 'string' ? (
+                                                <h2>{li}</h2>
+                                            ) : li && typeof li === 'object' && 'sublist' in li ? (
+                                                <ul className="px-5">
+                                                    {li.sublist.map((subli, subindex) => (
+                                                        <li key={subindex + 1}>-{subli}</li>
+                                                    ))}
+                                                </ul>
+                                            ) : (
+                                                <div>{li}</div>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )
+                    })}
+                </TextContainer>
+            </WaveBox>
             <TextInfo customClass="text-page-size"><strong>IL PADRE DELL'OZONOTERAPIA IN ITALIA</strong></TextInfo>
 
             <WhiteCard customClass="flex-row lg:flex lg:gap-5">
@@ -401,21 +402,22 @@ export default function ContentPage() {
 
             </div>
 
+            <WaveBox>
+                <h1 className="text-page-size text-center font-bold pt-">DOMANDE FREQUENTI SULL'OZONOTERAPIA'</h1>
 
-            <h1 className="text-page-size text-center font-bold">DOMANDE FREQUENTI SULL'OZONOTERAPIA'</h1>
 
-
-            <TextContainer>
-                {faqs.map((faq) => {
-                    return (
-                        <div className="flex flex-col gap-2">
-                            <h1 className="font-bold">{faq.question}</h1>
-                            <h2 className="mx-5" >{faq.answer}</h2>
-                        </div>
-                    )
-                })}
-            </TextContainer>
-        </section>
+                <TextContainer>
+                    {faqs.map((faq) => {
+                        return (
+                            <div className="flex flex-col gap-2">
+                                <h1 className="font-bold">{faq.question}</h1>
+                                <h2 className="mx-5" >{faq.answer}</h2>
+                            </div>
+                        )
+                    })}
+                </TextContainer>
+            </WaveBox>
+        </div>
 
 
     )

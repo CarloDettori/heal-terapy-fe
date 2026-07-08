@@ -139,7 +139,7 @@ export default function ScramblerPeoplePage() {
 
     return (
 
-        <section>
+        <div className="box">
 
             <TextInfo customClass="text-page-size font-bold">PRINCIPALE ESPONENTE DELLA SCRAMBLER THERAPY</TextInfo>
 
@@ -174,7 +174,7 @@ export default function ScramblerPeoplePage() {
                 })}
             </TextContainer>
 
-        </section>
+        </div>
 
     )
 }

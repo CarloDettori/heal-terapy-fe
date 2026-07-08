@@ -31,7 +31,7 @@ export default function ConfermataPage() {
     if (!booking) return <div className="m-20">Caricamento…</div>;
 
     return (
-        <section>
+        <div className="box">
             <h1 className="mt-30 text-2xl font-bold mb-6">Prenotazione confermata ✅</h1>
 
             <p><b>Email:</b> {booking.email}</p>
@@ -50,6 +50,6 @@ export default function ConfermataPage() {
                     Torna alla Home
                 </button>
             </div>
-        </section>
+        </div>
     );
 }

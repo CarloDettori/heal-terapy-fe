@@ -100,7 +100,7 @@ export default function ScramblerMythsPage() {
 
 
 
-        <section>
+        <div className="box">
 
             <TextInfo customClass="text-page-size font-bold">MITI INFONDATI SULLA SCRAMBLER THERAPY®</TextInfo>
             <TextContainer>
@@ -121,7 +121,7 @@ export default function ScramblerMythsPage() {
                 </div>
             </TextContainer>
 
-        </section>
+        </div>
 
 
     )

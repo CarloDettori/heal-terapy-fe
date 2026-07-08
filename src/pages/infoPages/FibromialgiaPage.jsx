@@ -115,7 +115,7 @@ export default function ContentPage() {
     ]
 
     return (
-        <section>
+        <div className="box">
 
             <h1 className="text-center mt-30 mb-20 font-bold text-page-size">FIBROMIALGIA</h1>
 
@@ -219,6 +219,6 @@ export default function ContentPage() {
             </div>
 
 
-        </section>
+        </div>
     )
 }

@@ -106,7 +106,7 @@ export default function ContentPage() {
 
 
     return (
-        <section>
+        <div className="box">
             <div className="mx-1 sm:mx-5 rounded-xl bg-white mt-30 p-12 text-center ">
                 <h1 className="text-center mb-10 font-bold text-page-size ">APPROCCIO MINI-NVASIVO <br /> Cosa significa?</h1>
 
@@ -215,6 +215,6 @@ export default function ContentPage() {
 
             <h1 className="text-center my-30 font-bold">L’obiettivo è offrire una soluzione efficace, <br /> mirata e meno invasiva possibile, <br />rispettando i tempi biologici di recupero del paziente.</h1>
 
-        </section>
+        </div>
     )
 }

@@ -156,11 +156,12 @@ export default function PrenotaPage() {
     if (!data) return <div>Caricamento...</div>;
 
     return (
-        <div className="m-20 mt-30">
+        <div className="box m-20 mt-30">
 
             <h1 className="text-center text-page-size font-bold mb-20 mt-30">
                 PRENOTAZIONE COLLOQUIO MEDICO
             </h1>
+
 
 
             <div className="mt-10">

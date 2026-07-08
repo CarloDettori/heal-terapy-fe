@@ -3,6 +3,7 @@ import { useEffect, useContext, useRef } from "react";
 import { GlobalContext } from "../context/GlobalContext"
 import WhiteCard from "../components/ui/WhiteCard.jsx";
 import TextInfo from "../components/ui/TextInfo.jsx";
+import WaveBox from "../components/ui/WaveBox.jsx";
 
 export default function MedicinaRigenerativaPag() {
 
@@ -129,106 +130,108 @@ export default function MedicinaRigenerativaPag() {
 
 
     return (
-        <>
-
-
-
-            <section className="text-center">
 
 
 
 
-                <div className="max-w-150 mx-auto">
-                    <TextInfo customClass="font-bold text-page-size">MEDICINA RIGENERATIVA</TextInfo>
-                    <div>
-                        <img className=" w-1/2 mx-auto items-center my-10" src="/regenerative.png" alt="" />
-                        <TextInfo size={1} className="home-corpo">La medicina rigenerativa mira a riparare o sostituire cellule, tessuti e organi danneggiati, stimolando i naturali processi di guarigione o utilizzando cellule staminali e biomateriali. Il suo scopo è ristabilire la funzione originale dei tessuti, superando i limiti dei trattamenti tradizionali basati solo sulla cura dei sintomi.</TextInfo>
+        <div className="box text-center">
+
+
+
+
+            <div className="max-w-150 mx-auto">
+                <TextInfo customClass="font-bold text-page-size">MEDICINA RIGENERATIVA</TextInfo>
+                <div>
+                    <img className=" w-1/2 mx-auto items-center my-10" src="/regenerative.png" alt="" />
+                    <TextInfo size={1} className="home-corpo">La medicina rigenerativa mira a riparare o sostituire cellule, tessuti e organi danneggiati, stimolando i naturali processi di guarigione o utilizzando cellule staminali e biomateriali. Il suo scopo è ristabilire la funzione originale dei tessuti, superando i limiti dei trattamenti tradizionali basati solo sulla cura dei sintomi.</TextInfo>
+
+                </div>
+            </div>
+
+
+
+
+
+            {/* MEDICINA RIGENERATIVA */}
+            <WaveBox>
+                <div>
+                    <TextInfo customClass="text-page-size font-bold">PRINCIPI DELLA MEDICINA RIGENERATIVA</TextInfo>
+
+                    <TextInfo size={1} customColor="--theme" customClass="font-bold">La medicina rigenerativa è un ambito innovativo della medicina che mira a stimolare i naturali processi di riparazione e rigenerazione dei tessuti danneggiati, favorendo il recupero funzionale.</TextInfo>
+                    <div className="mx-auto flex flex-wrap justify-center max-w-00">
+
+                        {
+                            healInfo.map((card) => {
+                                return (
+                                    <TextInfo className="flex flex-col" key={card.id}>
+                                        <h1 className="font-bold mb-3">{card.title}</h1>
+                                        <h2>{card.description}</h2>
+                                    </TextInfo>
+                                )
+                            })
+                        }
 
                     </div>
                 </div>
+            </WaveBox>
+            <div className="flex flex-wrap gap-5 justify-center mt-30">
+
+                <div className="h-full">
+                    <TextInfo customClass=" text-page-size font-bold max-w-200">Integrazione tra Terapia del Dolore <br /> e Medicina Rigenerativa</TextInfo>
+                    <TextInfo>
 
 
 
+                        <h2 className="font-bold">L’unione tra terapia del dolore e medicina rigenerativa consente di affrontare il problema in modo globale:</h2>
 
+                        <div className=" w-full p-5">
+                            {noDoloreSiRigenerazione.map((trat, index) => {
+                                return (
 
-                {/* MEDICINA RIGENERATIVA */}
-                <div className="mb-50" ref={regenerativeRef}></div>
-                <TextInfo customClass="text-page-size font-bold">PRINCIPI DELLA MEDICINA RIGENERATIVA</TextInfo>
+                                    <div key={index + 1} className="flex flex-col py-3  justify-center">
+                                        <h2 className="">{trat}</h2>
+                                    </div>
+                                )
+                            })}
+                        </div>
 
-                <TextInfo size={1}>La medicina rigenerativa è un ambito innovativo della medicina che mira a stimolare i naturali processi di riparazione e rigenerazione dei tessuti danneggiati, favorendo il recupero funzionale.</TextInfo>
-                <div className="flex flex-wrap justify-center">
+                        <h2 className="flex mt-auto font-bold">Questo approccio integrato è particolarmente indicato nelle patologie muscolo-scheletriche, degenerative e post-traumatiche.</h2>
 
-                    {
-                        healInfo.map((card) => {
-                            return (
-                                <WhiteCard key={card.id}>
-                                    <h1 className="font-bold">{card.title}</h1>
-                                    <h2>{card.description}</h2>
-                                </WhiteCard>
-                            )
-                        })
-                    }
-
+                    </TextInfo>
                 </div>
 
-                <div className="flex flex-wrap gap-5 justify-center mt-30">
-
-                    <div className="h-full">
-                        <TextInfo size={1} customClass="font-bold max-w-100">Integrazione tra Terapia del Dolore <br /> e Medicina Rigenerativa</TextInfo>
-                        <WhiteCard>
+                <div className="h-full">
+                    <TextInfo size={1} customColor="--theme" customClass="font-bold">Sicurezza, Appropriatezza <br /> e Personalizzazione</TextInfo>
+                    <WhiteCard >
 
 
 
-                            <h2 className="font-bold">L’unione tra terapia del dolore e medicina rigenerativa consente di affrontare il problema in modo globale:</h2>
+                        <h2 className="font-bold">Ogni trattamento viene proposto solo dopo una valutazione clinica accurata e nel rispetto delle linee guida scientifiche.
+                            <br />
+                            La scelta terapeutica si basa su:
+                        </h2>
 
-                            <div className=" w-full px-5">
-                                {noDoloreSiRigenerazione.map((trat, index) => {
-                                    return (
+                        <div className="w-full px-5">
+                            {sceltaTerapeutica.map((trat, index) => {
+                                return (
 
-                                        <div key={index + 1} className="flex flex-col py-3  justify-center">
-                                            <h2 className="">{trat}</h2>
-                                        </div>
-                                    )
-                                })}
-                            </div>
+                                    <div key={index + 1} className="flex flex-col py-3  justify-center">
+                                        <h2 className="">{trat}</h2>
+                                    </div>
+                                )
+                            })}
+                        </div>
 
-                            <h2 className="flex mt-auto font-bold">Questo approccio integrato è particolarmente indicato nelle patologie muscolo-scheletriche, degenerative e post-traumatiche.</h2>
+                        <h2 className=" font-bold">La sicurezza e l’efficacia del percorso terapeutico rappresentano elementi fondamentali dell’attività clinica.</h2>
 
-                        </WhiteCard>
-                    </div>
-
-                    <div className="h-full">
-                        <TextInfo size={1} customClass="font-bold">Sicurezza, Appropriatezza <br /> e Personalizzazione</TextInfo>
-                        <WhiteCard >
-
-
-
-                            <h2 className="font-bold">Ogni trattamento viene proposto solo dopo una valutazione clinica accurata e nel rispetto delle linee guida scientifiche.
-                                <br />
-                                La scelta terapeutica si basa su:
-                            </h2>
-
-                            <div className="w-full px-5">
-                                {sceltaTerapeutica.map((trat, index) => {
-                                    return (
-
-                                        <div key={index + 1} className="flex flex-col py-3  justify-center">
-                                            <h2 className="">{trat}</h2>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-
-                            <h2 className=" font-bold">La sicurezza e l’efficacia del percorso terapeutico rappresentano elementi fondamentali dell’attività clinica.</h2>
-
-                        </WhiteCard>
-                    </div>
-
+                    </WhiteCard>
                 </div>
 
+            </div>
 
-            </section >
 
-        </>
+        </div >
+
+
     )
 }

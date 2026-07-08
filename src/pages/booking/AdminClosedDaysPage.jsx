@@ -127,7 +127,7 @@ export default function AdminClosedDaysPage() {
     };
 
     return (
-        <section>
+        <div className="box">
             <TextContainer customClass="mt-30 flex-row max-w-150 justify-between items-center gap-4">
                 <h1 className="text-page-size font-bold">GIORNI CHIUSI</h1>
 
@@ -235,6 +235,6 @@ export default function AdminClosedDaysPage() {
                     {toast.message}
                 </div>
             )}
-        </section>
+        </div>
     );
 }

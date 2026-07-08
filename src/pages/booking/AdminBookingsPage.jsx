@@ -249,7 +249,7 @@ export default function AdminBookingsPage() {
     };
 
     return (
-        <section>
+        <div className="box">
             <div className="mt-30 flex items-center justify-between mb-6 gap-4 flex-wrap">
                 <h1 className="text-2xl font-bold">PRENOTAZIONI</h1>
 
@@ -600,6 +600,6 @@ export default function AdminBookingsPage() {
                     {toast.message}
                 </div>
             )}
-        </section>
+        </div>
     );
 }

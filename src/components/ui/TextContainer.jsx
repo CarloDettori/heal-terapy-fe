@@ -2,7 +2,7 @@ export default function TextContainer({ children, customClass = "", customColor 
 
 
     return (
-        <div className={`flex flex-col gap-3 m-0 lg:m-20 text-(${customColor}) ${customClass} text-${place}`}>
+        <div className={`flex flex-col gap-3 m-0 lg:p-20 text-(${customColor}) ${customClass} text-${place}`}>
             {children}
         </div>
     )

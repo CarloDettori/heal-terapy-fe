@@ -145,7 +145,7 @@ export default function ScramblerAskPage() {
 
     return (
 
-        <section>
+        <div className="box">
 
             <TextInfo customClass="text-page-size font-bold">DOMANDE FREQUENTI SULLA SCRAMBLER THERAPY®</TextInfo>
 
@@ -164,7 +164,7 @@ export default function ScramblerAskPage() {
                 </div>
             </TextContainer>
 
-        </section>
+        </div>
 
 
     )
