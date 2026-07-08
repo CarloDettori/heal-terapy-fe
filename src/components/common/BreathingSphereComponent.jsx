@@ -246,7 +246,7 @@ export default function BreathingSphereComponent() {
                 </div>
                 {!disintegrated && (
                     <button className="flex mx-auto discover-btn mt-15" onClick={handleDisintegration}>
-                        AVANTI
+                        Scopri di piu
                     </button>
                 )}
 
