@@ -30,20 +30,7 @@ export default function Footer() {
     return (
         <footer className="p-10 flex flex-col z-500 text-white bg-(--dark-theme) text-(--lightest-theme) border-top-theme">
 
-            <div className="my-20 mx-auto p-10 flex flex-col gap-5 max-w-130 border rounded-4xl">
 
-                <h1>
-                    BIBLIOGRAFIA
-                </h1>
-
-                <ul className="flex flex-col gap-2 italic">
-                    <li><p>"Riduzione del dolore senza chirurgia"</p></li>
-                    <li><p>"Stimolazione dei processi naturali di guarigione"</p></li>
-                    <li><p>"Selezione accurata del paziente, per garantire trattamenti mirati ed efficaci."</p></li>
-                    <li><p>"Cochrane Reviews / studi clinici su PRP, onde d’urto, rTMS, fibromialgia."</p></li>
-                </ul>
-
-            </div>
 
 
             <div id="footer-content-wrapper" className="flex  justify-between place item-center text-white text-start">

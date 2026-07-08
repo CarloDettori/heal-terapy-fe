@@ -116,10 +116,10 @@ export default function HomePage() {
 
             <WhiteCard place="center" customClass="max-w-150 shadow-xl">
 
-                <h1 className="font-bold">OBBIETTIVO DELLA CLINICA</h1>
 
-                <h2 className="font-bold">L’obiettivo è offrire al paziente un percorso di cura <br /> basato su:
-                </h2>
+
+                <h1 className="font-bold">L’obiettivo è offrire al paziente un percorso di cura <br /> basato su:
+                </h1>
 
                 <div className="text-center px-5 ">
                     {obbiettiviClinica.map((trat, index) => {
