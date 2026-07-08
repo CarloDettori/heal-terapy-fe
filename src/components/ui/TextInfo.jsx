@@ -19,8 +19,8 @@ export default function TextInfo({ children, customClass = "", customColor = "--
     }
 
     return (
-        <div className={`my-20 text-center mx-auto text-(${customColor}) ${customClass} text-${place}`}>
-            <Tag>{children}</Tag>
+        <div className={`text-center text-(${customColor}) ${customClass} text-${place}`}>
+            <Tag className=" px-5">{children}</Tag>
         </div>
     )
 }

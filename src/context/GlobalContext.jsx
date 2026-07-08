@@ -1,11 +1,13 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState } from "react"
 const GlobalContext = createContext()
 
 const GlobalProvider = ({ children }) => {
 
-
     const [showbar, setShowbar] = useState(false)
     const [sidebarLinks, setSidebarLinks] = useState([]);
+    const [disintegrated, setDisintegrated] = useState(false);
+    const [hidden, setHidden] = useState(false);
+
 
 
     /*async function fetchData(url) {
@@ -22,7 +24,7 @@ const GlobalProvider = ({ children }) => {
     }, [])*/
 
     return (
-        <GlobalContext.Provider value={{ showbar, setShowbar, sidebarLinks, setSidebarLinks }}>
+        <GlobalContext.Provider value={{ showbar, setShowbar, sidebarLinks, setSidebarLinks, disintegrated, setDisintegrated, hidden, setHidden }}>
             {children}
         </GlobalContext.Provider>
     )

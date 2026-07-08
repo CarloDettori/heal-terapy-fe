@@ -26,12 +26,14 @@ export default function Header() {
 
 
     return (
-        <header className=" bg-(--dark-theme) border-bottom-theme shadow-lg w-full flex items-center z-1000 p-3 justify-between">
-            <div className="flex relative">
-                <Link className="flex-shrink-0" to="/">
-                    <img src={logo} alt="" className="h-17 w-auto flex-shrink-0" />
+        <header className=" bg-(--dark-theme) border-bottom-theme shadow-lg w-full flex items-center z-1000 p-3 justify-between h-(--header-height)">
 
-                    <h1 className=" text-(--lightest-theme)  font-bold my-auto absolute top-4 left-5.5">RC</h1>
+            <div className="flex relative">
+
+                <Link className="flex-shrink-0" to="/">
+                    <img src={logo} alt="" className="h-10 w-auto flex-shrink-0" />
+
+                    <h2 className=" text-(--lightest-theme)  font-bold my-auto absolute top-2 left-3">RC</h2>
                 </Link>
 
             </div>
@@ -41,15 +43,17 @@ export default function Header() {
                 {pages.map((page) => {
 
                     return (
-                        <NavLink key={page.id} id={`link-${page.id}`} className="navlink flex flex-col sm:w-full w-20 px-1 sm:px-2 text-center text-(--light-theme) cursor-pointer" to={page.route}>
-                            <i className={`${page.icon} max-h-(--title-size) mx-auto mt-2`}></i>
-                            <h2 className="mx-auto my-auto">{page.name}</h2>
+                        <NavLink key={page.id} id={`link-${page.id}`} className="flex gap-1 px-1 sm:px-2 text-center text-(--light-theme) cursor-pointer" to={page.route}>
+                            <i className={`${page.icon} max-h-(--title-size) mx-auto my-auto`}></i>
+
+                            <p className="mx-auto my-auto">{page.name}</p>
                         </NavLink>
                     )
 
                 })}
 
             </nav>
+
         </header>
     );
 }

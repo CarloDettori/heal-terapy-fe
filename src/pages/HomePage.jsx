@@ -4,6 +4,7 @@ import { useEffect, useContext, useRef } from "react";
 import { GlobalContext } from "../context/GlobalContext"
 import WhiteCard from "../components/ui/WhiteCard.jsx";
 import TextInfo from "../components/ui/TextInfo.jsx";
+import WaveBox from "../components/ui/WaveBox.jsx";
 
 export default function HomePage() {
 
@@ -104,40 +105,40 @@ export default function HomePage() {
 
 
     return (
-        <>
+        <div className="box">
 
             <HeroComponent regenerativeRef={regenerativeRef} painRef={painRef} />
 
-            <section className="text-center">
-                <TextInfo customColor="--theme" customClass="text-page-size font-bold mb-30" >
-                    Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore acuto e cronico.
-                </TextInfo>
-
-                <WhiteCard place="center" customClass="max-w-150">
-
-                    <h1 className="font-bold">OBBIETTIVO DELLA CLINICA</h1>
-
-                    <h2 className="font-bold">L’obiettivo è offrire al paziente un percorso di cura <br /> basato su:
-                    </h2>
-
-                    <div className="text-center px-5 ">
-                        {obbiettiviClinica.map((trat, index) => {
-                            return (
-
-                                <div key={index + 1} className="flex flex-col py-3 mx-auto justify-center">
-                                    <h2 className="">{trat}</h2>
-                                </div>
-                            )
-                        })}
-                    </div>
-
-                    <h2 className="font-bold">La sicurezza e l’efficacia del percorso terapeutico rappresentano elementi fondamentali dell’attività clinica.</h2>
-
-                </WhiteCard>
+            <TextInfo customColor="--theme" customClass="page-text-size font-bold mt-0" size={1} >
+                Approccio innovativo, mini-invasivo e personalizzato alla cura del dolore acuto e cronico.
+            </TextInfo>
 
 
+            <WhiteCard place="center" customClass="max-w-150 shadow-xl">
 
-                <TextInfo size={1} customClass="font-bold mt-50 text-page-size">COSA ASPETTARSI</TextInfo>
+                <h1 className="font-bold">OBBIETTIVO DELLA CLINICA</h1>
+
+                <h2 className="font-bold">L’obiettivo è offrire al paziente un percorso di cura <br /> basato su:
+                </h2>
+
+                <div className="text-center px-5 ">
+                    {obbiettiviClinica.map((trat, index) => {
+                        return (
+
+                            <div key={index + 1} className="flex flex-col py-3 mx-auto justify-center">
+                                <h2 className="">{trat}</h2>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                <h2 className="font-bold">La sicurezza e l’efficacia del percorso terapeutico rappresentano elementi fondamentali dell’attività clinica.</h2>
+
+            </WhiteCard>
+
+
+            <WaveBox>
+                <TextInfo size={1} customClass="font-bold text-page-size">COSA ASPETTARSI</TextInfo>
                 <div className="flex flex-col gap-40 pb-30">
                     {
                         guides.map((guide) => {
@@ -153,9 +154,9 @@ export default function HomePage() {
                         })
                     }
                 </div>
+            </WaveBox>
 
-            </section >
 
-        </>
+        </div>
     )
 }

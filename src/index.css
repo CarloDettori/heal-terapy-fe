@@ -42,7 +42,7 @@ rosa sbiadito #FDF7FF
     --lightest-theme: #F0F9FF;
     --off-page-theme: #ced6db;
     --dark-theme: #1F2937;
-    --header-height: 100px;
+    --header-height: 70px;
     --footer-height: 40px;
     --main-height: calc(100vh - (var(--header-height) + var(--footer-height)));
     --title-size: 1.5em;
@@ -54,7 +54,7 @@ rosa sbiadito #FDF7FF
 
 .text-page-size {
     font-size: 2em;
-    margin-top: 120px;
+    padding-top: 120px;
 }
 
 .blur-xsm {
@@ -141,7 +141,8 @@ main {
 }
 
 section {
-    padding: 20px
+    padding: 0px;
+    background: white;
 }
 
 .home-icon {
@@ -471,12 +472,10 @@ section {
     }
 
     .hero-section.disintegrated .sphere-animation {
-        margin-top: -400px;
+        margin-top: -600px;
     }
 
-    .hero-section.disintegrated .grid-container {
-        margin-top: 250px;
-    }
+    
 
 }
 
@@ -492,7 +491,7 @@ section {
     }
 
     .hero-section.disintegrated .grid-container {
-        margin-top: 1000px;
+        margin-top: 500px;
     }
 }
 
