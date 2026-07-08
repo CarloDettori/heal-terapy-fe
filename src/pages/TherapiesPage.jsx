@@ -17,11 +17,11 @@ export default function TherapiesPage() {
         },
         {
             id: 4,
-            title: "Scrambler Therapy (Calmare®)",
+            title: "Scrambler Therapy",
             subtitle: "calmare il dolore neuropatico",
             img: "/scrumbler.png",
             lists: "",
-            description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del dolore neuropatico acuto e cronico. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
+            description: "La Scrambler Therapy, conosciuta anche come, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del dolore neuropatico acuto e cronico. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitaries come ad esempio la Johns Hopkins University, la Cleveland Clinic e la Mayo Clinic oltre ad altre importanti istituzioni universitarie e di ricerca"
 
         },
     ]
