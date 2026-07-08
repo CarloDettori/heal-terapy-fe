@@ -364,7 +364,7 @@ export default function ContentPage() {
                     </h1>
 
                     <p>
-                        Velio Bocci è stato un medico-fisiologo  italiano, Prof. ordinario presso l’Università di Siena. È stato pioniere nello studio delle citochine e dell’interferone, e ha concentrato buona parte della sua produzione scientifica sull’ozonoterapia, scrivendo testi e articoli che hanno contribuito a formalizzare questo campo. La sua importanza risiede tanto nei risultati e nella produzione scientifica quanto nel ruolo di “innovatore” che ha attraversato i confini tra fisiologia tradizionale e medicina integrativa.
+                        Velio Bocci è stato un medico-fisiologo  italiano, Prof. ordinario presso l’Università di Siena. È stato pioniere nello studio delle citochine e dell’interferone, e ha concentrato buona parte della sua produzione scientifica sull’ozonoterapia, scrivendo testi e articoli che hanno contribuito a rendere comprensibile questa tecnica. La sua importanza risiede tanto nei risultati e nella produzione scientifica quanto nel ruolo di “innovatore” che ha attraversato i confini tra fisiologia tradizionale e medicina integrativa.
                     </p>
 
 
