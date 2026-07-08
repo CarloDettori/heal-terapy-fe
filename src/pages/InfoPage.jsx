@@ -49,11 +49,11 @@ export default function InfoPage() {
         },
         {
             id: 4,
-            title: "Scrambler Therapy (Calmare®)",
+            title: "Scrambler Therapy",
             subtitle: "calmare il dolore neuropatico",
             img: "/scrumbler.png",
             lists: "",
-            description: "La Scrambler Therapy, conosciuta anche come Calmare®, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del fuoco di Sant’Antonio e di altre neuropatie croniche. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
+            description: "La Scrambler Therapy, è una tecnologia non invasiva che invia segnali elettrici “non dolorosi” al sistema nervoso, rimodulando la percezione del dolore. È particolarmente indicata per il trattamento del fuoco di Sant’Antonio e di altre neuropatie croniche. Negli Stati Uniti è riconosciuta come metodo efficace e sicuro da numerosi centri universitari(es.Johns Hopkins, Cleveland Clinic)."
 
         },
         {

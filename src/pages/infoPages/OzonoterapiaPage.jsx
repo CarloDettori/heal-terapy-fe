@@ -264,8 +264,6 @@ export default function ContentPage() {
             answer: "L'ossigeno-ozono terapia è una soluzione non invasiva, che sfrutta il potere curativo della breve ossidazione locale indotta dall’ozono per promuovere la guarigione e ridurre l'infiammazione.",
 
         },
-
-
     ]
 
     return (
