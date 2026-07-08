@@ -238,7 +238,7 @@ export default function BreathingSphereComponent() {
                         RC<br />
                     </TextInfo>
                     <TextInfo size={4} customColor="--ligthest-theme" customClass={`hero-title px-10 font-bold ${hidden ? "hero-hidden-by-button" : ""}`}>
-                        Ambulatorio Medico specialistico in:<br /><br />
+                        Ambulatorio Medico specialistico:<br /><br />
                         Terapia del dolore<br />
                         &<br />
                         Medicina rigenerativa</TextInfo>
@@ -297,7 +297,7 @@ export default function BreathingSphereComponent() {
                 <div className={` ${disintegrated ? "visible border rounded-4xl p-5" : ""}`}>
 
                     <Link to="/ter-dol" className="hover:scale-120 cursor-pointer text-center w-full">
-                        <h1 className="my-2">TERAPIA DEL DOLORE</h1>
+                        <h1 className="my-2 hover:scale-120">TERAPIA DEL DOLORE</h1>
                     </Link>
 
                     {painLinks.map((link) => (
@@ -310,8 +310,8 @@ export default function BreathingSphereComponent() {
 
                 <div className={` ${disintegrated ? "visible border rounded-4xl p-5" : ""}`}>
 
-                    <Link to="/med-rig" className="hover:scale-120 cursor-pointer text-center w-full">
-                        <h1 className="my-2">MEDICINA RIGENERATIVA</h1>
+                    <Link to="/med-rig" className=" cursor-pointer text-center w-full">
+                        <h1 className="my-2 hover:scale-120">MEDICINA RIGENERATIVA</h1>
                     </Link>
 
                     {regenerativeLinks.map((link) => (
