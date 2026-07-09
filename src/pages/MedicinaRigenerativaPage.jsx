@@ -1,5 +1,5 @@
 import HeroComponent from "../components/common/HeroComponent.jsx"
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext"
 import WhiteCard from "../components/ui/WhiteCard.jsx";
 import TextInfo from "../components/ui/TextInfo.jsx";
@@ -8,8 +8,6 @@ import WaveBox from "../components/ui/WaveBox.jsx";
 export default function MedicinaRigenerativaPag() {
 
     const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
-    const regenerativeRef = useRef()
-    const painRef = useRef()
 
 
     useEffect(() => {
@@ -71,11 +69,7 @@ export default function MedicinaRigenerativaPag() {
 
 
 
-    function scrollTo(target) {
-        if (target && target.current && typeof target.current.scrollIntoView === "function") {
-            target.current.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    }
+
 
 
 

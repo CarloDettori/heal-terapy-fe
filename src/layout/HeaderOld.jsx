@@ -5,20 +5,7 @@ import { useState } from "react"
 
 export default function Header() {
 
-    const pages = [
-        {
-            id: 1,
-            name: "Home",
-            route: "",
-            icon: "fa-solid fa-house"
-        },
-        {
-            id: 2,
-            name: "Info",
-            route: "info",
-            icon: "fa-solid fa-circle-info"
-        },
-    ]
+
 
 
     return (

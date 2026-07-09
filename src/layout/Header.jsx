@@ -1,8 +1,21 @@
 
 import { NavLink, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import logo from "/logo.png"
 
 export default function Header() {
+    const [smallWindow, setSmallWindow] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setSmallWindow(window.innerWidth < 460);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const pages = [
         {
             id: 1,
@@ -38,15 +51,15 @@ export default function Header() {
 
             </div>
 
-            <nav className="flex justify-evenly sm:gap-3 sm:me-3">
+            <nav className="flex justify-evenly gap-3 sm:me-3">
 
                 {pages.map((page) => {
 
                     return (
-                        <NavLink key={page.id} id={`link-${page.id}`} className="flex gap-1 px-1 sm:px-2 text-center text-(--light-theme) cursor-pointer" to={page.route}>
+                        <NavLink key={page.id} id={`link-${page.id}`} className="flex gap-1 px-1  text-center text-(--light-theme) cursor-pointer" to={page.route}>
                             <i className={`${page.icon} max-h-(--title-size) mx-auto my-auto`}></i>
 
-                            <p className="mx-auto my-auto">{page.name}</p>
+                            {!smallWindow && <p className="mx-auto my-auto">{page.name}</p>}
                         </NavLink>
                     )
 

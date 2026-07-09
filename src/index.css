@@ -190,7 +190,7 @@ section {
 /* HERO SECTION */
 .hero-section {
     
-    background: radial-gradient(circle at center, #0f172a, #020617);
+    background: radial-gradient(circle at center, #203158, #020617);
     color: white;
     overflow: hidden;
     display: flex;
@@ -211,7 +211,7 @@ section {
     opacity: 1;
     transition: opacity 0.6s ease, filter 0.6s ease;
     z-index: 5;
-    margin: 30px auto;
+    margin: 10px auto;
     /* regola per spostare il titolo verso l'alto/giù */
 
 
@@ -310,6 +310,7 @@ section {
 
 .sphere-container {
 
+    position: relative;
     width: 580px;
     height: 580px;
     display: flex;
@@ -342,7 +343,8 @@ section {
     width: min(92vw, 1200px);
     pointer-events: none;
     position: absolute;
-    top: -350px;
+    top: 0;
+    left: 0;
     visibility: hidden;
 }
 
@@ -350,6 +352,9 @@ section {
 .grid-container.visible {
     pointer-events: auto;
     visibility: visible;
+    position: relative;
+    top: auto;
+    margin-top: 40px;
 }
 
 /* i cerchi partono tutti centrati nel container */
@@ -476,7 +481,7 @@ section {
     }
 
     .hero-section.disintegrated .sphere-animation {
-        margin-top: -600px;
+        margin-top: -1000px;
     }
 
     
@@ -495,7 +500,8 @@ section {
     }
 
     .hero-section.disintegrated .grid-container {
-        margin-top: 500px;
+        margin-top: 600px;
+        top: 0;
     }
 }
 
@@ -594,6 +600,16 @@ section {
     width: 400px;
     margin-top: -350px
  }
+
+ .hero-title {
+    font-size: 2rem;
+    margin: 10px auto 0px;
+ }
+
+ .grid-container.visible {
+    
+    top: 50px;
+}
 
 }
 
