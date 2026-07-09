@@ -29,12 +29,7 @@ export default function Header() {
             route: "info",
             icon: "fa-solid fa-circle-info"
         },
-        {
-            id: 3,
-            name: "PRENOTA VISITA",
-            route: "checkout",
-            icon: "fa-solid fa-calendar-check"
-        },
+
     ]
 
 

@@ -93,7 +93,6 @@ export default function BreathingSphereComponent() {
     }, [disintegrated]);
 
     const regenerativeLinks = [
-        { id: 4, title: "Ozonoterapia", link: "/info/1" },
 
         { id: 6, title: "Rigenerazione Articolare", link: "/info/6" },
         { id: 7, title: "Medicina Estetica", link: "/info/3" },
@@ -237,12 +236,12 @@ export default function BreathingSphereComponent() {
                     <TextInfo size={1} customColor="--ligthest-theme" customClass={`hero-title px-10 text-page-size ${hidden ? "hero-hidden-by-button" : ""}`}>
                         RC<br />
                     </TextInfo>
-                    <TextInfo size={4} customColor="--ligthest-theme" customClass={`hero-title px-10 font-bold ${hidden ? "hero-hidden-by-button" : ""}`}>
+                    <TextInfo size={3} customColor="--ligthest-theme" customClass={`hero-title px-10 font-bold ${hidden ? "hero-hidden-by-button" : ""}`}>
                         Ambulatorio Medico specialistico:<br /><br />
                         Terapia del dolore<br />
                         &<br />
                         Medicina rigenerativa</TextInfo>
-                    <TextInfo size={4} customColor="--ligthest-theme" customClass={`hero-title ${hidden ? "hero-hidden-by-button" : ""}`}>Direttore Sanitario: Dott. Roberto Chessa</TextInfo>
+                    {/* <TextInfo size={4} customColor="--ligthest-theme" customClass={`hero-title ${hidden ? "hero-hidden-by-button" : ""}`}>Direttore Sanitario: Dott. Roberto Chessa</TextInfo> */}
                 </div>
                 {!disintegrated && (
                     <button className="flex mx-auto discover-btn mt-15" onClick={handleDisintegration}>
@@ -251,6 +250,8 @@ export default function BreathingSphereComponent() {
                 )}
 
             </div>
+
+
 
             <div className="sphere-animation">
 

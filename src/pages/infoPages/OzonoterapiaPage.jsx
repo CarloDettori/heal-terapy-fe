@@ -270,10 +270,10 @@ export default function ContentPage() {
 
         <div className="box">
 
-            <TextInfo customClass="text-page-size font-bold">OZONOTERAPIA</TextInfo>
+            <TextInfo customClass="text-page-size font-bold">OSSIGENO OZONOTERAPIA</TextInfo>
             <WhiteCard place="center" customClass="max-w-250">
                 <h2 className="font-bold ">
-                    L’Ozonoterapia è una pratica che utilizza una miscela di ossigeno e ozono (O₃) a scopo terapeutico. L’ozono impiegato è ozono medicale, prodotto da apparecchi certificati e usato in concentrazioni controllate.
+                    L’ Ossigeno Ozonoterapia è una pratica che utilizza una miscela di ossigeno e ozono (O₃) a scopo terapeutico. L’ozono impiegato è ozono medicale, prodotto da apparecchi certificati e usato in concentrazioni controllate. <br />L'Ossigeno Ozonoterapia è un'atto medico che puo essere esercitato solo da medici abilitati.
 
                 </h2>
             </WhiteCard>
@@ -293,7 +293,7 @@ export default function ContentPage() {
                         )
                     })}
                 </div>
-                <h2 className="font-bold  px-5">Non sostituisce le terapie standard: quando usata, lo è come complemento.</h2>
+                <h2 className="font-bold  px-5">Non sostituisce le terapie convenzionali: quando usata, lo è come complemento.</h2>
             </TextContainer>
 
 

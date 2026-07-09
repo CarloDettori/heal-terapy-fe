@@ -61,7 +61,8 @@ completamente responsive e dotato di due sezione
 
 
 
-
+sitemare il font della sfera
+ingrandire la stritta sotto il titolo di Ozonoterapia
 
 
 

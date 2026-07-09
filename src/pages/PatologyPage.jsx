@@ -3,10 +3,10 @@ import TextInfo from "../components/ui/TextInfo"
 export default function PatologyPage() {
 
     const pathology = [
-        "Patologie autoimmuni",
-        "Patologie vascolari",
-        "Patologie osteoarticolari",
-        "Patologie Neurologiche",
+        "Patologie autoimmuni (fibromialgia",
+        "Patologie vascolari (piede diabetico - ulcere diabetiche",
+        "Patologie osteoarticolari (ernia discale - tendinite - borsiti - artosi: spalla, gomito, polso, ginocchio, caviglia - neuroma di Morton - spine calcaneari",
+        "Patologie Neurologiche (neuropatie diabetiche: arto superiore ed inferione - neuropatia post erpetica",
 
     ]
 
