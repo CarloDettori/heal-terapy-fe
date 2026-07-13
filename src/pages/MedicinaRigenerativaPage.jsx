@@ -4,65 +4,62 @@ import { GlobalContext } from "../context/GlobalContext"
 import WhiteCard from "../components/ui/WhiteCard.jsx";
 import TextInfo from "../components/ui/TextInfo.jsx";
 import WaveBox from "../components/ui/WaveBox.jsx";
+import NavBarComponent from "../components/common/NavBarComponent";
 
 export default function MedicinaRigenerativaPag() {
 
-    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
+    const { navMainLinks, setNavMainLinks, navSubLinks, setNavSubLinks } = useContext(GlobalContext);
 
 
+
+    // Imposta i link specifici per questa pagina
     useEffect(() => {
         // Imposta i link specifici per questa pagina
-        setSidebarLinks(
+        setNavMainLinks(
             [
 
                 {
                     id: 1,
-                    route: "/info/1",
-                    title: "Ozonoterapia",
-
-                },
-
-                {
-                    id: 3,
-                    route: "/info/3",
-                    title: "Medicina estetica",
-
+                    linkName: "TERAPIA DEL DOLORE",
+                    linkAddress: "/ter-dol"
                 },
                 {
-                    id: 4,
-                    route: "/info/4",
-                    title: "Scrambler Therapy (Calmare®)",
+                    id: 2,
+                    linkName: "MEDICINA RIGENERATIVA",
+                    linkAddress: "/med-rig"
+                }
 
-
-                },
-                {
-                    id: 5,
-                    route: "/info/5",
-                    title: "Fibromialgia",
-
-
-                },
-                {
-                    id: 6,
-                    route: "/info/6",
-                    title: "Rigenerazione articolare",
-
-
-                },
-
-                {
-                    id: 7,
-                    route: "/info/7",
-                    title: "Trattamenti mini-invasivi",
-
-
-                },
 
             ]);
 
+        setNavSubLinks(
+            [
+
+                {
+                    id: 1,
+                    linkName: "Rigenerazione articolare",
+                    linkAddress: "/info/6"
+                },
+                {
+                    id: 2,
+                    linkName: "Medicina estetica",
+                    linkAddress: "/info/3"
+                },
+                {
+                    id: 3,
+                    linkName: "Trattamenti mininvasivi",
+                    linkAddress: "/info/7"
+                }
+
+
+            ]);
         // Cleanup: reset ai link di default quando esci dalla pagina
 
     }, []);
+
+    // Cleanup: reset ai link di default quando esci dalla pagina
+
+
 
 
 
@@ -130,7 +127,7 @@ export default function MedicinaRigenerativaPag() {
 
         <div className="box text-center">
 
-
+            
 
 
             <div className="max-w-150 mx-auto">

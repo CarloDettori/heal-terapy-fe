@@ -1,67 +1,52 @@
 import HeroComponent from "../components/common/HeroComponent.jsx"
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext"
 import WhiteCard from "../components/ui/WhiteCard.jsx";
 import TextInfo from "../components/ui/TextInfo.jsx";
 import WaveBox from "../components/ui/WaveBox.jsx";
+import NavBarComponent from "../components/common/NavBarComponent";
 
 export default function TerapiaDolorePage() {
 
-    const { setShowbar, setSidebarLinks } = useContext(GlobalContext);
-    const regenerativeRef = useRef()
-    const painRef = useRef()
+    const { navMainLinks, setNavMainLinks, navSubLinks, setNavSubLinks, } = useContext(GlobalContext);
+
 
 
     useEffect(() => {
         // Imposta i link specifici per questa pagina
-        setSidebarLinks(
+        setNavMainLinks(
             [
 
                 {
                     id: 1,
-                    route: "/info/1",
-                    title: "Ozonoterapia",
-
-                },
-
-                {
-                    id: 3,
-                    route: "/info/3",
-                    title: "Medicina estetica",
-
+                    linkName: "TERAPIA DEL DOLORE",
+                    linkAddress: "/ter-dol"
                 },
                 {
-                    id: 4,
-                    route: "/info/4",
-                    title: "Scrambler Therapy (Calmare®)",
+                    id: 2,
+                    linkName: "MEDICINA RIGENERATIVA",
+                    linkAddress: "/med-rig"
+                }
 
-
-                },
-                {
-                    id: 5,
-                    route: "/info/5",
-                    title: "Fibromialgia",
-
-
-                },
-                {
-                    id: 6,
-                    route: "/info/6",
-                    title: "Rigenerazione articolare",
-
-
-                },
-
-                {
-                    id: 7,
-                    route: "/info/7",
-                    title: "Trattamenti mini-invasivi",
-
-
-                },
 
             ]);
 
+        setNavSubLinks(
+            [
+
+                {
+                    id: 1,
+                    linkName: "Patologie trattate",
+                    linkAddress: "/info/8"
+                },
+                {
+                    id: 2,
+                    linkName: "Terapie",
+                    linkAddress: "/info/9"
+                }
+
+
+            ]);
         // Cleanup: reset ai link di default quando esci dalla pagina
 
     }, []);
@@ -126,7 +111,7 @@ export default function TerapiaDolorePage() {
 
             {/* TERAPIA DEL DOLORE */}
             <WaveBox>
-                <div ref={painRef}></div>
+
                 <TextInfo customClass="text-page-size font-bold">PRINCIPI DELLA TERAPIA DEL DOLORE</TextInfo>
                 <TextInfo size={1}>La terapia del dolore è una disciplina medica dedicata alla diagnosi e al trattamento del dolore acuto e cronico, con l’obiettivo di migliorare la qualità di vita del paziente.</TextInfo>
 

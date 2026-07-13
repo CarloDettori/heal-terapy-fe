@@ -1,10 +1,24 @@
 
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import NavBarComponent from "../components/common/NavBarComponent.jsx";
 import logo from "/logo.png"
 
+
 export default function Header() {
+    const { pathname } = useLocation();
     const [smallWindow, setSmallWindow] = useState(false);
+
+    const navBarRoutes = [
+        "/ter-dol",
+        "/med-rig",
+        "/info/3",
+        "/info/6",
+        "/info/7",
+        "/info/8",
+        "/info/9"
+    ];
+    const showNavBar = navBarRoutes.includes(pathname);
 
     useEffect(() => {
         const handleResize = () => {
@@ -34,34 +48,38 @@ export default function Header() {
 
 
     return (
-        <header className=" bg-(--dark-theme) border-bottom-theme shadow-lg w-full flex items-center z-1000 p-3 justify-between h-(--header-height)">
+        <>
+            <header className=" bg-(--dark-theme) border-bottom-theme shadow-lg w-full flex items-center z-1000 p-3 justify-between h-(--header-height)">
 
-            <div className="flex relative">
+                <div className="flex relative">
 
-                <Link className="flex-shrink-0" to="/">
-                    <img src={logo} alt="" className="h-10 w-auto flex-shrink-0" />
+                    <Link className="flex-shrink-0" to="/">
+                        <img src={logo} alt="" className="h-10 w-auto flex-shrink-0" />
 
-                    <h2 className=" text-(--lightest-theme)  font-bold my-auto absolute top-2 left-3">RC</h2>
-                </Link>
+                        <h2 className=" text-(--lightest-theme)  font-bold my-auto absolute top-2 left-3">RC</h2>
+                    </Link>
 
-            </div>
+                </div>
 
-            <nav className="flex justify-evenly gap-3 sm:me-3">
+                <nav className="flex justify-evenly gap-3 sm:me-3">
 
-                {pages.map((page) => {
+                    {pages.map((page) => {
 
-                    return (
-                        <NavLink key={page.id} id={`link-${page.id}`} className="flex gap-1 px-1  text-center text-(--light-theme) cursor-pointer" to={page.route}>
-                            <i className={`${page.icon} max-h-(--title-size) mx-auto my-auto`}></i>
+                        return (
+                            <NavLink key={page.id} id={`link-${page.id}`} className="flex gap-1 px-1  text-center text-(--light-theme) cursor-pointer" to={page.route}>
+                                <i className={`${page.icon} max-h-(--title-size) mx-auto my-auto`}></i>
 
-                            {!smallWindow && <p className="mx-auto my-auto">{page.name}</p>}
-                        </NavLink>
-                    )
+                                {!smallWindow && <p className="mx-auto my-auto">{page.name}</p>}
+                            </NavLink>
+                        )
 
-                })}
+                    })}
 
-            </nav>
+                </nav>
 
-        </header>
+            </header>
+            {showNavBar && <NavBarComponent />}
+
+        </>
     );
 }

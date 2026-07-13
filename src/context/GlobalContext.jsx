@@ -7,6 +7,8 @@ const GlobalProvider = ({ children }) => {
     const [sidebarLinks, setSidebarLinks] = useState([]);
     const [disintegrated, setDisintegrated] = useState(false);
     const [hidden, setHidden] = useState(false);
+    const [navMainLinks, setNavMainLinks] = useState([]);
+    const [navSubLinks, setNavSubLinks] = useState([]);
 
 
 
@@ -24,7 +26,7 @@ const GlobalProvider = ({ children }) => {
     }, [])*/
 
     return (
-        <GlobalContext.Provider value={{ showbar, setShowbar, sidebarLinks, setSidebarLinks, disintegrated, setDisintegrated, hidden, setHidden }}>
+        <GlobalContext.Provider value={{ navMainLinks, setNavMainLinks, navSubLinks, setNavSubLinks, showbar, setShowbar, sidebarLinks, setSidebarLinks, disintegrated, setDisintegrated, hidden, setHidden }}>
             {children}
         </GlobalContext.Provider>
     )

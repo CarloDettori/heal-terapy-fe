@@ -136,9 +136,7 @@ h3 {
     margin: auto;
 }
 
-main {
-    box-shadow: 0px -5px 10px var(--theme);
-}
+
 
 section {
     padding: 0px;
