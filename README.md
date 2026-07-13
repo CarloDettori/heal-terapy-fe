@@ -63,6 +63,8 @@ completamente responsive e dotato di due sezione
 
 sitemare il font della sfera
 ingrandire la stritta sotto il titolo di Ozonoterapia
+sistemare frase della scrambler terapi nel primo paragrafo
+insieme allo scrambler game aggiungere immagine dermatomeri
 
 
 

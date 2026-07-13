@@ -3,7 +3,7 @@ import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
 import TextContainer from "../../../components/ui/TextContainer";
 import TextInfo from "../../../components/ui/TextInfo";
-
+import WaveBox from "../../../components/ui/WaveBox.jsx"
 
 export default function ScramblerMythsPage() {
 
