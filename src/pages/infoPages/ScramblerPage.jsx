@@ -13,7 +13,7 @@ export default function ContentPage() {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsDesktop(window.innerWidth > 1440);
+            setIsDesktop(window.innerWidth > 900);
         };
 
         window.addEventListener("resize", handleResize);
@@ -237,7 +237,7 @@ export default function ContentPage() {
 
             <TextInfo customClass="font-bold text-page-size">SCRAMBLER THERAPY®</TextInfo>
             <img src="/scrambler-machine.png" alt="" className="flex mx-auto" />
-            <WhiteCard customClass="">La Scrambler Therapy rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata, essendo una apparecchiatura biomedicale, <strong>solo esclusivamente da personale medico abilitato per tale pratica.</strong> </WhiteCard>
+            <WhiteCard customClass=""><span> La Scrambler Therapy rappresenta un’interessante tecnologia di stimolazione nervosa non-invasiva destinata al trattamento del dolore neuropatico cronico e oncologico, molto valorizzata negli Stati Uniti per la sua proposta “senza farmaci”. È importante perché offre un’alternativa potenziale in un contesto – quello del dolore cronico – che ha molte lacune e grandi costi. È innovativa nel suo approccio (messaggi “no-pain” in luogo dei segnali di dolore), ma va usata, essendo una apparecchiatura biomedicale, <strong>solo esclusivamente da personale medico abilitato per tale pratica.</strong> </span></WhiteCard>
 
 
             <TextInfo size={1} customClass="font-bold"></TextInfo>
@@ -251,7 +251,10 @@ export default function ContentPage() {
 
                     Non è una stimolazione tradizionale tipo TENS (Transcutaneous Electrical Nerve Stimulation) ma, secondo l'ingegnere Giuseppe Marineo  (inventore della scrambler therapy), questa terapia biomedica rappresenta un sistema che interviene sul “linguaggio” dell’informazione afferente del dolore (“no-pain message”).</h2>
             </TextContainer>
+            <WhiteCard>
 
+                <img src="/Dermatomeri.jpg" alt="" />
+            </WhiteCard>
             {isDesktop && <ScramblerGameComponent />}
 
 

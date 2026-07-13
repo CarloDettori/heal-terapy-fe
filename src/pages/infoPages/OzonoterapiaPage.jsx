@@ -272,10 +272,10 @@ export default function ContentPage() {
 
             <TextInfo customClass="text-page-size font-bold">OSSIGENO OZONOTERAPIA</TextInfo>
             <WhiteCard place="center" customClass="max-w-250">
-                <h2 className="font-bold ">
+                <h1 className="font-bold ">
                     L’ Ossigeno Ozonoterapia è una pratica che utilizza una miscela di ossigeno e ozono (O₃) a scopo terapeutico. L’ozono impiegato è ozono medicale, prodotto da apparecchi certificati e usato in concentrazioni controllate. <br />L'Ossigeno Ozonoterapia è un'atto medico che puo essere esercitato solo da medici abilitati.
 
-                </h2>
+                </h1>
             </WhiteCard>
 
 
